@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" name="viewport"/>
+  <title data-i18n="meta_title">Aura Web | Desarrollo Web Acelerado con IA & Cloud</title>
+  <meta name="description" content="Sitios web de alta conversión y MVPs listos en 48 horas con Inteligencia Artificial. Hosting gestionado cloud con Coolify y Cloudflare."/>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/aura_web_logo.jpg"/>
+
+  <!-- Google Fonts & Material Symbols -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#0a0e17",
+            "surface-dim": "#0a0e17",
+            "surface-container-lowest": "#06090f",
+            "surface-container-low": "#111622",
+            "surface-container": "#161c2b",
+            "surface-container-high": "#1f2638",
+            "surface-container-highest": "#2a3349",
+            "on-surface": "#e2e8f0",
+            "on-surface-variant": "#94a3b8",
+            "outline": "#64748b",
+            "primary-container": "#00f0ff",
+            "primary": "#38bdf8",
+            "on-primary": "#032830",
+            "secondary": "#a855f7",
+            "secondary-container": "#581c87",
+            "on-secondary": "#ffffff",
+            "tertiary": "#38bdf8",
+            "tertiary-fixed-dim": "#38bdf8",
+            "error": "#f43f5e"
+          },
+          fontFamily: {
+            sans: ["Inter", "sans-serif"],
+            display: ["Plus Jakarta Sans", "sans-serif"],
+            mono: ["JetBrains Mono", "monospace"]
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    html, body {
+      width: 100%;
+      max-width: 100vw;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+      background-color: #0a0e17;
+      -webkit-text-size-adjust: 100%;
+    }
+    @keyframes aura-pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(0, 240, 255, 0.45); }
+      50% { box-shadow: 0 0 20px 6px rgba(0, 240, 255, 0.25); }
+    }
+    @keyframes glow-drift {
+      0%, 100% { transform: translate(0px, 0px) scale(1); }
+      50% { transform: translate(15px, -15px) scale(1.05); }
+    }
+    .animate-glow {
+      animation: glow-drift 12s ease-in-out infinite;
+    }
+    .glass-card {
+      background: rgba(22, 28, 43, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-card-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .glass-card-hover:hover {
+      border-color: rgba(0, 240, 255, 0.35);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 36px -10px rgba(0, 240, 255, 0.15);
+    }
+  </style>
+</head>
+
+<body class="bg-surface text-on-surface flex flex-col min-h-screen selection:bg-primary-container selection:text-on-primary font-sans antialiased">
+
+  <!-- ========================================== -->
+  <!-- NAVBAR SUPERIOR CON SELECTOR DE IDIOMA     -->
+  <!-- ========================================== -->
+  <header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-2xl border-b border-white/10 transition-all shadow-[0_4px_30px_rgba(0,0,0,0.5)]">
+    <div class="max-w-7xl mx-auto h-16 sm:h-20 px-4 sm:px-8 lg:px-12 flex items-center justify-between gap-2">
+      
+      <!-- Logo y Nombre de Marca -->
+      <a href="#" class="flex items-center gap-2.5 sm:gap-3.5 group min-w-0">
+        <div class="relative shrink-0">
+          <img alt="Aura Web Logo" class="h-9 w-9 sm:h-11 sm:w-11 rounded-xl object-cover border border-primary-container/30 shadow-[0_0_16px_rgba(0,240,255,0.4)] transition-all duration-300 group-hover:scale-105 group-hover:border-primary-container" src="assets/aura_web_logo.jpg"/>
+          <div class="absolute inset-0 rounded-xl bg-primary-container/10 blur-sm -z-10 group-hover:blur-md transition-all"></div>
+        </div>
+        <span class="font-display text-xl sm:text-2xl font-extrabold tracking-tight text-white flex items-center gap-1.5 sm:gap-2 truncate">
+          Aura Web
+          <span class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-primary-container shadow-[0_0_8px_#00f0ff] inline-block shrink-0 animate-pulse"></span>
+        </span>
+      </a>
+
+      <!-- Desktop Links -->
+      <nav class="hidden md:flex items-center gap-1 lg:gap-2 text-[15px] font-semibold text-on-surface-variant">
+        <a href="#servicios" class="px-3.5 py-2 rounded-xl hover:text-white hover:bg-white/5 transition-all" data-i18n="nav_services">Servicios</a>
+        <a href="#proceso" class="px-3.5 py-2 rounded-xl hover:text-white hover:bg-white/5 transition-all" data-i18n="nav_process">Metodología</a>
+        <a href="#precios" class="px-3.5 py-2 rounded-xl hover:text-white hover:bg-white/5 transition-all" data-i18n="nav_pricing">Planes</a>
+        <a href="#infraestructura" class="px-3.5 py-2 rounded-xl hover:text-white hover:bg-white/5 transition-all" data-i18n="nav_infra">Infraestructura</a>
+      </nav>
+
+      <!-- Botón de Idioma & Contacto Superior -->
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+        
+        <!-- SELECTOR DE IDIOMA (ES / EN) -->
+        <div class="flex items-center bg-surface-container-lowest border border-white/10 rounded-full p-1 text-xs font-mono font-bold">
+          <button id="lang-btn-es" onclick="switchLanguage('es')" class="px-2.5 py-1 rounded-full transition-all bg-primary-container text-on-primary shadow-[0_0_10px_rgba(0,240,255,0.4)]">
+            ES
+          </button>
+          <button id="lang-btn-en" onclick="switchLanguage('en')" class="px-2.5 py-1 rounded-full text-on-surface-variant hover:text-white transition-all">
+            EN
+          </button>
+        </div>
+
+        <!-- Botón Contacto -->
+        <a class="px-3 py-1.5 sm:px-5 sm:py-2.5 rounded-full bg-gradient-to-r from-primary-container to-secondary text-on-primary font-display font-bold text-xs sm:text-sm flex items-center gap-1.5 sm:gap-2 shadow-[0_0_18px_rgba(0,240,255,0.35)] hover:shadow-[0_0_26px_rgba(0,240,255,0.55)] active:scale-95 transition-all" 
+           href="javascript:void(0)" onclick="openWhatsappWithCurrentLang()">
+          <span class="material-symbols-outlined text-[16px] sm:text-[19px]">chat</span>
+          <span data-i18n="nav_cta">WhatsApp <span class="hidden sm:inline">Directo</span></span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================== -->
+  <!-- MAIN CONTENT CONTAINER                     -->
+  <!-- ========================================== -->
+  <main class="flex-1 relative w-full overflow-x-hidden pt-20 sm:pt-24 lg:pt-28 pb-20 md:pb-0">
+    
+    <!-- Luces ambientales de fondo -->
+    <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[350px] sm:w-[550px] h-[250px] sm:h-[350px] rounded-full bg-primary-container/10 blur-[100px] sm:blur-[130px] pointer-events-none animate-glow"></div>
+    <div class="absolute top-[600px] right-0 w-[280px] sm:w-[450px] h-[280px] sm:h-[450px] rounded-full bg-secondary/10 blur-[100px] sm:blur-[140px] pointer-events-none"></div>
+
+    <!-- ========================================== -->
+    <!-- SECTION 1: HERO SECTION                     -->
+    <!-- ========================================== -->
+    <section class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-12 sm:pt-10 sm:pb-16 lg:pt-14 lg:pb-20">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        
+        <!-- Hero Text -->
+        <div class="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
+          
+          <!-- Pill Badge -->
+          <div class="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-surface-container-high/90 border border-white/10 shadow-[0_0_16px_rgba(0,240,255,0.2)] mb-5 backdrop-blur-md max-w-full">
+            <span class="relative flex h-2 w-2 shrink-0">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-container opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-primary-container"></span>
+            </span>
+            <span class="font-display text-[10px] sm:text-xs font-semibold text-primary-container tracking-wider uppercase truncate" data-i18n="hero_badge">Desarrollo Web con IA & Cloud</span>
+          </div>
+
+          <!-- Main Headline -->
+          <h1 class="font-display text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.16] mb-5" data-i18n-html="hero_title">
+            Tu Web de <span class="bg-gradient-to-r from-primary-container via-cyan-200 to-secondary text-transparent bg-clip-text">Alta Conversión</span> Lista en <span class="bg-gradient-to-r from-primary-container to-secondary text-transparent bg-clip-text">48 Horas</span> con IA
+          </h1>
+
+          <!-- Subheadline -->
+          <p class="font-sans text-sm sm:text-base lg:text-lg text-on-surface-variant max-w-xl mb-6 sm:mb-8 leading-relaxed" data-i18n="hero_subtitle">
+            Diseñamos y programamos sitios web ultrarrápidos y aplicaciones a medida orientadas a ventas, respaldadas por infraestructura cloud propia de alto rendimiento.
+          </p>
+
+          <!-- Dual CTAs -->
+          <div class="w-full sm:w-auto flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
+            <a class="w-full sm:w-auto min-h-[48px] sm:min-h-[50px] px-6 sm:px-8 py-3 rounded-full bg-gradient-to-r from-primary-container to-secondary text-on-primary font-display font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-[0_0_24px_rgba(0,240,255,0.4)] hover:shadow-[0_0_32px_rgba(0,240,255,0.6)] active:scale-[0.98] transition-all" 
+               href="javascript:void(0)" onclick="openWhatsappWithCurrentLang()">
+              <span class="material-symbols-outlined text-[18px] sm:text-[20px]" style="font-variation-settings: 'FILL' 1;">chat</span>
+              <span data-i18n="hero_cta_primary">Iniciar Proyecto vía WhatsApp</span>
+            </a>
+            <a class="w-full sm:w-auto min-h-[48px] sm:min-h-[50px] px-6 sm:px-7 py-3 rounded-full glass-card hover:bg-surface-container-high text-white font-display font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 active:scale-[0.98] transition-all" 
+               href="#servicios">
+              <span class="material-symbols-outlined text-[17px] sm:text-[18px]">terminal</span>
+              <span data-i18n="hero_cta_secondary">Ver Servicios & Precios</span>
+            </a>
+          </div>
+
+          <!-- Fast Highlights -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-5 text-xs text-on-surface-variant font-medium">
+            <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-primary-container text-[16px]">verified</span> <span data-i18n="hero_badge1">100% Código Limpio</span></span>
+            <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-primary-container text-[16px]">bolt</span> <span data-i18n="hero_badge2">Entrega en 48hs</span></span>
+            <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-primary-container text-[16px]">shield</span> Cloudflare SSL Edge</span>
+          </div>
+        </div>
+
+        <!-- Hero Card Mockup -->
+        <div class="lg:col-span-5 w-full">
+          <div class="glass-card rounded-2xl p-4 sm:p-5 shadow-[0_20px_50px_rgba(0,0,0,0.6)] relative overflow-hidden border border-white/10">
+            
+            <!-- Window Bar -->
+            <div class="flex items-center justify-between pb-3 mb-3 border-b border-white/5">
+              <div class="flex items-center gap-1.5 min-w-0">
+                <span class="w-2.5 h-2.5 rounded-full bg-error/80 shrink-0"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-400/80 shrink-0"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-primary-container/80 shrink-0"></span>
+                <span class="font-mono text-[11px] sm:text-xs text-outline ml-1.5 truncate">cloud.auraweb.studio</span>
+              </div>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-container/10 text-primary-container text-[10px] font-mono shrink-0">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span>
+                ONLINE 99.9%
+              </span>
+            </div>
+
+            <!-- PageSpeed 100 & Speed Gauge -->
+            <div class="grid grid-cols-2 gap-2.5 sm:gap-3 mb-2.5 sm:mb-3">
+              <div class="bg-surface-container-lowest/90 rounded-xl p-3 sm:p-3.5 border border-white/5 flex flex-col justify-between">
+                <div class="flex items-center justify-between text-on-surface-variant text-[11px] sm:text-xs font-medium">
+                  <span>Google PageSpeed</span>
+                  <span class="material-symbols-outlined text-primary-container text-[16px] sm:text-[18px]">speed</span>
+                </div>
+                <div class="flex items-baseline gap-1 my-1.5">
+                  <span class="font-display text-3xl sm:text-4xl font-extrabold text-primary-container tracking-tight">100</span>
+                  <span class="font-mono text-[10px] sm:text-xs text-outline">/100</span>
+                </div>
+                <span class="text-[10px] sm:text-[11px] text-emerald-400 flex items-center gap-1 font-medium">
+                  <span class="material-symbols-outlined text-[12px] sm:text-[14px]">check_circle</span> <span data-i18n="mockup_optimal">Calificación Óptima</span>
+                </span>
+              </div>
+
+              <div class="bg-surface-container-lowest/90 rounded-xl p-3 sm:p-3.5 border border-white/5 flex flex-col justify-between">
+                <div class="flex items-center justify-between text-on-surface-variant text-[11px] sm:text-xs font-medium">
+                  <span data-i18n="mockup_fcp">Tiempo Carga (FCP)</span>
+                  <span class="material-symbols-outlined text-secondary text-[16px] sm:text-[18px]">bolt</span>
+                </div>
+                <div class="flex items-baseline gap-1 my-1.5">
+                  <span class="font-display text-3xl sm:text-4xl font-extrabold text-white tracking-tight">0.38</span>
+                  <span class="font-mono text-[10px] sm:text-xs text-secondary" data-i18n="mockup_sec">seg</span>
+                </div>
+                <span class="text-[10px] sm:text-[11px] text-on-surface-variant font-medium" data-i18n="mockup_speed">
+                  Ultra Rápido
+                </span>
+              </div>
+            </div>
+
+            <!-- Cloudflare Edge Strip -->
+            <div class="rounded-xl bg-surface-container-lowest/80 border border-white/5 p-2.5 sm:p-3 flex items-center justify-between gap-2 mb-2.5">
+              <div class="flex items-center gap-2.5 min-w-0">
+                <div class="w-8 h-8 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary-container shrink-0">
+                  <span class="material-symbols-outlined text-[18px]">shield_lock</span>
+                </div>
+                <div class="flex flex-col min-w-0">
+                  <span class="font-display text-xs font-semibold text-white truncate">Cloudflare Edge & Anti-DDoS</span>
+                  <span class="text-[10px] sm:text-[11px] text-on-surface-variant truncate" data-i18n="mockup_ssl">SSL 256-bit Automatizado</span>
+                </div>
+              </div>
+              <span class="text-[10px] font-mono font-semibold text-primary-container px-2 py-0.5 rounded bg-primary-container/10 shrink-0" data-i18n="mockup_active">Activo</span>
+            </div>
+
+            <!-- SysAdmin Infra Card -->
+            <div class="rounded-xl bg-gradient-to-r from-surface-container-high/60 to-surface-container-lowest/80 border border-white/5 p-2.5 sm:p-3 flex items-center justify-between gap-2">
+              <div class="flex items-center gap-2.5 min-w-0">
+                <div class="w-8 h-8 rounded-lg bg-secondary/15 flex items-center justify-center text-secondary shrink-0">
+                  <span class="material-symbols-outlined text-[18px]">dns</span>
+                </div>
+                <div class="flex flex-col min-w-0">
+                  <span class="font-display text-xs font-semibold text-white truncate" data-i18n="mockup_coolify">Hosting Gestionado Coolify</span>
+                  <span class="text-[10px] sm:text-[11px] text-on-surface-variant truncate" data-i18n="mockup_docker">Docker & Backups Diarios</span>
+                </div>
+              </div>
+              <span class="text-[10px] font-mono font-semibold text-secondary px-2 py-0.5 rounded bg-secondary/10 shrink-0">NVMe</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SECTION 2: TRUST & METRICS BAR             -->
+    <!-- ========================================== -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+        
+        <div class="glass-card rounded-2xl p-3.5 sm:p-5 flex flex-col gap-1 border border-white/5">
+          <div class="w-8 h-8 rounded-lg bg-primary-container/15 flex items-center justify-center text-primary-container mb-1">
+            <span class="material-symbols-outlined text-[18px]">bolt</span>
+          </div>
+          <span class="font-display text-sm sm:text-lg font-bold text-white" data-i18n="m1_title">Entrega en 48h</span>
+          <span class="text-[11px] sm:text-xs text-on-surface-variant leading-relaxed" data-i18n="m1_desc">Prototipado express con IA y despliegue rápido.</span>
+        </div>
+
+        <div class="glass-card rounded-2xl p-3.5 sm:p-5 flex flex-col gap-1 border border-white/5">
+          <div class="w-8 h-8 rounded-lg bg-secondary/15 flex items-center justify-center text-secondary mb-1">
+            <span class="material-symbols-outlined text-[18px]">cloud</span>
+          </div>
+          <span class="font-display text-sm sm:text-lg font-bold text-white" data-i18n="m2_title">Cloud Propio</span>
+          <span class="text-[11px] sm:text-xs text-on-surface-variant leading-relaxed" data-i18n="m2_desc">Servidores gestionados con Coolify y aislamiento Docker.</span>
+        </div>
+
+        <div class="glass-card rounded-2xl p-3.5 sm:p-5 flex flex-col gap-1 border border-white/5">
+          <div class="w-8 h-8 rounded-lg bg-cyan-400/15 flex items-center justify-center text-cyan-400 mb-1">
+            <span class="material-symbols-outlined text-[18px]">security</span>
+          </div>
+          <span class="font-display text-sm sm:text-lg font-bold text-white" data-i18n="m3_title">99.9% Uptime</span>
+          <span class="text-[11px] sm:text-xs text-on-surface-variant leading-relaxed" data-i18n="m3_desc">Red CDN Anycast global y mitigación DDoS.</span>
+        </div>
+
+        <div class="glass-card rounded-2xl p-3.5 sm:p-5 flex flex-col gap-1 border border-white/5">
+          <div class="w-8 h-8 rounded-lg bg-emerald-400/15 flex items-center justify-center text-emerald-400 mb-1">
+            <span class="material-symbols-outlined text-[18px]">chat</span>
+          </div>
+          <span class="font-display text-sm sm:text-lg font-bold text-white" data-i18n="m4_title">WhatsApp Funnel</span>
+          <span class="text-[11px] sm:text-xs text-on-surface-variant leading-relaxed" data-i18n="m4_desc">Diseñadas para convertir visitantes en chats de venta.</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SECTION 3: SERVICES (BENTO GRID)            -->
+    <!-- ========================================== -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16" id="servicios">
+      <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
+        <span class="font-display text-xs font-bold text-primary-container uppercase tracking-widest" data-i18n="s_subtitle">Soluciones de Ingeniería</span>
+        <h2 class="font-display text-2xl sm:text-4xl font-extrabold text-white mt-1.5" data-i18n="s_title">Servicios Diseñados para Convertir</h2>
+        <p class="text-xs sm:text-base text-on-surface-variant mt-2 sm:mt-3" data-i18n="s_desc">Combinamos desarrollo acelerado con inteligencia artificial y arquitectura de servidores enterprise.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
+        
+        <!-- Card 1: Landing Pages -->
+        <div class="glass-card glass-card-hover rounded-2xl p-5 sm:p-6 flex flex-col justify-between relative overflow-hidden">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-0.5 rounded-full bg-primary-container/15 text-primary-container font-display text-[11px] font-bold" data-i18n="c1_badge">
+                ⚡ Más Solicitado
+              </span>
+              <span class="font-mono text-[11px] text-outline">01 / EXPRESS</span>
+            </div>
+            <h3 class="font-display text-lg sm:text-xl font-bold text-white" data-i18n="c1_title">Landing Pages de Alta Conversión</h3>
+            <p class="text-xs sm:text-sm text-on-surface-variant mt-2.5 leading-relaxed" data-i18n="c1_desc">
+              Diseño de alto impacto visual, redacción comercial persuasiva asistida con IA y velocidad instantánea. Construidas para transformar cada clic en una consulta directa a tu WhatsApp.
+            </p>
+            <div class="flex flex-wrap gap-1.5 sm:gap-2 mt-4">
+              <span class="px-2 py-0.5 rounded-md bg-surface-container-high text-[11px] text-on-surface">Tailwind CSS</span>
+              <span class="px-2 py-0.5 rounded-md bg-surface-container-high text-[11px] text-on-surface" data-i18n="tag_animations">Micro-animaciones</span>
+              <span class="px-2 py-0.5 rounded-md bg-surface-container-high text-[11px] text-primary-container font-medium">Conversion Copy</span>
+            </div>
+          </div>
+          <div class="mt-6 pt-3 border-t border-white/5 flex items-center justify-between">
+            <span class="text-[11px] text-outline" data-i18n="c1_time">Entrega en 48 Horas</span>
+            <a class="inline-flex items-center gap-1 text-xs font-display font-semibold text-primary-container hover:underline" 
+               href="javascript:void(0)" onclick="openWhatsappWithCurrentLang('c1')">
+              <span data-i18n="c1_cta">Cotizar ahora</span> <span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 2: Web Apps & MVPs -->
+        <div class="glass-card glass-card-hover rounded-2xl p-5 sm:p-6 flex flex-col justify-between relative overflow-hidden">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-0.5 rounded-full bg-secondary/15 text-secondary font-display text-[11px] font-bold" data-i18n="c2_badge">
+                Arquitectura Full-Stack
+              </span>
+              <span class="font-mono text-[11px] text-outline">02 / ESCALA</span>
+            </div>
+            <h3 class="font-display text-lg sm:text-xl font-bold text-white" data-i18n="c2_title">Web Apps & MVPs a Medida</h3>
+            <p class="text-xs sm:text-sm text-on-surface-variant mt-2.5 leading-relaxed" data-i18n="c2_desc">
+              Desarrollo de software y plataformas funcionales. Paneles administrativos, dashboards interactivos, catálogos con filtros y pasarelas de pago automatizadas (MercadoPago / Stripe).
+            </p>
+            <div class="flex flex-wrap gap-1.5 sm:gap-2 mt-4">
+              <span class="px-2 py-0.5 rounded-md bg-surface-container-high text-[11px] text-on-surface">React / Node.js</span>
+              <span class="px-2 py-0.5 rounded-md bg-surface-container-high text-[11px] text-on-surface">Django / APIs</span>
+              <span class="px-2 py-0.5 rounded-md bg-surface-container-high text-[11px] text-secondary font-medium">Auth & Roles</span>
+            </div>
+          </div>
+          <div class="mt-6 pt-3 border-t border-white/5 flex items-center justify-between">
+            <span class="text-[11px] text-outline" data-i18n="c2_time">Stack Robusto</span>
+            <a class="inline-flex items-center gap-1 text-xs font-display font-semibold text-secondary hover:underline" 
+               href="javascript:void(0)" onclick="openWhatsappWithCurrentLang('c2')">
+              <span data-i18n="c2_cta">Consultar alcance</span> <span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 3: Cloud Managed Hosting -->
+        <div class="glass-card glass-card-hover rounded-2xl p-5 sm:p-6 flex flex-col justify-between relative overflow-hidden" id="infraestructura">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-0.5 rounded-full bg-cyan-400/15 text-cyan-400 font-display text-[11px] font-bold" data-i18n="c3_badge">
+                DevOps & SysAdmin
+              </span>
+              <span class="font-mono text-[11px] text-outline">03 / CLOUD</span>
+            </div>
+            <h3 class="font-display text-lg sm:text-xl font-bold text-white" data-i18n="c3_title">Hosting Gestionado Cloud</h3>
+            <p class="text-xs sm:text-sm text-on-surface-variant mt-2.5 leading-relaxed" data-i18n="c3_desc">
+              Despreocúpate de servidores, configuraciones y caídas. Alojamos tu plataforma en infraestructura dedicada con Coolify, proxy Cloudflare, SSL automatizado, monitoreo y copias de seguridad diarias.
+            </p>
+            <div class="flex flex-wrap gap-1.5 sm:gap-2 mt-4">
+              <span class="px-2 py-0.5 rounded-md bg-surface-container-high text-[11px] text-on-surface">Coolify PaaS</span>
+              <span class="px-2 py-0.5 rounded-md bg-surface-container-high text-[11px] text-on-surface">Cloudflare DNS/SSL</span>
+              <span class="px-2 py-0.5 rounded-md bg-surface-container-high text-[11px] text-cyan-400 font-medium" data-i18n="tag_backups">Backups Diarios</span>
+            </div>
+          </div>
+          <div class="mt-6 pt-3 border-t border-white/5 flex items-center justify-between">
+            <span class="text-[11px] text-outline" data-i18n="c3_time">Cero mantenimiento para ti</span>
+            <a class="inline-flex items-center gap-1 text-xs font-display font-semibold text-cyan-400 hover:underline" 
+               href="javascript:void(0)" onclick="openWhatsappWithCurrentLang('c3')">
+              <span data-i18n="c3_cta">Ver detalles</span> <span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SECTION 4: PROCESS (TIMELINE)              -->
+    <!-- ========================================== -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16" id="proceso">
+      <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
+        <span class="font-display text-xs font-bold text-secondary uppercase tracking-widest" data-i18n="p_subtitle">Metodología Ágil</span>
+        <h2 class="font-display text-2xl sm:text-4xl font-extrabold text-white mt-1.5" data-i18n="p_title">De la Idea al Lanzamiento en 3 Pasos</h2>
+        <p class="text-xs sm:text-base text-on-surface-variant mt-2 sm:mt-3" data-i18n="p_desc">Un proceso cronometrado y transparente para que tengas resultados en tiempo récord.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 relative">
+        
+        <!-- Step 1 -->
+        <div class="glass-card rounded-2xl p-5 sm:p-6 relative border border-white/5">
+          <div class="flex items-center justify-between mb-3">
+            <div class="w-9 h-9 rounded-xl bg-surface-container-lowest text-primary-container flex items-center justify-center font-display font-bold text-xs shadow-[0_0_12px_rgba(0,240,255,0.35)]">
+              01
+            </div>
+            <span class="font-mono text-xs text-primary-container font-semibold" data-i18n="step1_badge">DÍA 1</span>
+          </div>
+          <h4 class="font-display text-base sm:text-lg font-bold text-white" data-i18n="step1_title">Estrategia & Prototipo</h4>
+          <p class="text-xs sm:text-sm text-on-surface-variant mt-1.5 leading-relaxed" data-i18n="step1_desc">
+            Briefing inicial de 15 minutos. Definimos la propuesta comercial, redactamos el copy persuasivo con IA y generamos la maqueta visual en Figma/Stitch para tu aprobación.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="glass-card rounded-2xl p-5 sm:p-6 relative border border-white/5">
+          <div class="flex items-center justify-between mb-3">
+            <div class="w-9 h-9 rounded-xl bg-surface-container-lowest text-secondary flex items-center justify-center font-display font-bold text-xs shadow-[0_0_12px_rgba(168,85,247,0.35)]">
+              02
+            </div>
+            <span class="font-mono text-xs text-secondary font-semibold" data-i18n="step2_badge">DÍA 2</span>
+          </div>
+          <h4 class="font-display text-base sm:text-lg font-bold text-white" data-i18n="step2_title">Desarrollo Acelerado</h4>
+          <p class="text-xs sm:text-sm text-on-surface-variant mt-1.5 leading-relaxed" data-i18n="step2_desc">
+            Codificación con componentes modernos y ligeros en Antigravity IDE. Integración con WhatsApp, optimización para celulares y micro-interacciones de alta gama.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="glass-card rounded-2xl p-5 sm:p-6 relative border border-white/5">
+          <div class="flex items-center justify-between mb-3">
+            <div class="w-9 h-9 rounded-xl bg-surface-container-lowest text-primary-container flex items-center justify-center font-display font-bold text-xs shadow-[0_0_12px_rgba(0,240,255,0.35)]">
+              03
+            </div>
+            <span class="font-mono text-xs text-primary-container font-semibold" data-i18n="step3_badge">HORA 48</span>
+          </div>
+          <h4 class="font-display text-base sm:text-lg font-bold text-white" data-i18n="step3_title">Despliegue Cloud</h4>
+          <p class="text-xs sm:text-sm text-on-surface-variant mt-1.5 leading-relaxed" data-i18n="step3_desc">
+            Puesta en producción en tu dominio oficial con certificado SSL, proxy Cloudflare anti-DDoS, optimización SEO técnica y calificación 100/100 en Google PageSpeed.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SECTION 5: PRICING & PLANS (CON MONEDA)    -->
+    <!-- ========================================== -->
+    <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16" id="precios">
+      <div class="text-center max-w-xl mx-auto mb-8 sm:mb-12">
+        <span class="font-display text-xs font-bold text-primary-container uppercase tracking-widest" data-i18n="plan_badge">Inversión Transparente</span>
+        <h2 class="font-display text-2xl sm:text-4xl font-extrabold text-white mt-1.5" data-i18n="plan_title">Planes Claros, Sin Letra Chica</h2>
+        <p class="text-xs sm:text-base text-on-surface-variant mt-2 sm:mt-3" data-i18n="plan_desc">Elige la modalidad que mejor se adapte a tu etapa actual.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-stretch">
+        
+        <!-- Plan 1: Landing Express -->
+        <div class="glass-card rounded-2xl p-5 sm:p-8 flex flex-col justify-between border border-white/5">
+          <div>
+            <div class="flex justify-between items-start">
+              <div>
+                <span class="text-[11px] text-outline uppercase tracking-wider font-semibold" data-i18n="p1_category">Negocios & Profesionales</span>
+                <h3 class="font-display text-xl sm:text-2xl font-bold text-white mt-0.5" data-i18n="p1_name">Plan Landing Express</h3>
+              </div>
+              <span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface text-[11px] font-mono" data-i18n="p1_delivery">48 Horas</span>
+            </div>
+
+            <div class="my-5">
+              <div class="flex items-baseline gap-2">
+                <span class="font-display text-3xl sm:text-5xl font-extrabold text-white" id="p1_price">$150.000</span>
+                <span class="text-xs text-on-surface-variant" id="p1_currency">ARS / pago único</span>
+              </div>
+              <p class="text-[11px] text-outline mt-1 font-mono" id="p1_subtext">(o $190 USD para clientes del exterior)</p>
+            </div>
+
+            <ul class="flex flex-col gap-2.5 my-5 text-xs sm:text-sm text-on-surface">
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary-container text-[17px]">check_circle</span>
+                <span data-i18n="p1_f1">Entrega garantizada en 48 Horas</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary-container text-[17px]">check_circle</span>
+                <span data-i18n="p1_f2">Copywriting persuasivo redactado con IA</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary-container text-[17px]">check_circle</span>
+                <span data-i18n="p1_f3">Embudo directo a WhatsApp Business</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary-container text-[17px]">check_circle</span>
+                <span data-i18n="p1_f4">PageSpeed optimizado (95+)</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary-container text-[17px]">check_circle</span>
+                <span data-i18n="p1_f5">1 mes de Hosting Cloud y SSL incluido</span>
+              </li>
+            </ul>
+          </div>
+
+          <a class="w-full min-h-[46px] rounded-full bg-surface-container-high hover:bg-surface-container-highest text-white font-display font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 active:scale-[0.98] transition-all" 
+             href="javascript:void(0)" onclick="openWhatsappWithCurrentLang('plan1')">
+            <span data-i18n="p1_cta">Elegir Landing Express</span>
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+          </a>
+        </div>
+
+        <!-- Plan 2: Full Stack + Cloud -->
+        <div class="glass-card rounded-2xl p-5 sm:p-8 flex flex-col justify-between border-2 border-primary-container/40 relative shadow-[0_0_35px_rgba(0,240,255,0.15)]">
+          
+          <div class="absolute -top-3 right-5 sm:right-6">
+            <span class="px-3 py-0.5 rounded-full bg-gradient-to-r from-primary-container to-secondary text-on-primary font-display text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider shadow-lg" data-i18n="p2_badge">
+              Recomendado
+            </span>
+          </div>
+
+          <div>
+            <div class="flex justify-between items-start">
+              <div>
+                <span class="text-[11px] text-primary-container uppercase tracking-wider font-semibold" data-i18n="p2_category">Escala & Control Total</span>
+                <h3 class="font-display text-xl sm:text-2xl font-bold text-white mt-0.5" data-i18n="p2_name">Plan Full Stack + Cloud</h3>
+              </div>
+            </div>
+
+            <div class="my-5">
+              <div class="flex items-baseline gap-2">
+                <span class="font-display text-3xl sm:text-5xl font-extrabold text-white" id="p2_price">$280.000</span>
+                <span class="text-xs text-on-surface-variant" id="p2_currency">ARS / pago único</span>
+              </div>
+              <p class="text-[11px] text-outline mt-1 font-mono" id="p2_subtext">+ $18.000 ARS/mes de Hosting Gestionado Coolify</p>
+            </div>
+
+            <ul class="flex flex-col gap-2.5 my-5 text-xs sm:text-sm text-on-surface">
+              <li class="flex items-center gap-2 font-semibold text-white">
+                <span class="material-symbols-outlined text-primary-container text-[17px]">check_circle</span>
+                <span data-i18n="p2_f1">Todo lo incluido en el Plan Express</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary-container text-[17px]">check_circle</span>
+                <span data-i18n="p2_f2">Panel de control / Base de datos o Catálogo</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary-container text-[17px]">check_circle</span>
+                <span data-i18n="p2_f3">Servidor Cloud dedicado gestionado con Coolify</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary-container text-[17px]">check_circle</span>
+                <span data-i18n="p2_f4">Copias de seguridad diarias & Monitoreo 24/7</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary-container text-[17px]">check_circle</span>
+                <span data-i18n="p2_f5">Soporte técnico prioritario y cambios mensuales</span>
+              </li>
+            </ul>
+          </div>
+
+          <a class="w-full min-h-[48px] rounded-full bg-gradient-to-r from-primary-container via-cyan-200 to-secondary text-on-primary font-display font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-[0_0_24px_rgba(0,240,255,0.4)] hover:shadow-[0_0_32px_rgba(0,240,255,0.6)] active:scale-[0.98] transition-all" 
+             href="javascript:void(0)" onclick="openWhatsappWithCurrentLang('plan2')">
+            <span data-i18n="p2_cta">Elegir Plan Full Stack</span>
+            <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">bolt</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SECTION 6: FAST CONTACT FORM TO WHATSAPP   -->
+    <!-- ========================================== -->
+    <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16" id="contacto">
+      <div class="glass-card rounded-2xl sm:rounded-3xl p-5 sm:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.6)] relative overflow-hidden border border-white/10">
+        
+        <div class="text-center mb-6 sm:mb-8">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-container/15 text-primary-container font-display text-xs font-semibold mb-2 sm:mb-3">
+            <span class="material-symbols-outlined text-[14px]">rocket_launch</span>
+            <span data-i18n="form_badge">Comienza Hoy Mismo</span>
+          </span>
+          <h2 class="font-display text-xl sm:text-3xl font-extrabold text-white" data-i18n="form_title">¿Listo para transformar tu presencia digital?</h2>
+          <p class="text-xs sm:text-sm text-on-surface-variant mt-2 max-w-lg mx-auto" data-i18n="form_desc">
+            Completa los datos y te enviamos un mensaje por WhatsApp con un prototipo preliminar para tu negocio sin compromiso.
+          </p>
+        </div>
+
+        <form class="flex flex-col gap-3.5 max-w-lg mx-auto" onsubmit="event.preventDefault(); submitFormToWhatsapp();">
+          <div>
+            <label class="block text-xs font-medium text-on-surface-variant mb-1 ml-1" for="clientName" data-i18n="form_label_name">Tu Nombre o Nombre de tu Negocio</label>
+            <input class="w-full min-h-[46px] px-3.5 sm:px-4 rounded-xl bg-surface-container-lowest border border-white/10 text-white text-xs sm:text-sm placeholder:text-outline focus:outline-none focus:border-primary-container transition-colors" 
+                   id="clientName" data-i18n-placeholder="form_placeholder_name" placeholder="Ej. Carlos / Clínica Dental Belgrano" required type="text"/>
+          </div>
+
+          <div>
+            <label class="block text-xs font-medium text-on-surface-variant mb-1 ml-1" for="projectType" data-i18n="form_label_service">Servicio de Interés</label>
+            <div class="relative">
+              <select class="w-full min-h-[46px] px-3.5 sm:px-4 rounded-xl bg-surface-container-lowest border border-white/10 text-white text-xs sm:text-sm focus:outline-none focus:border-primary-container appearance-none transition-colors" id="projectType">
+                <option value="Landing Page Express" data-i18n="opt_landing">Landing Page Express (48 Horas)</option>
+                <option value="Plan Full Stack + Cloud" data-i18n="opt_full">Plan Full Stack + Hosting Cloud</option>
+                <option value="Hosting Gestionado Coolify" data-i18n="opt_hosting">Hosting Gestionado Coolify / Cloudflare</option>
+                <option value="Web App / MVP a Medida" data-i18n="opt_mvp">Web App / MVP a Medida</option>
+                <option value="Rediseño & Optimización" data-i18n="opt_redesign">Rediseño & Optimización de Web Actual</option>
+              </select>
+              <span class="material-symbols-outlined absolute right-3.5 top-3.5 pointer-events-none text-outline text-[18px]">expand_more</span>
+            </div>
+          </div>
+
+          <button class="mt-1 w-full min-h-[48px] rounded-full bg-gradient-to-r from-primary-container to-secondary text-on-primary font-display font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-[0_0_24px_rgba(0,240,255,0.4)] hover:shadow-[0_0_32px_rgba(0,240,255,0.6)] active:scale-[0.98] transition-all" type="submit">
+            <span class="material-symbols-outlined text-[18px] sm:text-[20px]" style="font-variation-settings: 'FILL' 1;">chat</span>
+            <span data-i18n="form_btn">Enviar Consulta a WhatsApp ⚡</span>
+          </button>
+        </form>
+
+        <div class="mt-5 pt-3 border-t border-white/5 flex items-center justify-center gap-1.5 text-center text-[11px] text-outline">
+          <span class="material-symbols-outlined text-primary-container text-[15px]">verified_user</span>
+          <span data-i18n="form_trust">Respuesta directa de ingenieros • Sin contratos forzados</span>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================== -->
+  <!-- FOOTER                                     -->
+  <!-- ========================================== -->
+  <footer class="w-full bg-surface-container-lowest border-t border-white/5 py-10 px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center gap-3">
+    <div class="flex items-center gap-2">
+      <img alt="Aura Web" class="h-6 w-6 rounded object-cover" src="assets/aura_web_logo.jpg"/>
+      <span class="font-display font-bold text-white text-sm">Aura Web</span>
+    </div>
+    <div class="flex flex-wrap justify-center gap-4 sm:gap-6 text-xs text-on-surface-variant font-medium">
+      <a class="hover:text-primary-container transition-colors" href="#servicios" data-i18n="nav_services">Servicios</a>
+      <a class="hover:text-primary-container transition-colors" href="#proceso" data-i18n="nav_process">Metodología</a>
+      <a class="hover:text-primary-container transition-colors" href="#precios" data-i18n="nav_pricing">Planes</a>
+      <a class="hover:text-primary-container transition-colors" href="#infraestructura" data-i18n="nav_infra">Infraestructura</a>
+    </div>
+    <p class="text-[11px] text-outline mt-1" data-i18n="footer_rights">© 2026 Aura Web. Todos los derechos reservados. Desarrollo acelerado con IA & Cloud.</p>
+  </footer>
+
+  <!-- Botón Flotante de WhatsApp -->
+  <a aria-label="Contacto WhatsApp Directo" 
+     class="fixed bottom-18 right-4 md:bottom-8 md:right-8 z-40 w-12 h-12 md:w-14 md:h-14 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-[0_0_24px_rgba(0,240,255,0.45)] hover:scale-105 active:scale-95 transition-all" 
+     href="javascript:void(0)" onclick="openWhatsappWithCurrentLang()" 
+     style="animation: aura-pulse 3s infinite;">
+    <span class="material-symbols-outlined text-[24px] md:text-[28px]" style="font-variation-settings: 'FILL' 1;">chat</span>
+  </a>
+
+  <!-- Mobile Bottom Tab Bar -->
+  <nav class="md:hidden fixed bottom-0 w-full z-50 bg-surface/95 backdrop-blur-xl border-t border-white/10 px-1 py-1">
+    <div class="flex justify-around items-center h-14">
+      <a href="#" class="flex flex-col items-center justify-center text-primary-container text-[10px] font-medium gap-0.5 w-14">
+        <span class="material-symbols-outlined text-[20px]">home</span>
+        <span data-i18n="tab_home">Inicio</span>
+      </a>
+      <a href="#servicios" class="flex flex-col items-center justify-center text-on-surface-variant text-[10px] font-medium gap-0.5 w-14 hover:text-white">
+        <span class="material-symbols-outlined text-[20px]">terminal</span>
+        <span data-i18n="tab_services">Servicios</span>
+      </a>
+      <a href="#proceso" class="flex flex-col items-center justify-center text-on-surface-variant text-[10px] font-medium gap-0.5 w-14 hover:text-white">
+        <span class="material-symbols-outlined text-[20px]">sync_alt</span>
+        <span data-i18n="tab_process">Proceso</span>
+      </a>
+      <a href="#precios" class="flex flex-col items-center justify-center text-on-surface-variant text-[10px] font-medium gap-0.5 w-14 hover:text-white">
+        <span class="material-symbols-outlined text-[20px]">payments</span>
+        <span data-i18n="tab_pricing">Planes</span>
+      </a>
+      <a href="#contacto" class="flex flex-col items-center justify-center text-on-surface-variant text-[10px] font-medium gap-0.5 w-14 hover:text-white">
+        <span class="material-symbols-outlined text-[20px]">chat</span>
+        <span data-i18n="tab_contact">Contacto</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ========================================== -->
+  <!-- SISTEMA DE INTERNACIONALIZACIÓN (i18n)     -->
+  <!-- ========================================== -->
+  <script>
+    // Configura tu número de WhatsApp aquí con código de país (ej: "5491123456789")
+    const WHATSAPP_PHONE = ""; 
+
+    let currentLang = 'es';
+
+    const translations = {
+      es: {
+        meta_title: "Aura Web | Desarrollo Web Acelerado con IA & Cloud",
+        nav_services: "Servicios",
+        nav_process: "Metodología",
+        nav_pricing: "Planes",
+        nav_infra: "Infraestructura",
+        nav_cta: "WhatsApp Directo",
+        hero_badge: "Desarrollo Web con IA & Cloud",
+        hero_title: 'Tu Web de <span class="bg-gradient-to-r from-primary-container via-cyan-200 to-secondary text-transparent bg-clip-text">Alta Conversión</span> Lista en <span class="bg-gradient-to-r from-primary-container to-secondary text-transparent bg-clip-text">48 Horas</span> con IA',
+        hero_subtitle: "Diseñamos y programamos sitios web ultrarrápidos y aplicaciones a medida orientadas a ventas, respaldadas por infraestructura cloud propia de alto rendimiento.",
+        hero_cta_primary: "Iniciar Proyecto vía WhatsApp",
+        hero_cta_secondary: "Ver Servicios & Precios",
+        hero_badge1: "100% Código Limpio",
+        hero_badge2: "Entrega en 48hs",
+        mockup_optimal: "Calificación Óptima",
+        mockup_fcp: "Tiempo Carga (FCP)",
+        mockup_sec: "seg",
+        mockup_speed: "Ultra Rápido",
+        mockup_ssl: "SSL 256-bit Automatizado",
+        mockup_active: "Activo",
+        mockup_coolify: "Hosting Gestionado Coolify",
+        mockup_docker: "Docker & Backups Diarios",
+        m1_title: "Entrega en 48h",
+        m1_desc: "Prototipado express con IA y despliegue rápido.",
+        m2_title: "Cloud Propio",
+        m2_desc: "Servidores gestionados con Coolify y aislamiento Docker.",
+        m3_title: "99.9% Uptime",
+        m3_desc: "Red CDN Anycast global y mitigación DDoS.",
+        m4_title: "WhatsApp Funnel",
+        m4_desc: "Diseñadas para convertir visitantes en chats de venta.",
+        s_subtitle: "Soluciones de Ingeniería",
+        s_title: "Servicios Diseñados para Convertir",
+        s_desc: "Combinamos desarrollo acelerado con inteligencia artificial y arquitectura de servidores enterprise.",
+        c1_badge: "⚡ Más Solicitado",
+        c1_title: "Landing Pages de Alta Conversión",
+        c1_desc: "Diseño de alto impacto visual, redacción comercial persuasiva asistida con IA y velocidad instantánea. Construidas para transformar cada clic en una consulta directa a tu WhatsApp.",
+        tag_animations: "Micro-animaciones",
+        c1_time: "Entrega en 48 Horas",
+        c1_cta: "Cotizar ahora",
+        c2_badge: "Arquitectura Full-Stack",
+        c2_title: "Web Apps & MVPs a Medida",
+        c2_desc: "Desarrollo de software y plataformas funcionales. Paneles administrativos, dashboards interactivos, catálogos con filtros y pasarelas de pago automatizadas (MercadoPago / Stripe).",
+        c2_time: "Stack Robusto",
+        c2_cta: "Consultar alcance",
+        c3_badge: "DevOps & SysAdmin",
+        c3_title: "Hosting Gestionado Cloud",
+        c3_desc: "Despreocúpate de servidores, configuraciones y caídas. Alojamos tu plataforma en infraestructura dedicada con Coolify, proxy Cloudflare, SSL automatizado, monitoreo y copias de seguridad diarias.",
+        tag_backups: "Backups Diarios",
+        c3_time: "Cero mantenimiento para ti",
+        c3_cta: "Ver detalles",
+        p_subtitle: "Metodología Ágil",
+        p_title: "De la Idea al Lanzamiento en 3 Pasos",
+        p_desc: "Un proceso cronometrado y transparente para que tengas resultados en tiempo récord.",
+        step1_badge: "DÍA 1",
+        step1_title: "Estrategia & Prototipo",
+        step1_desc: "Briefing inicial de 15 minutos. Definimos la propuesta comercial, redactamos el copy persuasivo con IA y generamos la maqueta visual en Figma/Stitch para tu aprobación.",
+        step2_badge: "DÍA 2",
+        step2_title: "Desarrollo Acelerado",
+        step2_desc: "Codificación con componentes modernos y ligeros en Antigravity IDE. Integración con WhatsApp, optimización para celulares y micro-interacciones de alta gama.",
+        step3_badge: "HORA 48",
+        step3_title: "Despliegue Cloud",
+        step3_desc: "Puesta en producción en tu dominio oficial con certificado SSL, proxy Cloudflare anti-DDoS, optimización SEO técnica y calificación 100/100 en Google PageSpeed.",
+        plan_badge: "Inversión Transparente",
+        plan_title: "Planes Claros, Sin Letra Chica",
+        plan_desc: "Elige la modalidad que mejor se adapte a tu etapa actual.",
+        p1_category: "Negocios & Profesionales",
+        p1_name: "Plan Landing Express",
+        p1_delivery: "48 Horas",
+        p1_price: "$150.000",
+        p1_currency: "ARS / pago único",
+        p1_subtext: "(o $190 USD para clientes del exterior)",
+        p1_f1: "Entrega garantizada en 48 Horas",
+        p1_f2: "Copywriting persuasivo redactado con IA",
+        p1_f3: "Embudo directo a WhatsApp Business",
+        p1_f4: "PageSpeed optimizado (95+)",
+        p1_f5: "1 mes de Hosting Cloud y SSL incluido",
+        p1_cta: "Elegir Landing Express",
+        p2_badge: "Recomendado",
+        p2_category: "Escala & Control Total",
+        p2_name: "Plan Full Stack + Cloud",
+        p2_price: "$280.000",
+        p2_currency: "ARS / pago único",
+        p2_subtext: "+ $18.000 ARS/mes de Hosting Gestionado Coolify",
+        p2_f1: "Todo lo incluido en el Plan Express",
+        p2_f2: "Panel de control / Base de datos o Catálogo",
+        p2_f3: "Servidor Cloud dedicado gestionado con Coolify",
+        p2_f4: "Copias de seguridad diarias & Monitoreo 24/7",
+        p2_f5: "Soporte técnico prioritario y cambios mensuales",
+        p2_cta: "Elegir Plan Full Stack",
+        form_badge: "Comienza Hoy Mismo",
+        form_title: "¿Listo para transformar tu presencia digital?",
+        form_desc: "Completa los datos y te enviamos un mensaje por WhatsApp con un prototipo preliminar para tu negocio sin compromiso.",
+        form_label_name: "Tu Nombre o Nombre de tu Negocio",
+        form_placeholder_name: "Ej. Carlos / Clínica Dental Belgrano",
+        form_label_service: "Servicio de Interés",
+        form_btn: "Enviar Consulta a WhatsApp ⚡",
+        form_trust: "Respuesta directa de ingenieros • Sin contratos forzados",
+        footer_rights: "© 2026 Aura Web. Todos los derechos reservados. Desarrollo acelerado con IA & Cloud.",
+        tab_home: "Inicio",
+        tab_services: "Servicios",
+        tab_process: "Proceso",
+        tab_pricing: "Planes",
+        tab_contact: "Contacto",
+        opt_landing: "Landing Page Express (48 Horas)",
+        opt_full: "Plan Full Stack + Hosting Cloud",
+        opt_hosting: "Hosting Gestionado Coolify / Cloudflare",
+        opt_mvp: "Web App / MVP a Medida",
+        opt_redesign: "Rediseño & Optimización de Web Actual"
+      },
+      en: {
+        meta_title: "Aura Web | AI-Accelerated Web Development & Cloud Infrastructure",
+        nav_services: "Services",
+        nav_process: "Process",
+        nav_pricing: "Pricing",
+        nav_infra: "Cloud",
+        nav_cta: "Direct WhatsApp",
+        hero_badge: "AI-Powered Web Dev & Cloud",
+        hero_title: 'Your <span class="bg-gradient-to-r from-primary-container via-cyan-200 to-secondary text-transparent bg-clip-text">High-Converting</span> Website Ready in <span class="bg-gradient-to-r from-primary-container to-secondary text-transparent bg-clip-text">48 Hours</span> with AI',
+        hero_subtitle: "We build ultra-fast, high-converting websites and custom web apps designed to generate revenue, backed by dedicated enterprise cloud infrastructure.",
+        hero_cta_primary: "Start Project via WhatsApp",
+        hero_cta_secondary: "View Services & Pricing",
+        hero_badge1: "100% Clean Code",
+        hero_badge2: "48h Turnaround",
+        mockup_optimal: "Optimal Score",
+        mockup_fcp: "First Paint (FCP)",
+        mockup_sec: "sec",
+        mockup_speed: "Lightning Fast",
+        mockup_ssl: "Automated 256-bit SSL",
+        mockup_active: "Active",
+        mockup_coolify: "Coolify Managed Hosting",
+        mockup_docker: "Docker & Daily Backups",
+        m1_title: "48h Turnaround",
+        m1_desc: "Express AI-assisted prototyping & rapid deployment.",
+        m2_title: "Dedicated Cloud",
+        m2_desc: "High-speed cloud servers managed with Coolify & Docker.",
+        m3_title: "99.9% Uptime",
+        m3_desc: "Global Anycast CDN and automated DDoS protection.",
+        m4_title: "Conversion Funnels",
+        m4_desc: "Tailored to turn inbound visitors into direct leads.",
+        s_subtitle: "Engineering Solutions",
+        s_title: "Services Built for Conversion",
+        s_desc: "We merge fast AI-accelerated development with robust enterprise server infrastructure.",
+        c1_badge: "⚡ Most Popular",
+        c1_title: "High-Converting Landing Pages",
+        c1_desc: "Stunning visuals, persuasive AI-assisted sales copywriting, and instant load times. Engineered to convert clicks directly into paying clients.",
+        tag_animations: "Smooth Micro-animations",
+        c1_time: "48-Hour Delivery",
+        c1_cta: "Get Instant Quote",
+        c2_badge: "Full-Stack Architecture",
+        c2_title: "Custom Web Apps & MVPs",
+        c2_desc: "Agile, scalable software solutions. Admin portals, analytics dashboards, dynamic catalogs, and automated payment gateways (Stripe/PayPal).",
+        c2_time: "Robust Tech Stack",
+        c2_cta: "Explore Scope",
+        c3_badge: "DevOps & SysAdmin",
+        c3_title: "Managed Cloud Hosting",
+        c3_desc: "Zero server headaches for you. We host your site on dedicated infrastructure with Coolify, Cloudflare proxy, automated SSL, monitoring, and daily backups.",
+        tag_backups: "Daily Backups",
+        c3_time: "Zero maintenance needed",
+        c3_cta: "See Details",
+        p_subtitle: "Agile Methodology",
+        p_title: "From Idea to Launch in 3 Steps",
+        p_desc: "A transparent, timeline-driven process to deliver top-tier results in record time.",
+        step1_badge: "DAY 1",
+        step1_title: "Strategy & Prototype",
+        step1_desc: "Quick 15-minute onboarding. We define the sales angle, craft persuasive AI copy, and generate the interactive UI mockup in Figma/Stitch for your approval.",
+        step2_badge: "DAY 2",
+        step2_title: "Rapid Development",
+        step2_desc: "Lightweight, ultra-clean code built in Antigravity IDE. WhatsApp integration, mobile-first responsiveness, and sleek micro-interactions.",
+        step3_badge: "HOUR 48",
+        step3_title: "Cloud Deployment",
+        step3_desc: "Live launch on your domain with SSL encryption, Cloudflare DDoS defense, technical SEO optimization, and 100/100 Google PageSpeed score.",
+        plan_badge: "Transparent Pricing",
+        plan_title: "Simple Plans, No Hidden Fees",
+        plan_desc: "Choose the solution that matches your business stage.",
+        p1_category: "Businesses & Founders",
+        p1_name: "Landing Express Plan",
+        p1_delivery: "48 Hours",
+        p1_price: "$190",
+        p1_currency: "USD / one-time",
+        p1_subtext: "Perfect for local businesses & lead generation",
+        p1_f1: "Guaranteed 48-Hour Delivery",
+        p1_f2: "Persuasive sales copywriting with AI",
+        p1_f3: "Direct WhatsApp / Booking funnel",
+        p1_f4: "Google PageSpeed 95+ score",
+        p1_f5: "1 month free Cloud Hosting & SSL included",
+        p1_cta: "Get Landing Express",
+        p2_badge: "Recommended",
+        p2_category: "Scale & Full Control",
+        p2_name: "Full Stack + Cloud Plan",
+        p2_price: "$350",
+        p2_currency: "USD / one-time",
+        p2_subtext: "+ $29/mo Managed Coolify Cloud Hosting",
+        p2_f1: "Everything in the Express Plan",
+        p2_f2: "Admin panel / Database or dynamic catalog",
+        p2_f3: "Dedicated Cloud Server managed with Coolify",
+        p2_f4: "Daily backups & 24/7 uptime monitoring",
+        p2_f5: "Priority support and monthly maintenance updates",
+        p2_cta: "Get Full Stack Plan",
+        form_badge: "Start Today",
+        form_title: "Ready to elevate your digital presence?",
+        form_desc: "Share your details and we will send you a personalized message with a free preview mockup for your business.",
+        form_label_name: "Your Name or Business Name",
+        form_placeholder_name: "e.g. Michael / Apex Logistics",
+        form_label_service: "Service Needed",
+        form_btn: "Send Inquiry to WhatsApp ⚡",
+        form_trust: "Direct engineer response • No locked-in contracts",
+        footer_rights: "© 2026 Aura Web. All rights reserved. Accelerated Web Dev & Cloud.",
+        tab_home: "Home",
+        tab_services: "Services",
+        tab_process: "Process",
+        tab_pricing: "Plans",
+        tab_contact: "Contact",
+        opt_landing: "Landing Page Express (48 Hours)",
+        opt_full: "Full Stack Plan + Cloud Hosting",
+        opt_hosting: "Coolify / Cloudflare Managed Hosting",
+        opt_mvp: "Custom Web App / MVP",
+        opt_redesign: "Website Redesign & Speed Optimization"
+      }
+    };
+
+    function switchLanguage(lang) {
+      currentLang = lang;
+      document.documentElement.lang = lang;
+      localStorage.setItem('aura_lang', lang);
+
+      // Actualizar botones del switch
+      const btnEs = document.getElementById('lang-btn-es');
+      const btnEn = document.getElementById('lang-btn-en');
+      if (lang === 'es') {
+        btnEs.className = "px-2.5 py-1 rounded-full transition-all bg-primary-container text-on-primary shadow-[0_0_10px_rgba(0,240,255,0.4)]";
+        btnEn.className = "px-2.5 py-1 rounded-full text-on-surface-variant hover:text-white transition-all";
+      } else {
+        btnEn.className = "px-2.5 py-1 rounded-full transition-all bg-primary-container text-on-primary shadow-[0_0_10px_rgba(0,240,255,0.4)]";
+        btnEs.className = "px-2.5 py-1 rounded-full text-on-surface-variant hover:text-white transition-all";
+      }
+
+      // Reemplazar textos simples
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+
+      // Reemplazar textos con HTML (gradientes)
+      document.querySelectorAll('[data-i18n-html]').forEach(el => {
+        const key = el.getAttribute('data-i18n-html');
+        if (translations[lang][key]) {
+          el.innerHTML = translations[lang][key];
+        }
+      });
+
+      // Reemplazar placeholders
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (translations[lang][key]) {
+          el.placeholder = translations[lang][key];
+        }
+      });
+
+      // Precios dinámicos
+      document.getElementById('p1_price').textContent = translations[lang].p1_price;
+      document.getElementById('p1_currency').textContent = translations[lang].p1_currency;
+      document.getElementById('p1_subtext').textContent = translations[lang].p1_subtext;
+
+      document.getElementById('p2_price').textContent = translations[lang].p2_price;
+      document.getElementById('p2_currency').textContent = translations[lang].p2_currency;
+      document.getElementById('p2_subtext').textContent = translations[lang].p2_subtext;
+    }
+
+    function openWhatsappWithCurrentLang(context) {
+      let defaultMsg = "";
+      if (currentLang === 'es') {
+        if (context === 'c1' || context === 'plan1') defaultMsg = "¡Hola Aura Web! Me interesa cotizar una Landing Page Express de 48hs.";
+        else if (context === 'c2' || context === 'plan2') defaultMsg = "¡Hola Aura Web! Quiero consultar por el Plan Full Stack & Web Apps.";
+        else if (context === 'c3') defaultMsg = "¡Hola Aura Web! Quiero consultar por el Hosting Gestionado Cloud.";
+        else defaultMsg = "¡Hola Aura Web! Me gustaría iniciar un proyecto para mi negocio.";
+      } else {
+        if (context === 'c1' || context === 'plan1') defaultMsg = "Hi Aura Web! I'm interested in getting a quote for the 48-Hour Landing Express.";
+        else if (context === 'c2' || context === 'plan2') defaultMsg = "Hi Aura Web! I'd like to discuss the Full Stack & Web App Plan.";
+        else if (context === 'c3') defaultMsg = "Hi Aura Web! I'd like to know more about your Managed Cloud Hosting.";
+        else defaultMsg = "Hi Aura Web! I'd like to start a new web project for my business.";
+      }
+      openWhatsappDirect(defaultMsg);
+    }
+
+    function openWhatsappDirect(msg) {
+      const base = WHATSAPP_PHONE ? `https://wa.me/${WHATSAPP_PHONE}` : `https://wa.me/`;
+      const url = `${base}?text=${encodeURIComponent(msg)}`;
+      window.open(url, '_blank');
+    }
+
+    function submitFormToWhatsapp() {
+      const name = document.getElementById('clientName').value.trim();
+      const project = document.getElementById('projectType').value;
+      if (!name) {
+        document.getElementById('clientName').focus();
+        return;
+      }
+      let message = "";
+      if (currentLang === 'es') {
+        message = `¡Hola Aura Web! Mi nombre es *${name}* y me interesa desarrollar un proyecto de *${project}*. Me gustaría recibir información y ver una propuesta para mi negocio.`;
+      } else {
+        message = `Hi Aura Web! My name is *${name}* and I'm interested in a *${project}* project. I would like to receive details and discuss a proposal.`;
+      }
+      openWhatsappDirect(message);
+    }
+
+    // Inicializar idioma guardado o por defecto
+    const savedLang = localStorage.getItem('aura_lang') || 'es';
+    if (savedLang === 'en') {
+      switchLanguage('en');
+    }
+  </script>
+
+</body>
+</html>
