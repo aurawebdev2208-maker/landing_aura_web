@@ -10,9 +10,9 @@ RUN rm -rf /usr/share/nginx/html/*
 # Copia todo el sitio estatico al directorio de Nginx
 COPY . /usr/share/nginx/html
 
-# Copia la configuracion personalizada de Nginx
+# Copia la configuracion personalizada de Nginx (puerto 3000)
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-EXPOSE 80
+EXPOSE 3000
 
 CMD ["nginx", "-g", "daemon off;"]
