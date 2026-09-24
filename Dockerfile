@@ -4,6 +4,9 @@
 # ─────────────────────────────────────────────
 FROM nginx:alpine
 
+# Instalar bash (requerido por Coolify para health checks)
+RUN apk add --no-cache bash
+
 # Elimina la pagina por defecto de Nginx
 RUN rm -rf /usr/share/nginx/html/*
 
