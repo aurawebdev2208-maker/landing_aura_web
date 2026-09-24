@@ -1,0 +1,18 @@
+﻿# ─────────────────────────────────────────────
+#  Dockerfile — Landing Aura Web (static site)
+#  Serve con Nginx en Coolify
+# ─────────────────────────────────────────────
+FROM nginx:alpine
+
+# Elimina la pagina por defecto de Nginx
+RUN rm -rf /usr/share/nginx/html/*
+
+# Copia todo el sitio estatico al directorio de Nginx
+COPY . /usr/share/nginx/html
+
+# Copia la configuracion personalizada de Nginx
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
