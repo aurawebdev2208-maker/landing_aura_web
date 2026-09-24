@@ -1,0 +1,3 @@
+﻿# Forzar LF en archivos de configuracion de Linux
+nginx.conf text eol=lf
+Dockerfile text eol=lf
