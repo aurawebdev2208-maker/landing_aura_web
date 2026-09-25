@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OdontoStudio | Clínica Odontológica & Estética Dental Avanzada</title>
+  <meta name="description" content="Centro de estética dental, ortodoncia invisible e implantes digitales en Belgrano. Diagnóstico 3D y odontología sin dolor. Agenda tu turno por WhatsApp.">
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="OdontoStudio | Clínica Odontológica Avanzada">
+  <meta property="og:description" content="Ortodoncia invisible, implantes guiados y diseño de sonrisa con tecnología 3D en Belgrano. Atención sin dolor.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              500: '#0ea5e9', // cyan tech
+              600: '#0284c7',
+              700: '#0369a1',
+              900: '#0c4a6e',
+            },
+            slate: {
+              850: '#151e2e',
+              900: '#0f172a',
+            },
+            medical: {
+              mint: '#10b981',
+              emerald: '#059669',
+              lightMint: '#ecfdf5',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    /* Custom Slider & Micro-interactions */
+    .before-after-container {
+      position: relative;
+      overflow: hidden;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    .before-after-slider {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: white;
+      cursor: ew-resize;
+      box-shadow: 0 0 12px rgba(0,0,0,0.4);
+      z-index: 20;
+    }
+    .slider-handle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: white;
+      box-shadow: 0 4px 14px rgba(14,165,233,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #0284c7;
+      border: 3px solid #0ea5e9;
+    }
+    /* Smooth Accordion */
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 font-sans text-slate-800 antialiased selection:bg-brand-500 selection:text-white">
+
+  <!-- TOP EMERGENCY & FAST CONTACT BAR -->
+  <aside class="bg-gradient-to-r from-slate-900 via-slate-850 to-slate-900 text-white text-xs py-2 px-4 border-b border-slate-800 relative z-50">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="relative flex h-2.5 w-2.5">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-medical-mint opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-medical-mint"></span>
+        </span>
+        <span class="font-medium text-slate-200 flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-[15px] text-medical-mint">emergency</span>
+          <strong>Guardia Odontológica Activa 24/7</strong> &bull; Atención Inmediata de Dolor
+        </span>
+      </div>
+      <div class="flex items-center gap-4 text-slate-300">
+        <a href="https://wa.me/5491123456789?text=Hola%20OdontoStudio%2C%20tengo%20una%20urgencia%20odontol%C3%B3gica" target="_blank" rel="noopener noreferrer" class="hover:text-brand-500 transition-colors flex items-center gap-1">
+          <span class="material-symbols-outlined text-[15px] text-brand-500">chat</span>
+          <span>WhatsApp Guardia: <strong>+54 9 11 2345-6789</strong></span>
+        </a>
+        <span class="hidden md:inline text-slate-600">|</span>
+        <span class="hidden md:inline flex items-center gap-1 text-slate-400">
+          <span class="material-symbols-outlined text-[15px]">location_on</span>
+          Belgrano, CABA
+        </span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN HEADER / NAVBAR -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200/80 shadow-sm transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-brand-600 to-cyan-400 flex items-center justify-center text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform">
+          <span class="material-symbols-outlined text-[26px]">dentistry</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-display font-extrabold text-xl sm:text-2xl tracking-tight text-slate-900 leading-none">
+            Odonto<span class="text-brand-600">Studio</span>
+          </span>
+          <span class="text-[10px] tracking-wider uppercase font-semibold text-slate-500 mt-0.5">Clínica &amp; Estética Dental</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-600">
+        <a href="#tratamientos" class="hover:text-brand-600 transition-colors">Especialidades</a>
+        <a href="#antes-despues" class="hover:text-brand-600 transition-colors">Casos Clínicos</a>
+        <a href="#metodologia" class="hover:text-brand-600 transition-colors">Experiencia Digital</a>
+        <a href="#faq" class="hover:text-brand-600 transition-colors">Preguntas Frecuentes</a>
+        <a href="#contacto" class="hover:text-brand-600 transition-colors">Ubicación</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-3">
+        <a href="#contacto" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-brand-600 text-white font-display font-bold text-sm shadow-md shadow-brand-500/25 hover:bg-brand-500 hover:shadow-lg hover:-translate-y-0.5 transition-all">
+          <span class="material-symbols-outlined text-[18px]">calendar_month</span>
+          <span>Pedir Turno</span>
+        </a>
+        
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobileMenuBtn" type="button" aria-label="Abrir menú" class="lg:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors">
+          <span class="material-symbols-outlined text-[26px]" id="menuIcon">menu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-white border-b border-slate-200 px-6 py-5 shadow-xl transition-all">
+      <nav class="flex flex-col gap-4 text-base font-medium text-slate-700">
+        <a href="#tratamientos" class="hover:text-brand-600 py-1 transition-colors" onclick="toggleMobileMenu()">Especialidades</a>
+        <a href="#antes-despues" class="hover:text-brand-600 py-1 transition-colors" onclick="toggleMobileMenu()">Casos Antes y Después</a>
+        <a href="#metodologia" class="hover:text-brand-600 py-1 transition-colors" onclick="toggleMobileMenu()">Experiencia OdontoStudio</a>
+        <a href="#faq" class="hover:text-brand-600 py-1 transition-colors" onclick="toggleMobileMenu()">Preguntas Frecuentes</a>
+        <a href="#contacto" class="hover:text-brand-600 py-1 transition-colors" onclick="toggleMobileMenu()">Ubicación &amp; Contacto</a>
+      </nav>
+      <div class="mt-5 pt-5 border-t border-slate-100 flex flex-col gap-3">
+        <a href="#contacto" onclick="toggleMobileMenu()" class="w-full text-center py-3 rounded-xl bg-brand-600 text-white font-display font-bold text-sm shadow-md">
+          Agendar Turno Online
+        </a>
+        <a href="https://wa.me/5491123456789" target="_blank" class="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl border border-medical-mint text-medical-emerald font-semibold text-sm">
+          <span class="material-symbols-outlined text-[18px]">chat</span>
+          WhatsApp Directo
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative pt-8 pb-16 md:pt-16 md:pb-24 overflow-hidden bg-gradient-to-b from-white via-brand-50/30 to-slate-50">
+    
+    <!-- Background Tech Glows -->
+    <div class="absolute top-10 right-0 w-96 h-96 bg-brand-100/50 rounded-full blur-3xl pointer-events-none -z-10"></div>
+    <div class="absolute bottom-0 left-10 w-80 h-80 bg-medical-lightMint rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Content -->
+        <div class="lg:col-span-7 flex flex-col gap-6">
+          
+          <!-- Pill Badge -->
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-brand-100 text-brand-700 w-fit shadow-sm text-xs sm:text-sm font-semibold">
+            <span class="flex h-2 w-2 rounded-full bg-brand-500 animate-pulse"></span>
+            <span>Odontología Digital de Precisión &bull; 100% Sin Dolor</span>
+          </div>
+
+          <!-- Main Title -->
+          <h1 class="font-display font-extrabold text-3xl sm:text-5xl lg:text-6xl text-slate-950 tracking-tight leading-[1.12]">
+            Tu Sonrisa Ideal con la <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 via-brand-500 to-cyan-500">Tecnología Dental</span> Más Avanzada
+          </h1>
+
+          <!-- Subheadline -->
+          <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
+            Especialistas en <strong>implantes guiados 3D</strong>, <strong>ortodoncia invisible</strong> y <strong>diseño estético de sonrisa</strong> en Belgrano. Diagnóstico digital en 1 sesión y máxima comodidad para que sonrías con total confianza.
+          </p>
+
+          <!-- CTAs -->
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a href="#contacto" class="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-brand-600 text-white font-display font-bold text-base shadow-lg shadow-brand-500/30 hover:bg-brand-500 hover:shadow-xl hover:-translate-y-0.5 transition-all">
+              <span class="material-symbols-outlined text-[20px]">chat</span>
+              <span>Solicitar Turno Diagnóstico</span>
+            </a>
+            <a href="#antes-despues" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white border border-slate-200 text-slate-700 font-display font-semibold text-base shadow-sm hover:bg-slate-50 hover:border-slate-300 transition-all">
+              <span>Ver Casos Reales</span>
+              <span class="material-symbols-outlined text-[18px] text-brand-600">arrow_forward</span>
+            </a>
+          </div>
+
+          <!-- Trust Badges Strip -->
+          <div class="pt-4 border-t border-slate-200/80 flex flex-wrap items-center gap-6 text-xs sm:text-sm text-slate-600">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-medical-mint text-[20px]">verified</span>
+              <span><strong>Escáner 3D</strong> sin pastas incómodas</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-brand-600 text-[20px]">workspace_premium</span>
+              <span><strong>Garantía Escrita</strong> en tratamientos</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-brand-600 text-[20px]">credit_card</span>
+              <span>Cuotas sin interés &amp; reintegros</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Bento Mosaic Visual -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative grid grid-cols-12 gap-3 sm:gap-4">
+            
+            <!-- Main Clinic Photo -->
+            <div class="col-span-8 rounded-2xl overflow-hidden shadow-xl bg-white aspect-[4/3] relative group border border-slate-100">
+              <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80" alt="Instalaciones OdontoStudio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>
+              <div class="absolute bottom-3 left-3 text-white">
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-900/70 backdrop-blur-md text-[11px] font-semibold">
+                  <span class="w-1.5 h-1.5 rounded-full bg-medical-mint"></span>
+                  Suite Clínica Belgrano
+                </span>
+              </div>
+            </div>
+
+            <!-- Patient Smile Photo -->
+            <div class="col-span-4 rounded-2xl overflow-hidden shadow-xl bg-white aspect-square sm:aspect-[3/4] relative group border border-slate-100">
+              <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80" alt="Sonrisa OdontoStudio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>
+              <div class="absolute bottom-2.5 left-2.5 right-2.5 text-white">
+                <p class="text-[10px] uppercase font-bold tracking-wider text-brand-300">Estética DSD</p>
+                <p class="text-xs font-bold leading-tight">Diseño 100% Personalizado</p>
+              </div>
+            </div>
+
+            <!-- Floating Badge: Google Rating -->
+            <div class="col-span-7 -mt-6 sm:-mt-8 z-20 bg-white/95 backdrop-blur-md rounded-2xl p-3 sm:p-4 shadow-xl border border-slate-100 flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-500 flex items-center justify-center flex-shrink-0">
+                <span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              </div>
+              <div class="min-w-0">
+                <div class="flex items-center gap-0.5 text-amber-400">
+                  <span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                </div>
+                <p class="text-xs sm:text-sm font-bold text-slate-900">4.9 / 5 en Google Reviews</p>
+                <p class="text-[11px] text-slate-500 truncate">+280 pacientes atendidos este año</p>
+              </div>
+            </div>
+
+            <!-- Floating Badge: Escáner 3D -->
+            <div class="col-span-5 -mt-6 sm:-mt-8 z-20 bg-white/95 backdrop-blur-md rounded-2xl p-3 sm:p-4 shadow-xl border border-slate-100 flex items-center gap-2.5">
+              <div class="w-9 h-9 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0">
+                <span class="material-symbols-outlined text-[20px]">view_in_ar</span>
+              </div>
+              <div class="min-w-0">
+                <p class="text-xs sm:text-sm font-bold text-slate-900 truncate">Escáner 3D</p>
+                <p class="text-[11px] text-medical-emerald font-semibold truncate">Sin moldes</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR / WHY CHOOSE US -->
+  <section class="bg-white py-12 border-y border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-50 hover:bg-brand-50/50 transition-colors border border-slate-100">
+          <div class="w-12 h-12 rounded-xl bg-white shadow-sm border border-slate-100 flex items-center justify-center flex-shrink-0 text-brand-600">
+            <span class="material-symbols-outlined text-[24px]">medical_services</span>
+          </div>
+          <div>
+            <h4 class="font-display font-bold text-slate-900 text-sm">Tecnología Sin Dolor</h4>
+            <p class="text-xs text-slate-600 mt-1">Anestesia computarizada controlada y procedimientos mínimamente invasivos.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-50 hover:bg-brand-50/50 transition-colors border border-slate-100">
+          <div class="w-12 h-12 rounded-xl bg-white shadow-sm border border-slate-100 flex items-center justify-center flex-shrink-0 text-medical-emerald">
+            <span class="material-symbols-outlined text-[24px]">school</span>
+          </div>
+          <div>
+            <h4 class="font-display font-bold text-slate-900 text-sm">Especialistas Matriculados</h4>
+            <p class="text-xs text-slate-600 mt-1">Profesionales universitarios con posgrados en implantes y ortodoncia.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-50 hover:bg-brand-50/50 transition-colors border border-slate-100">
+          <div class="w-12 h-12 rounded-xl bg-white shadow-sm border border-slate-100 flex items-center justify-center flex-shrink-0 text-brand-600">
+            <span class="material-symbols-outlined text-[24px]">local_parking</span>
+          </div>
+          <div>
+            <h4 class="font-display font-bold text-slate-900 text-sm">Estacionamiento Propio</h4>
+            <p class="text-xs text-slate-600 mt-1">Cochera de cortesía gratuita para pacientes sobre Av. Libertador.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-50 hover:bg-brand-50/50 transition-colors border border-slate-100">
+          <div class="w-12 h-12 rounded-xl bg-white shadow-sm border border-slate-100 flex items-center justify-center flex-shrink-0 text-medical-emerald">
+            <span class="material-symbols-outlined text-[24px]">credit_card</span>
+          </div>
+          <div>
+            <h4 class="font-display font-bold text-slate-900 text-sm">Obras Sociales &amp; Cuotas</h4>
+            <p class="text-xs text-slate-600 mt-1">Factura electrónica para reintegros (OSDE, Swiss Medical) y planes en cuotas.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- STAR TREATMENTS SECTION -->
+  <section class="py-16 md:py-24 bg-slate-50" id="tratamientos">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div class="max-w-xl">
+          <span class="text-xs uppercase font-extrabold tracking-widest text-brand-600">NUESTRAS ESPECIALIDADES</span>
+          <h2 class="font-display font-bold text-2xl sm:text-4xl text-slate-950 mt-2">
+            Tratamientos Odontológicos de Vanguardia
+          </h2>
+          <p class="text-sm sm:text-base text-slate-600 mt-3">
+            Fusionamos micro-odontología, materiales biocompatibles de máxima durabilidad y software digital 3D.
+          </p>
+        </div>
+        <a href="#contacto" class="inline-flex items-center gap-2 text-sm font-bold text-brand-600 hover:text-brand-700 transition-colors">
+          <span>Consultar por un tratamiento específico</span>
+          <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+        </a>
+      </div>
+
+      <!-- Treatments Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Treatment 1: Implantes -->
+        <div class="bg-white rounded-3xl p-7 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between mb-5">
+              <span class="px-3 py-1 rounded-full bg-brand-50 text-brand-700 text-xs font-bold font-display">
+                Cirugía Digital Guiada
+              </span>
+              <div class="w-11 h-11 rounded-2xl bg-brand-50 text-brand-600 group-hover:bg-brand-600 group-hover:text-white transition-colors flex items-center justify-center">
+                <span class="material-symbols-outlined text-[24px]">dentistry</span>
+              </div>
+            </div>
+            <h3 class="font-display font-bold text-xl text-slate-900 group-hover:text-brand-600 transition-colors">
+              Implantes Dentales &amp; Dientes en 1 Día
+            </h3>
+            <p class="text-sm text-slate-600 mt-2.5">
+              Recupera tu capacidad masticatoria y la estética completa sin dolor con la técnica de carga inmediata.
+            </p>
+            <ul class="mt-5 space-y-2.5 text-xs text-slate-600 border-t border-slate-100 pt-5">
+              <li class="flex items-start gap-2">
+                <span class="material-symbols-outlined text-[17px] text-medical-emerald flex-shrink-0">check_circle</span>
+                <span>Cirugía por computadora sin cortes traumáticos.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="material-symbols-outlined text-[17px] text-medical-emerald flex-shrink-0">check_circle</span>
+                <span>Dientes fijos provisionales en la misma sesión.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="material-symbols-outlined text-[17px] text-medical-emerald flex-shrink-0">check_circle</span>
+                <span>Titanio médico de grado quirúrgico de por vida.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-7 pt-4 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-xs font-semibold text-slate-500">Tomografía 3D previa</span>
+            <a href="#contacto" class="text-xs font-bold text-brand-600 hover:text-brand-700 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              <span>Pedir Turno</span>
+              <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Treatment 2: Ortodoncia Invisible -->
+        <div class="bg-white rounded-3xl p-7 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between mb-5">
+              <span class="px-3 py-1 rounded-full bg-cyan-50 text-cyan-700 text-xs font-bold font-display">
+                Alineadores Invisibles
+              </span>
+              <div class="w-11 h-11 rounded-2xl bg-cyan-50 text-cyan-600 group-hover:bg-cyan-600 group-hover:text-white transition-colors flex items-center justify-center">
+                <span class="material-symbols-outlined text-[24px]">auto_awesome</span>
+              </div>
+            </div>
+            <h3 class="font-display font-bold text-xl text-slate-900 group-hover:text-brand-600 transition-colors">
+              Ortodoncia Invisible (Sin Brackets)
+            </h3>
+            <p class="text-sm text-slate-600 mt-2.5">
+              Alinea tus dientes con placas transparentes y removibles. Nadie notará que las estás usando.
+            </p>
+            <ul class="mt-5 space-y-2.5 text-xs text-slate-600 border-t border-slate-100 pt-5">
+              <li class="flex items-start gap-2">
+                <span class="material-symbols-outlined text-[17px] text-medical-emerald flex-shrink-0">check_circle</span>
+                <span>100% removibles para comer y cepillarte con comodidad.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="material-symbols-outlined text-[17px] text-medical-emerald flex-shrink-0">check_circle</span>
+                <span>Simulación digital de tu sonrisa final antes de empezar.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="material-symbols-outlined text-[17px] text-medical-emerald flex-shrink-0">check_circle</span>
+                <span>Citas de control cortas cada 4 a 6 semanas.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-7 pt-4 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-xs font-semibold text-slate-500">Simulación virtual 3D</span>
+            <a href="#contacto" class="text-xs font-bold text-brand-600 hover:text-brand-700 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              <span>Pedir Turno</span>
+              <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Treatment 3: Diseño de Sonrisa & Carillas -->
+        <div class="bg-white rounded-3xl p-7 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between mb-5">
+              <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold font-display">
+                Alta Estética Dental
+              </span>
+              <div class="w-11 h-11 rounded-2xl bg-emerald-50 text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-colors flex items-center justify-center">
+                <span class="material-symbols-outlined text-[24px]">flare</span>
+              </div>
+            </div>
+            <h3 class="font-display font-bold text-xl text-slate-900 group-hover:text-brand-600 transition-colors">
+              Carillas de Porcelana &amp; Blanqueamiento
+            </h3>
+            <p class="text-sm text-slate-600 mt-2.5">
+              Perfecciona la forma, color y simetría de tus dientes con micro-carillas de cerámica ultradelgadas.
+            </p>
+            <ul class="mt-5 space-y-2.5 text-xs text-slate-600 border-t border-slate-100 pt-5">
+              <li class="flex items-start gap-2">
+                <span class="material-symbols-outlined text-[17px] text-medical-emerald flex-shrink-0">check_circle</span>
+                <span>Diseño biomimético armónico con tus facciones.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="material-symbols-outlined text-[17px] text-medical-emerald flex-shrink-0">check_circle</span>
+                <span>Blanqueamiento LED clínico en sesión de 45 minutos.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="material-symbols-outlined text-[17px] text-medical-emerald flex-shrink-0">check_circle</span>
+                <span>Conservación máxima del esmalte dental natural.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-7 pt-4 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-xs font-semibold text-slate-500">Hasta 6 tonos más blanco</span>
+            <a href="#contacto" class="text-xs font-bold text-brand-600 hover:text-brand-700 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              <span>Pedir Turno</span>
+              <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE BEFORE & AFTER SLIDER (CASOS CLÍNICOS) -->
+  <section class="py-16 md:py-24 bg-white border-t border-slate-200/80" id="antes-despues">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs uppercase font-extrabold tracking-widest text-brand-600">RESULTADOS CLÍNICOS REALES</span>
+        <h2 class="font-display font-bold text-2xl sm:text-4xl text-slate-950 mt-2">
+          Transformaciones que Cambian Vidas
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600 mt-3">
+          Desliza la barra interactiva hacia los lados para comparar el estado inicial con el resultado final obtenido en nuestra clínica.
+        </p>
+      </div>
+
+      <!-- Slider Component Card -->
+      <div class="max-w-3xl mx-auto bg-slate-900 rounded-3xl p-4 sm:p-6 shadow-2xl relative border border-slate-800">
+        
+        <!-- Header badge -->
+        <div class="flex items-center justify-between mb-4 text-white text-xs px-2">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-medical-mint"></span>
+            <span class="font-bold">Caso: Diseño de Sonrisa &amp; Carillas Cerámicas</span>
+          </div>
+          <span class="text-slate-400">Duración: 2 Sesiones</span>
+        </div>
+
+        <!-- The Interactive Before-After Box -->
+        <div class="before-after-container relative w-full h-80 sm:h-[420px] rounded-2xl overflow-hidden cursor-ew-resize" id="sliderContainer">
+          
+          <!-- AFTER Image (Background full width) -->
+          <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=80" alt="Resultado Final Después" class="absolute inset-0 w-full h-full object-cover">
+          <div class="absolute bottom-4 right-4 z-10 bg-slate-900/80 backdrop-blur-md text-white text-xs font-bold px-3 py-1.5 rounded-full border border-white/20">
+            DESPUÉS (Resultado)
+          </div>
+
+          <!-- BEFORE Image (Clipped with div) -->
+          <div class="absolute inset-0 overflow-hidden" id="beforeClip" style="width: 50%;">
+            <img src="https://images.unsplash.com/photo-1572565654516-7d1c68f121d1?auto=format&fit=crop&w=1200&q=80" alt="Estado Inicial Antes" class="absolute inset-0 w-full h-full object-cover max-w-none" id="beforeImage">
+            <div class="absolute bottom-4 left-4 z-10 bg-slate-900/80 backdrop-blur-md text-white text-xs font-bold px-3 py-1.5 rounded-full border border-white/20">
+              ANTES (Diagnóstico)
+            </div>
+          </div>
+
+          <!-- Divider Slider Bar -->
+          <div class="before-after-slider" id="sliderDivider" style="left: 50%;">
+            <div class="slider-handle">
+              <span class="material-symbols-outlined text-[20px]">drag_handle</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slider Hint -->
+        <p class="text-center text-xs text-slate-400 mt-4 flex items-center justify-center gap-1.5">
+          <span class="material-symbols-outlined text-[16px] text-brand-500">swipe</span>
+          <span>Arrastra o haz clic en la imagen para interactuar con la comparación</span>
+        </p>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- STEP-BY-STEP EXPERIENCE (METODOLOGÍA) -->
+  <section class="py-16 md:py-24 bg-slate-50 border-t border-slate-200/80" id="metodologia">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs uppercase font-extrabold tracking-widest text-brand-600">EXPERIENCIA ODONTOSTUDIO</span>
+        <h2 class="font-display font-bold text-2xl sm:text-4xl text-slate-950 mt-2">
+          ¿Cómo es tu Consulta con Nosotros?
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600 mt-3">
+          Un proceso transparente, cálido y sin estrés desde que ingresas a nuestras instalaciones.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Step 1 -->
+        <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-100 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="w-12 h-12 rounded-2xl bg-brand-50 text-brand-600 font-display font-extrabold text-lg flex items-center justify-center">
+                01
+              </span>
+              <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-semibold">100% Digital</span>
+            </div>
+            <h3 class="font-display font-bold text-xl text-slate-900">Consulta &amp; Escaneo 3D</h3>
+            <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+              Digitalizamos tu boca en 5 minutos con nuestro escáner intraoral. Olvídate de los moldes de silicona con gusto amargo y arcadas.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center gap-2 text-xs font-bold text-brand-600">
+            <span class="material-symbols-outlined text-[18px]">document_scanner</span>
+            <span>Diagnóstico en Alta Definición</span>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-100 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="w-12 h-12 rounded-2xl bg-emerald-50 text-medical-emerald font-display font-extrabold text-lg flex items-center justify-center">
+                02
+              </span>
+              <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-semibold">Cero Sorpresas</span>
+            </div>
+            <h3 class="font-display font-bold text-xl text-slate-900">Plan Claro &amp; Financiación</h3>
+            <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+              Te mostramos en pantalla la proyección de tus resultados. Te entregamos un presupuesto cerrado por escrito con opciones de cuotas.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center gap-2 text-xs font-bold text-medical-emerald">
+            <span class="material-symbols-outlined text-[18px]">payments</span>
+            <span>Precios Transparentes</span>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-100 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="w-12 h-12 rounded-2xl bg-cyan-50 text-cyan-600 font-display font-extrabold text-lg flex items-center justify-center">
+                03
+              </span>
+              <span class="px-3 py-1 rounded-full bg-cyan-50 text-cyan-800 text-xs font-semibold">Atención VIP</span>
+            </div>
+            <h3 class="font-display font-bold text-xl text-slate-900">Atención Sin Dolor</h3>
+            <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+              Sillones ergonómicos, música relajante y anestesia indolora. Seguimiento personalizado vía WhatsApp luego de tu visita.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center gap-2 text-xs font-bold text-cyan-600">
+            <span class="material-symbols-outlined text-[18px]">sentiment_very_satisfied</span>
+            <span>Garantía de Satisfacción</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INTERACTIVE APPOINTMENT FORM VIA WHATSAPP -->
+  <section class="py-16 md:py-24 bg-white border-t border-slate-200/80" id="contacto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-5xl mx-auto bg-slate-950 rounded-3xl shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 border border-slate-800">
+        
+        <!-- Left Info Column -->
+        <div class="lg:col-span-5 p-8 sm:p-10 bg-gradient-to-br from-slate-900 via-slate-850 to-slate-950 text-white flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-slate-800">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-xs font-semibold mb-6">
+              <span class="w-2 h-2 rounded-full bg-brand-400 animate-ping"></span>
+              <span>Recepción Online Inmediata</span>
+            </div>
+            <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-white leading-tight">
+              Agenda tu Consulta Diagnóstica
+            </h2>
+            <p class="text-sm text-slate-300 mt-3 leading-relaxed">
+              Completa el formulario en 30 segundos. El sistema abrirá tu WhatsApp con los datos listos para coordinar tu cita en el horario que prefieras.
+            </p>
+          </div>
+
+          <div class="mt-8 space-y-4 pt-6 border-t border-slate-800 text-xs sm:text-sm text-slate-300">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-lg bg-slate-800 text-medical-mint flex items-center justify-center flex-shrink-0">
+                <span class="material-symbols-outlined text-[18px]">verified</span>
+              </div>
+              <span>Evaluación integral y escaneo 3D</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-lg bg-slate-800 text-brand-400 flex items-center justify-center flex-shrink-0">
+                <span class="material-symbols-outlined text-[18px]">schedule</span>
+              </div>
+              <span>Respuesta promedio en menos de 15 minutos</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-lg bg-slate-800 text-cyan-400 flex items-center justify-center flex-shrink-0">
+                <span class="material-symbols-outlined text-[18px]">support_agent</span>
+              </div>
+              <span>Atención directa por secretaría médica</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Form Column -->
+        <div class="lg:col-span-7 p-8 sm:p-10 bg-slate-900">
+          <form id="appointmentForm" onsubmit="handleFormSubmit(event)" class="space-y-5">
+            
+            <!-- Patient Name -->
+            <div>
+              <label for="fullName" class="block text-xs font-semibold text-slate-300 mb-1.5 uppercase tracking-wider">
+                Nombre y Apellido *
+              </label>
+              <input type="text" id="fullName" required placeholder="Ej: Carolina Méndez" class="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all">
+            </div>
+
+            <!-- WhatsApp Number -->
+            <div>
+              <label for="whatsappNumber" class="block text-xs font-semibold text-slate-300 mb-1.5 uppercase tracking-wider">
+                Tu Teléfono / WhatsApp *
+              </label>
+              <input type="tel" id="whatsappNumber" required placeholder="Ej: +54 9 11 2345-6789" class="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all">
+            </div>
+
+            <!-- Treatment Select -->
+            <div>
+              <label for="treatmentSelect" class="block text-xs font-semibold text-slate-300 mb-1.5 uppercase tracking-wider">
+                Tratamiento de Interés *
+              </label>
+              <select id="treatmentSelect" required class="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all cursor-pointer">
+                <option value="" disabled selected>Selecciona una opción...</option>
+                <option value="Implantes Dentales & Dientes en 1 Día">Implantes Dentales &amp; Prótesis Fijas</option>
+                <option value="Ortodoncia Invisible (Alineadores)">Ortodoncia Invisible (Sin brackets)</option>
+                <option value="Diseño de Sonrisa & Carillas">Carillas de Porcelana &amp; Estética</option>
+                <option value="Blanqueamiento Dental LED">Blanqueamiento Dental Clínico</option>
+                <option value="Limpieza Profunda & Control Preventivo">Limpieza Profunda &amp; Control General</option>
+                <option value="Urgencia / Dolor Agudo">Urgencia Odontológica Inmediata</option>
+              </select>
+            </div>
+
+            <!-- Time Preference -->
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wider">
+                Preferencia de Horario
+              </label>
+              <div class="grid grid-cols-2 gap-3">
+                <label class="cursor-pointer">
+                  <input type="radio" name="timePreference" value="Mañana (09:00 a 14:00)" checked class="peer sr-only">
+                  <div class="py-2.5 px-3 rounded-xl bg-slate-800 border border-slate-700 text-slate-300 text-xs font-semibold text-center peer-checked:bg-brand-600 peer-checked:text-white peer-checked:border-brand-500 transition-all">
+                    ☀️ Mañana (09 a 14 hs)
+                  </div>
+                </label>
+                <label class="cursor-pointer">
+                  <input type="radio" name="timePreference" value="Tarde (14:00 a 20:00)" class="peer sr-only">
+                  <div class="py-2.5 px-3 rounded-xl bg-slate-800 border border-slate-700 text-slate-300 text-xs font-semibold text-center peer-checked:bg-brand-600 peer-checked:text-white peer-checked:border-brand-500 transition-all">
+                    🌙 Tarde (14 a 20 hs)
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="w-full mt-4 py-4 px-6 rounded-xl bg-gradient-to-r from-brand-600 to-cyan-500 text-white font-display font-bold text-sm shadow-lg shadow-brand-500/25 hover:from-brand-500 hover:to-cyan-400 hover:shadow-xl hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2">
+              <span class="material-symbols-outlined text-[20px]">chat</span>
+              <span>Solicitar Disponibilidad vía WhatsApp</span>
+            </button>
+
+            <!-- Microcopy -->
+            <p class="text-center text-[11px] text-slate-400 flex items-center justify-center gap-1.5 pt-1">
+              <span class="material-symbols-outlined text-[14px] text-medical-mint">lock</span>
+              <span>Tus datos son privados. No enviamos spam ni publicidad molesta.</span>
+            </p>
+
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ ACCORDION -->
+  <section class="py-16 md:py-24 bg-slate-50 border-t border-slate-200/80" id="faq">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-xl mx-auto mb-12">
+        <span class="text-xs uppercase font-extrabold tracking-widest text-brand-600">DUDAS COMUNES</span>
+        <h2 class="font-display font-bold text-2xl sm:text-4xl text-slate-950 mt-2">
+          Preguntas Frecuentes
+        </h2>
+        <p class="text-sm text-slate-600 mt-2">
+          Respuestas transparentes sobre nuestros tratamientos, coberturas y métodos de pago.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        
+        <!-- FAQ Item 1 -->
+        <details class="group bg-white rounded-2xl p-5 shadow-sm border border-slate-200/80 transition-all duration-200 open:border-brand-500">
+          <summary class="flex items-center justify-between cursor-pointer font-display font-bold text-slate-900 text-sm sm:text-base list-none">
+            <span>¿Las cirugías o la colocación de implantes duelen?</span>
+            <span class="material-symbols-outlined text-slate-400 group-open:rotate-180 group-open:text-brand-600 transition-transform">expand_more</span>
+          </summary>
+          <div class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed pt-2 border-t border-slate-100">
+            No. Utilizamos anestesia computarizada de última generación que adormece la zona sin el molesto dolor del pinchazo tradicional. Además, planificamos la cirugía de forma digital 3D para evitar incisiones innecesarias, lo que hace que el postoperatorio sea prácticamente asintomático.
+          </div>
+        </details>
+
+        <!-- FAQ Item 2 -->
+        <details class="group bg-white rounded-2xl p-5 shadow-sm border border-slate-200/80 transition-all duration-200 open:border-brand-500">
+          <summary class="flex items-center justify-between cursor-pointer font-display font-bold text-slate-900 text-sm sm:text-base list-none">
+            <span>¿Aceptan obras sociales y prepagas?</span>
+            <span class="material-symbols-outlined text-slate-400 group-open:rotate-180 group-open:text-brand-600 transition-transform">expand_more</span>
+          </summary>
+          <div class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed pt-2 border-t border-slate-100">
+            Trabajamos con el sistema de reintegros para las principales prepagas (OSDE, Swiss Medical, Galeno, Medifé, Omint). Emitimos la factura médica con todos los códigos odontológicos necesarios y el informe clínico para que gestiones tu reintegro directo en 48 hs.
+          </div>
+        </details>
+
+        <!-- FAQ Item 3 -->
+        <details class="group bg-white rounded-2xl p-5 shadow-sm border border-slate-200/80 transition-all duration-200 open:border-brand-500">
+          <summary class="flex items-center justify-between cursor-pointer font-display font-bold text-slate-900 text-sm sm:text-base list-none">
+            <span>¿Cuánto tiempo dura el tratamiento con ortodoncia invisible?</span>
+            <span class="material-symbols-outlined text-slate-400 group-open:rotate-180 group-open:text-brand-600 transition-transform">expand_more</span>
+          </summary>
+          <div class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed pt-2 border-t border-slate-100">
+            Dependiendo de la complejidad del caso, los tratamientos suelen durar entre 6 y 14 meses. En la primera consulta realizamos el escaneo 3D y te mostramos con exactitud cuántos alineadores necesitarás y el tiempo estimado de tratamiento.
+          </div>
+        </details>
+
+        <!-- FAQ Item 4 -->
+        <details class="group bg-white rounded-2xl p-5 shadow-sm border border-slate-200/80 transition-all duration-200 open:border-brand-500">
+          <summary class="flex items-center justify-between cursor-pointer font-display font-bold text-slate-900 text-sm sm:text-base list-none">
+            <span>¿Cuáles son las facilidades de pago?</span>
+            <span class="material-symbols-outlined text-slate-400 group-open:rotate-180 group-open:text-brand-600 transition-transform">expand_more</span>
+          </summary>
+          <div class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed pt-2 border-t border-slate-100">
+            Ofrecemos planes de pago en cuotas fijas con tarjeta de crédito, transferencias bancarias y descuentos por pago de contado. También estructuramos planes por avance de tratamiento para que abones por etapas.
+          </div>
+        </details>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- LOCATION & MAP SECTION -->
+  <section class="py-16 md:py-24 bg-white border-t border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Info Column -->
+        <div class="lg:col-span-6 space-y-6">
+          <div>
+            <span class="text-xs uppercase font-extrabold tracking-widest text-brand-600">SEDE CENTRAL BELGRANO</span>
+            <h2 class="font-display font-bold text-2xl sm:text-4xl text-slate-950 mt-2">
+              Visítanos en Nuestras Instalaciones
+            </h2>
+            <p class="text-sm sm:text-base text-slate-600 mt-2">
+              Ubicación privilegiada con consultorios de diseño, salas de espera confortables y la mejor tecnología médica.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100">
+              <span class="material-symbols-outlined text-brand-600 text-[22px] mb-2 block">pin_drop</span>
+              <h4 class="font-display font-bold text-slate-900 text-sm">Dirección</h4>
+              <p class="text-xs text-slate-600 mt-1">Av. del Libertador 4850, Piso 3<br>Belgrano / Palermo, CABA</p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100">
+              <span class="material-symbols-outlined text-brand-600 text-[22px] mb-2 block">local_parking</span>
+              <h4 class="font-display font-bold text-slate-900 text-sm">Estacionamiento</h4>
+              <p class="text-xs text-slate-600 mt-1">Cochera exclusiva sin cargo en Av. Libertador 4820 (Valet).</p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100">
+              <span class="material-symbols-outlined text-brand-600 text-[22px] mb-2 block">schedule</span>
+              <h4 class="font-display font-bold text-slate-900 text-sm">Horarios</h4>
+              <p class="text-xs text-slate-600 mt-1">Lun a Vie: 09:00 a 20:00 hs<br>Sábados: 09:00 a 14:00 hs</p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-emerald-50 border border-emerald-100">
+              <span class="material-symbols-outlined text-medical-emerald text-[22px] mb-2 block">emergency</span>
+              <h4 class="font-display font-bold text-emerald-950 text-sm">Línea de Urgencias</h4>
+              <p class="text-xs text-emerald-800 font-semibold mt-1">Guardia activa 24 hs para dolores o traumatismos.</p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Visual Map Card Column -->
+        <div class="lg:col-span-6">
+          <div class="bg-slate-900 p-3 rounded-3xl shadow-xl border border-slate-800">
+            <div class="w-full h-80 rounded-2xl overflow-hidden relative">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.502930263659!2d-58.4358826!3d-34.5661601!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb5b4e3933c97%3A0x7d022b72dfc9aa2c!2sAv.%20del%20Libertador%204850%2C%20CABA!5e0!3m2!1ses-419!2sar!4v1700000000000!5m2!1ses-419!2sar" 
+                class="w-full h-full border-0 rounded-2xl" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Ubicación OdontoStudio Belgrano">
+              </iframe>
+            </div>
+            <div class="p-3 flex items-center justify-between text-xs text-slate-400">
+              <span class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-[16px] text-brand-500">directions</span>
+                A 300m de Barrancas de Belgrano
+              </span>
+              <a href="https://maps.google.com/?q=Av.+del+Libertador+4850,+CABA" target="_blank" rel="noopener noreferrer" class="text-brand-400 hover:text-white font-bold flex items-center gap-1 transition-colors">
+                <span>Cómo llegar</span>
+                <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-10 border-b border-slate-800">
+        
+        <!-- Col 1: Brand -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-600 to-cyan-400 flex items-center justify-center text-white">
+              <span class="material-symbols-outlined text-[20px]">dentistry</span>
+            </div>
+            <span class="font-display font-extrabold text-xl text-white">
+              Odonto<span class="text-brand-500">Studio</span>
+            </span>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Centro de estética dental y rehabilitación de alta complejidad. Fusión de tecnología digital, precisión médica y confort odontológico de excelencia.
+          </p>
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-[11px] text-brand-400 font-semibold">
+            <span class="material-symbols-outlined text-[14px] text-medical-mint">verified</span>
+            Certificación Digital 3D
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div>
+          <h4 class="font-display font-bold text-white text-sm mb-4">Tratamientos</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#tratamientos" class="hover:text-brand-400 transition-colors">Implantes Dentales Guiados</a></li>
+            <li><a href="#tratamientos" class="hover:text-brand-400 transition-colors">Ortodoncia Invisible</a></li>
+            <li><a href="#tratamientos" class="hover:text-brand-400 transition-colors">Diseño de Sonrisa &amp; Carillas</a></li>
+            <li><a href="#tratamientos" class="hover:text-brand-400 transition-colors">Blanqueamiento Clínico Láser</a></li>
+            <li><a href="#contacto" class="hover:text-brand-400 transition-colors">Guardia de Urgencias 24/7</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Hours -->
+        <div>
+          <h4 class="font-display font-bold text-white text-sm mb-4">Horarios de Atención</h4>
+          <ul class="space-y-2 text-xs">
+            <li class="flex justify-between">
+              <span>Lunes a Viernes:</span>
+              <span class="font-semibold text-white">09:00 - 20:00</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Sábados:</span>
+              <span class="font-semibold text-white">09:00 - 14:00</span>
+            </li>
+            <li class="flex justify-between text-medical-mint font-semibold pt-1 border-t border-slate-800/80">
+              <span>Guardia Odontológica:</span>
+              <span>24 hs / 365 días</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact info -->
+        <div>
+          <h4 class="font-display font-bold text-white text-sm mb-4">Contacto Directo</h4>
+          <div class="space-y-2.5 text-xs">
+            <p class="flex items-start gap-2">
+              <span class="material-symbols-outlined text-[16px] text-brand-500 mt-0.5">location_on</span>
+              <span>Av. del Libertador 4850, Piso 3, Belgrano, CABA</span>
+            </p>
+            <p class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-[16px] text-brand-500">call</span>
+              <span>+54 9 11 2345-6789</span>
+            </p>
+            <p class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-[16px] text-brand-500">mail</span>
+              <span>contacto@odontostudio.com.ar</span>
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
+        <div>
+          © 2026 OdontoStudio. Todos los derechos reservados. Matrícula Nacional N° 45.291.
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="#" class="hover:text-slate-300 transition-colors">Términos de Atención</a>
+          <span>&bull;</span>
+          <a href="#" class="hover:text-slate-300 transition-colors">Política de Privacidad</a>
+          <span>&bull;</span>
+          <span class="text-slate-400">Desarrollado por <strong class="text-white">Aura Web</strong></span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP BUTTON (HIGH MOBILE CONVERSION) -->
+  <a href="https://wa.me/5491123456789?text=Hola%20OdontoStudio%2C%20quisiera%20solicitar%20un%20turno%20de%20consulta" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-3.5 sm:p-4 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 flex items-center justify-center group" aria-label="Contactar por WhatsApp">
+    <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
+      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.086s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.164.577 4.195 1.585 5.952l-1.685 6.16 6.331-1.661c1.701.928 3.654 1.459 5.769 1.459 6.627 0 12-5.373 12-12 0-6.627-5.373-12-12-12z"/>
+    </svg>
+    <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-300 ease-in-out font-display font-bold text-xs pl-0 group-hover:pl-2">
+      Turno WhatsApp
+    </span>
+  </a>
+
+  <!-- SCRIPTS -->
+  <script>
+    // 1. Mobile Menu Toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const icon = document.getElementById('menuIcon');
+      menu.classList.toggle('hidden');
+      if (menu.classList.contains('hidden')) {
+        icon.textContent = 'menu';
+      } else {
+        icon.textContent = 'close';
+      }
+    }
+    document.getElementById('mobileMenuBtn').addEventListener('click', toggleMobileMenu);
+
+    // 2. Interactive Before/After Smile Slider
+    const sliderContainer = document.getElementById('sliderContainer');
+    const beforeClip = document.getElementById('beforeClip');
+    const sliderDivider = document.getElementById('sliderDivider');
+    let isDragging = false;
+
+    function updateSlider(xPosition) {
+      const rect = sliderContainer.getBoundingClientRect();
+      let pos = (xPosition - rect.left) / rect.width;
+      if (pos < 0.05) pos = 0.05;
+      if (pos > 0.95) pos = 0.95;
+      const percentage = pos * 100;
+      beforeClip.style.width = percentage + '%';
+      sliderDivider.style.left = percentage + '%';
+    }
+
+    // Mouse Events
+    sliderContainer.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      updateSlider(e.clientX);
+    });
+    window.addEventListener('mouseup', () => { isDragging = false; });
+    window.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      updateSlider(e.clientX);
+    });
+
+    // Touch Events for Mobile
+    sliderContainer.addEventListener('touchstart', (e) => {
+      isDragging = true;
+      updateSlider(e.touches[0].clientX);
+    }, { passive: true });
+    window.addEventListener('touchend', () => { isDragging = false; });
+    window.addEventListener('touchmove', (e) => {
+      if (!isDragging) return;
+      updateSlider(e.touches[0].clientX);
+    }, { passive: true });
+
+    // 3. WhatsApp Form Handler
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('fullName').value.trim();
+      const phone = document.getElementById('whatsappNumber').value.trim();
+      const treatment = document.getElementById('treatmentSelect').value;
+      const timePref = document.querySelector('input[name="timePreference"]:checked') ? document.querySelector('input[name="timePreference"]:checked').value : 'Sin preferencia';
+
+      const messageText = `Hola OdontoStudio! 👋 Quisiera solicitar una consulta diagnóstica:\n\n` +
+                          `👤 *Nombre:* ${name}\n` +
+                          `📱 *WhatsApp:* ${phone}\n` +
+                          `🩺 *Tratamiento:* ${treatment}\n` +
+                          `⏰ *Horario sugerido:* ${timePref}\n\n` +
+                          `Aguardo su confirmación de disponibilidad. Muchas gracias!`;
+
+      const encodedMessage = encodeURIComponent(messageText);
+      const whatsappUrl = `https://wa.me/5491123456789?text=${encodedMessage}`;
+      
+      window.open(whatsappUrl, '_blank');
+    }
+  </script>
+</body>
+</html>
