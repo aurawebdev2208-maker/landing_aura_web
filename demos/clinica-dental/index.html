@@ -1,983 +1,1089 @@
-<!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OdontoStudio | Clínica Boutique de Odontología & Estética Dental en Belgrano</title>
-  <meta name="description" content="Centro boutique de estética dental, carillas cerámicas, ortodoncia invisible e implantes 3D en Belgrano. Atención 1 a 1 en suites privadas sin dolor.">
-  
-  <!-- Open Graph / Meta -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="OdontoStudio | Clínica Boutique de Estética Dental">
-  <meta property="og:description" content="Odontología de autor en Belgrano. Suites privadas, tecnología digital 3D y atención libre de dolor.">
-  
-  <!-- Google Fonts: Playfair Display (Luxury Editorial Serif) + Plus Jakarta Sans & Inter -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-  
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            luxury: {
-              gold: '#C5A880',
-              goldHover: '#B39369',
-              goldLight: '#F7F3EE',
-              charcoal: '#1A1F2C',
-              dark: '#0E131F',
-              cream: '#FAFAF7',
-              border: '#E8E4DD',
-              sage: '#3B6E59',
-              sageLight: '#EBF4F0'
-            }
-          },
-          fontFamily: {
-            serif: ['Cormorant Garamond', 'serif'],
-            sans: ['Plus Jakarta Sans', 'sans-serif'],
-            body: ['Inter', 'sans-serif']
-          }
-        }
-      }
-    }
-  </script>
-  
-  <style>
-    /* Slider Controls */
-    .slider-range::-webkit-slider-thumb {
-      appearance: none;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      cursor: ew-resize;
-      background: transparent;
-    }
-    .slider-range::-moz-range-thumb {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      cursor: ew-resize;
-      background: transparent;
-      border: none;
-    }
-    /* Smooth Details */
-    details summary::-webkit-details-marker {
-      display: none;
-    }
-  </style>
-</head>
-<body class="bg-luxury-cream text-luxury-charcoal font-body antialiased selection:bg-luxury-gold selection:text-white">
+<!DOCTYPE html><html class="light scroll-smooth" lang="es"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
 
-  <!-- TOP CLINICAL & EMERGENCY CONCIERGE BAR -->
-  <aside class="bg-luxury-dark text-stone-300 text-xs py-2.5 px-4 sm:px-8 border-b border-white/5 relative z-50">
-    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
-      <div class="flex items-center gap-2">
-        <span class="inline-flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        <span class="tracking-wide text-stone-200">
-          <strong>Guardia Odontológica Activa 24hs</strong> &bull; Sede Belgrano (Av. Libertador 4850)
-        </span>
-      </div>
-      <div class="flex items-center gap-5 text-stone-300">
-        <a href="tel:+5491123456789" class="hover:text-luxury-gold transition-colors hidden sm:flex items-center gap-1.5">
-          <span class="material-symbols-outlined text-[15px] text-luxury-gold">call</span>
-          <span>+54 9 11 2345-6789</span>
-        </a>
-        <a href="https://wa.me/5491123456789?text=Hola%20OdontoStudio%2C%20quisiera%20solicitar%20un%20turno%20diagn%C3%B3stico" target="_blank" rel="noopener noreferrer" class="text-luxury-gold hover:text-white font-medium transition-colors flex items-center gap-1">
-          <span class="material-symbols-outlined text-[15px]">chat</span>
-          <span>WhatsApp Recepción VIP</span>
-        </a>
-      </div>
-    </div>
-  </aside>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"tertiary-container":"#00b17b","secondary-fixed":"#dae2fd","error-container":"#ffdad6","tertiary-fixed":"#6ffbbe","on-surface":"#0b1c30","surface-variant":"#d3e4fe","primary-fixed-dim":"#89ceff","error":"#ba1a1a","on-tertiary-container":"#003b26","inverse-on-surface":"#eaf1ff","secondary-container":"#dae2fd","outline":"#6e7881","on-primary-fixed-variant":"#004c6e","surface-container-lowest":"#ffffff","outline-variant":"#bec8d2","on-error":"#ffffff","on-tertiary-fixed":"#002113","surface":"#f8f9ff","surface-tint":"#006591","on-surface-variant":"#3e4850","on-secondary-fixed-variant":"#3f465c","surface-bright":"#f8f9ff","primary-fixed":"#c9e6ff","on-primary-fixed":"#001e2f","on-secondary":"#ffffff","on-secondary-fixed":"#131b2e","on-primary-container":"#003751","primary-container":"#0ea5e9","on-tertiary-fixed-variant":"#005236","surface-container-low":"#eff4ff","inverse-surface":"#213145","surface-container-high":"#dce9ff","on-tertiary":"#ffffff","background":"#f8f9ff","surface-dim":"#cbdbf5","tertiary":"#006c49","surface-container":"#e5eeff","inverse-primary":"#89ceff","on-secondary-container":"#5c647a","on-background":"#0b1c30","secondary":"#565e74","on-error-container":"#93000a","surface-container-highest":"#d3e4fe","secondary-fixed-dim":"#bec6e0","tertiary-fixed-dim":"#4edea3","on-primary":"#ffffff","primary":"#006591"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-xs":"0.25rem","space-lg":"1.5rem","gutter":"1.5rem","gutter-mobile":"1rem","space-sm":"0.5rem","margin":"3rem","space-md":"1rem","margin-mobile":"1.25rem","space-xl":"2.5rem"},fontFamily:{"headline-lg-mobile":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"display-hero":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"body-sm":["Inter"],"headline-sm":["Plus Jakarta Sans"],"label-caps":["Plus Jakarta Sans"],"display-hero-mobile":["Plus Jakarta Sans"],"body-md":["Inter"],"body-lg":["Inter"],"label-md":["Plus Jakarta Sans"]},fontSize:{"headline-lg-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"700"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"600"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"display-hero":["56px",{"lineHeight":"64px","letterSpacing":"-0.03em","fontWeight":"700"}],"headline-lg":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-sm":["13px",{"lineHeight":"20px","letterSpacing":"0.005em","fontWeight":"400"}],"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"label-caps":["11px",{"lineHeight":"16px","letterSpacing":"0.08em","fontWeight":"700"}],"display-hero-mobile":["36px",{"lineHeight":"44px","letterSpacing":"-0.025em","fontWeight":"700"}],"body-md":["15px",{"lineHeight":"24px","letterSpacing":"0em","fontWeight":"400"}],"body-lg":["18px",{"lineHeight":"28px","letterSpacing":"-0.005em","fontWeight":"400"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"600"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 w-full z-50 shadow-[0_4px_20px_-2px_rgba(15,23,42,0.04)]"><div class="bg-surface-container-high/90 backdrop-blur-md px-gutter-mobile lg:px-margin text-on-surface"><div class="max-w-[1280px] mx-auto h-10 flex items-center justify-between text-body-sm"><div class="flex items-center gap-space-sm"><span class="flex h-2 w-2 rounded-full bg-tertiary-container animate-pulse"></span><span class="font-label-md text-on-surface flex items-center gap-space-xs"><span class="material-symbols-outlined text-[16px] text-tertiary">emergency</span>Urgencias Odontológicas 24/7 disponible</span></div><div class="flex items-center gap-space-md"><a class="flex items-center gap-space-xs font-label-md text-primary hover:text-on-surface transition-colors" href="https://wa.me/5491123456789" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-[16px] text-tertiary-container">chat</span><span class="">WhatsApp: +54 9 11 2345-6789</span></a></div></div></div><div class="bg-surface-container-lowest/85 backdrop-blur-xl"><div class="max-w-[1280px] mx-auto h-20 px-gutter-mobile lg:px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md flex-shrink-0"><a href="#" class="flex items-center transition-opacity hover:opacity-90"><img src="https://lh3.googleusercontent.com/aida/AEtjO1XudFTRdeI_5hYVeUqB0-MEsSA_ac97WQqTcc3243jb6tcqvBs6DqiftAjYI9IkANIM-_ejda5LB45SbUV1ShU1LFaUYbcZz3Cd_EUTTuteh4u2N76fzqd7eMIVodfe7rXkxhzn5oHZiC4nvTSIFjvlyPXHSuTtd91PR50T3KhVNy78j0BWXAGMvKzPuvl8-DvboVRZVkqbs70UCHq7OcFRrFblwu_LOSGgqSmrgq5Kzs2pOj0vNjnojKRf" alt="OdontoStudio Logo" class="h-11 w-auto object-contain"></a></div><nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-primary font-bold"><a aria-current="page" class="transition-colors text-primary font-bold" data-path="tratamientos" href="#">Tratamientos</a><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="casos-clinicos" href="#">Casos Clínicos</a><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="especialistas" href="#">Especialistas</a><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="ubicacion" href="#">Ubicación</a></nav><div class="flex items-center gap-space-md"><a class="hidden sm:inline-flex items-center gap-space-xs px-space-md py-space-sm bg-primary-container text-on-primary rounded-full font-label-lg text-label-lg shadow-[0px_8px_24px_-4px_rgba(14,165,233,0.35)] hover:brightness-105 hover:-translate-y-0.5 transition-all" href="https://wa.me/5491123456789" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-[20px] text-on-primary">phone_in_talk</span><span class="">Agendar Turno WhatsApp</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-[120px] bg-background min-h-screen"><div class="flex flex-col w-full overflow-hidden">
 
-  <!-- MAIN LUXURY NAVIGATION -->
-  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-luxury-border shadow-[0_2px_20px_rgba(0,0,0,0.03)] transition-all">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 sm:h-24 flex items-center justify-between">
-      
-      <!-- Brand Monogram & Name -->
-      <a href="#" class="flex items-center gap-3.5 group">
-        <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-luxury-dark border border-luxury-gold/40 flex items-center justify-center text-luxury-gold shadow-sm group-hover:border-luxury-gold transition-colors">
-          <span class="font-serif italic font-bold text-xl tracking-wider text-luxury-gold">O</span>
-        </div>
-        <div class="flex flex-col">
-          <span class="font-serif font-bold text-2xl sm:text-3xl tracking-wide text-luxury-dark leading-none">
-            ODONTO<span class="font-serif italic text-luxury-gold font-normal">STUDIO</span>
-          </span>
-          <span class="text-[9px] sm:text-[10px] uppercase font-sans tracking-[0.25em] text-stone-500 font-semibold mt-1">
-            Estética Dental &bull; Belgrano
-          </span>
-        </div>
-      </a>
+<!-- HERO SECTION -->
 
-      <!-- Desktop Links -->
-      <nav class="hidden lg:flex items-center gap-8 text-xs uppercase tracking-widest font-sans font-semibold text-stone-600">
-        <a href="#experiencia" class="hover:text-luxury-gold transition-colors">La Experiencia</a>
-        <a href="#tratamientos" class="hover:text-luxury-gold transition-colors">Especialidades</a>
-        <a href="#antes-despues" class="hover:text-luxury-gold transition-colors text-luxury-gold font-bold">Casos Clínicos</a>
-        <a href="#especialistas" class="hover:text-luxury-gold transition-colors">Especialistas</a>
-        <a href="#ubicacion" class="hover:text-luxury-gold transition-colors">Ubicación</a>
-      </nav>
+<section class="relative w-full px-gutter-mobile lg:px-margin pt-space-md lg:pt-space-xl pb-space-xl">
 
-      <!-- Action Button -->
-      <div class="flex items-center gap-3">
-        <a href="#contacto" class="hidden sm:inline-flex items-center gap-2 px-6 py-3 rounded-full bg-luxury-dark text-white hover:bg-luxury-gold transition-all duration-300 font-sans font-bold text-xs uppercase tracking-widest shadow-md">
-          <span>Agendar Consulta</span>
-          <span class="material-symbols-outlined text-[16px] text-luxury-gold group-hover:text-white">arrow_forward</span>
-        </a>
-        
-        <!-- Mobile Toggle -->
-        <button id="mobileMenuBtn" aria-label="Abrir Menú" class="lg:hidden p-2 rounded-lg text-luxury-dark hover:bg-stone-100 transition-colors">
-          <span class="material-symbols-outlined text-[28px]" id="menuIcon">menu</span>
-        </button>
-      </div>
+<div class="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-space-lg lg:gap-space-xl items-center">
 
-    </div>
+<!-- Left Content Column -->
 
-    <!-- Mobile Drawer -->
-    <div id="mobileMenu" class="hidden lg:hidden bg-white border-b border-luxury-border px-6 py-6 shadow-xl">
-      <nav class="flex flex-col gap-4 text-sm font-sans uppercase tracking-wider font-semibold text-stone-700">
-        <a href="#experiencia" onclick="toggleMobileMenu()" class="hover:text-luxury-gold py-1">La Experiencia</a>
-        <a href="#tratamientos" onclick="toggleMobileMenu()" class="hover:text-luxury-gold py-1">Especialidades</a>
-        <a href="#antes-despues" onclick="toggleMobileMenu()" class="hover:text-luxury-gold py-1 text-luxury-gold font-bold">Casos Clínicos (Antes y Después)</a>
-        <a href="#especialistas" onclick="toggleMobileMenu()" class="hover:text-luxury-gold py-1">Especialistas</a>
-        <a href="#contacto" onclick="toggleMobileMenu()" class="hover:text-luxury-gold py-1">Ubicación &amp; Citas</a>
-      </nav>
-      <div class="mt-6 pt-5 border-t border-stone-200">
-        <a href="#contacto" onclick="toggleMobileMenu()" class="w-full block text-center py-3.5 rounded-full bg-luxury-dark text-white font-sans font-bold text-xs uppercase tracking-widest">
-          Reservar Cita por WhatsApp
-        </a>
-      </div>
-    </div>
-  </header>
+<div class="lg:col-span-6 flex flex-col gap-space-md z-10">
 
-  <!-- BESPOKE LUXURY HERO SECTION (DISTINCT FROM SAAS BENTO GRID) -->
-  <section class="relative pt-10 pb-16 sm:pt-16 sm:pb-24 overflow-hidden bg-gradient-to-b from-white via-luxury-cream to-stone-100/50">
-    
-    <!-- Elegant Ambient Backdrop -->
-    <div class="absolute top-0 right-1/4 w-[600px] h-[600px] bg-amber-100/30 rounded-full blur-3xl pointer-events-none -z-10"></div>
-    <div class="absolute bottom-10 left-10 w-96 h-96 bg-luxury-goldLight rounded-full blur-2xl pointer-events-none -z-10"></div>
+<!-- Pill Badge -->
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
-        
-        <!-- Left Column: Editorial & Personalized Care Presentation -->
-        <div class="lg:col-span-7 space-y-7">
-          
-          <!-- Category Monogram Strip -->
-          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-luxury-goldLight border border-luxury-gold/30 text-stone-800 text-xs font-sans tracking-wide">
-            <span class="w-1.5 h-1.5 rounded-full bg-luxury-gold"></span>
-            <span class="uppercase tracking-widest text-[11px] font-bold text-stone-700">Clínica Boutique &bull; Sede Belgrano</span>
-          </div>
+<div class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container-low text-primary w-fit shadow-sm">
 
-          <!-- Main Editorial Headline -->
-          <h1 class="font-serif text-4xl sm:text-6xl lg:text-[64px] font-bold text-luxury-dark leading-[1.08] tracking-tight">
-            El arte de crear una sonrisa <span class="italic font-normal text-luxury-gold">natural, saludable</span> y perdurable.
-          </h1>
+<span class="text-tertiary text-base leading-none">✨</span>
 
-          <!-- Subheadline -->
-          <p class="text-base sm:text-lg text-stone-600 leading-relaxed font-body max-w-2xl">
-            Diseño de sonrisa de alta complejidad, carillas cerámicas ultradelgadas y ortodoncia invisible. Tratamientos mínimamente invasivos y <strong>100% libres de dolor</strong> en suites privadas individuales.
-          </p>
+<span class="font-label-md text-label-md font-semibold text-primary">Atención Odontológica Personalizada &amp; Sin Dolor</span>
 
-          <!-- Interactive Treatment Selector (High Clinical Value) -->
-          <div class="p-5 rounded-2xl bg-white border border-luxury-border shadow-sm space-y-3">
-            <span class="block text-xs uppercase font-sans tracking-widest text-stone-500 font-bold">
-              ¿Qué tratamiento estás buscando?
-            </span>
-            <div class="flex flex-wrap gap-2" id="treatmentSelector">
-              <button type="button" onclick="selectQuickTreatment(this, 'Carillas Cerámicas & Diseño de Sonrisa')" class="quick-pill active px-3.5 py-2 rounded-xl text-xs font-sans font-semibold border border-luxury-gold bg-luxury-dark text-white transition-all">
-                ✨ Carillas &amp; Estética
-              </button>
-              <button type="button" onclick="selectQuickTreatment(this, 'Ortodoncia Invisible (Alineadores 3D)')" class="quick-pill px-3.5 py-2 rounded-xl text-xs font-sans font-semibold border border-stone-200 bg-stone-50 text-stone-700 hover:border-luxury-gold transition-all">
-                💎 Ortodoncia Invisible
-              </button>
-              <button type="button" onclick="selectQuickTreatment(this, 'Implantes Guiados & Carga en 1 Día')" class="quick-pill px-3.5 py-2 rounded-xl text-xs font-sans font-semibold border border-stone-200 bg-stone-50 text-stone-700 hover:border-luxury-gold transition-all">
-                🦷 Implantes en 1 Día
-              </button>
-              <button type="button" onclick="selectQuickTreatment(this, 'Blanqueamiento Clínico Láser')" class="quick-pill px-3.5 py-2 rounded-xl text-xs font-sans font-semibold border border-stone-200 bg-stone-50 text-stone-700 hover:border-luxury-gold transition-all">
-                ⚡ Blanqueamiento Láser
-              </button>
-            </div>
-            <p id="treatmentHint" class="text-xs text-stone-500 italic pt-1">
-              Seleccionado: <strong>Carillas Cerámicas</strong> &bull; Diseño digital DSD sin desgaste del esmalte sano.
-            </p>
-          </div>
+</div>
 
-          <!-- CTAs -->
-          <div class="flex flex-wrap items-center gap-4 pt-1">
-            <a href="#contacto" id="heroBookingCta" class="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-luxury-dark text-white hover:bg-luxury-gold transition-all duration-300 font-sans font-bold text-xs uppercase tracking-widest shadow-xl">
-              <span class="material-symbols-outlined text-[18px] text-luxury-gold">calendar_today</span>
-              <span>Solicitar Primera Consulta</span>
-            </a>
-            <a href="#antes-despues" class="inline-flex items-center gap-2 px-6 py-4 rounded-full bg-white border border-stone-300 text-stone-800 hover:bg-stone-50 transition-all font-sans font-semibold text-xs uppercase tracking-wider">
-              <span>Ver Casos Antes &amp; Después</span>
-              <span class="material-symbols-outlined text-[18px]">expand_more</span>
-            </a>
-          </div>
+<!-- Main Headline -->
 
-          <!-- Medical Directors Badge -->
-          <div class="pt-4 border-t border-luxury-border flex items-center gap-4 text-xs text-stone-600">
-            <div class="flex -space-x-2">
-              <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=120&q=80" alt="Dra. Valeria Rossi" class="w-10 h-10 rounded-full object-cover border-2 border-white shadow-sm">
-              <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=120&q=80" alt="Dr. Martín Silva" class="w-10 h-10 rounded-full object-cover border-2 border-white shadow-sm">
-            </div>
-            <div>
-              <p class="font-bold text-luxury-dark">Dirección Médica Universitaria</p>
-              <p class="text-stone-500">Dr. Martín Silva &bull; Dra. Valeria Rossi (Especialistas UBA &bull; M.N. 45.291)</p>
-            </div>
-          </div>
+<h1 class="font-headline-lg lg:font-display-hero text-headline-lg lg:text-display-hero text-on-surface tracking-tight leading-[1.1]">
 
-        </div>
+          Tu Sonrisa Ideal con la <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-container">Tecnología Dental</span> Más Avanzada
 
-        <!-- Right Column: Editorial Visual Centerpiece (NOT A SAAS BENTO GRID) -->
-        <div class="lg:col-span-5 relative">
-          
-          <!-- Outer Portrait Frame -->
-          <div class="relative mx-auto max-w-md lg:max-w-none">
-            
-            <!-- Main Editorial Image -->
-            <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-stone-100 aspect-[3/4] relative group">
-              <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=900&q=80" alt="Sonrisa Natural OdontoStudio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-              
-              <!-- Subtle Luxury Vignette -->
-              <div class="absolute inset-0 bg-gradient-to-t from-luxury-dark/70 via-transparent to-transparent"></div>
-              
-              <!-- Bottom Editorial Caption -->
-              <div class="absolute bottom-6 left-6 right-6 text-white space-y-1">
-                <span class="text-[10px] uppercase font-sans font-bold tracking-widest text-luxury-gold">Caso Real en Clínica</span>
-                <p class="font-serif italic text-xl sm:text-2xl leading-tight">
-                  "El cambio de mi sonrisa transformó mi seguridad por completo."
-                </p>
-                <p class="text-[11px] text-stone-300 font-sans pt-1">
-                  Rehabilitación Estética DSD &bull; Paciente de Sede Belgrano
-                </p>
-              </div>
-            </div>
+        </h1>
 
-            <!-- Floating VIP Concierge Badge -->
-            <div class="absolute -bottom-6 -left-4 sm:-left-6 z-20 bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-xl border border-luxury-border max-w-[270px]">
-              <div class="flex items-center gap-2 text-amber-500 mb-1">
-                <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
-                <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
-                <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
-                <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
-                <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
-              </div>
-              <p class="text-xs font-bold text-luxury-dark">4.9 / 5 en Google Reviews</p>
-              <p class="text-[11px] text-stone-500 leading-snug mt-0.5">
-                Más de 280 pacientes atendidos este año con garantía escrita.
-              </p>
-            </div>
+<!-- Subheadline -->
 
-            <!-- Floating Availability Chip -->
-            <div class="absolute -top-4 -right-4 sm:-right-6 z-20 bg-luxury-dark text-white rounded-2xl py-3 px-4 shadow-xl border border-luxury-gold/40 flex items-center gap-3">
-              <div class="w-3 h-3 rounded-full bg-emerald-400 animate-ping"></div>
-              <div>
-                <p class="text-[10px] uppercase tracking-wider text-luxury-gold font-bold">Turnos Esta Semana</p>
-                <p class="text-xs font-semibold text-stone-200">Jueves 16:00 | Viernes 11:30</p>
-              </div>
-            </div>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl leading-relaxed">
 
-          </div>
+          Especialistas en implantes, ortodoncia invisible y diseño de sonrisa. Diagnóstico integral con tecnología 3D y atención sin dolor.
 
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- LA EXPERIENCIA BOUTIQUE (POR QUÉ SOMOS DIFERENTES) -->
-  <section class="py-16 sm:py-24 bg-white border-y border-luxury-border" id="experiencia">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-2xl mx-auto mb-16">
-        <span class="text-xs uppercase font-sans font-bold tracking-[0.25em] text-luxury-gold">LA FILOSOFÍA ODONTOSTUDIO</span>
-        <h2 class="font-serif font-bold text-3xl sm:text-5xl text-luxury-dark mt-2">
-          La odontología que mereces: <br><span class="italic font-normal text-stone-500">cero estrés, máxima delicadeza.</span>
-        </h2>
-        <p class="text-stone-600 font-body text-sm sm:text-base mt-4">
-          Diseñamos cada espacio para que tu visita sea un momento de bienestar y tranquilidad.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        
-        <!-- Pillar 1 -->
-        <div class="p-7 rounded-3xl bg-luxury-cream border border-luxury-border hover:border-luxury-gold transition-all duration-300">
-          <div class="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center text-luxury-dark mb-5 border border-stone-200">
-            <span class="material-symbols-outlined text-[24px]">meeting_room</span>
-          </div>
-          <h3 class="font-serif font-bold text-xl text-luxury-dark">Suites Privadas 1 a 1</h3>
-          <p class="text-xs sm:text-sm text-stone-600 mt-2.5 leading-relaxed">
-            Atención personalizada a puertas cerradas. Cada paciente dispone de su suite individual sin ruidos de turbinas ni esperas compartidas.
-          </p>
-        </div>
-
-        <!-- Pillar 2 -->
-        <div class="p-7 rounded-3xl bg-luxury-cream border border-luxury-border hover:border-luxury-gold transition-all duration-300">
-          <div class="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center text-luxury-dark mb-5 border border-stone-200">
-            <span class="material-symbols-outlined text-[24px]">spa</span>
-          </div>
-          <h3 class="font-serif font-bold text-xl text-luxury-dark">Anestesia Sin Dolor</h3>
-          <p class="text-xs sm:text-sm text-stone-600 mt-2.5 leading-relaxed">
-            Sistema digital computarizado que adormece con precisión microscópica sin el clásico dolor de aguja ni adormecimiento facial molesto.
-          </p>
-        </div>
-
-        <!-- Pillar 3 -->
-        <div class="p-7 rounded-3xl bg-luxury-cream border border-luxury-border hover:border-luxury-gold transition-all duration-300">
-          <div class="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center text-luxury-dark mb-5 border border-stone-200">
-            <span class="material-symbols-outlined text-[24px]">view_in_ar</span>
-          </div>
-          <h3 class="font-serif font-bold text-xl text-luxury-dark">Escáner 3D Sin Pastas</h3>
-          <p class="text-xs sm:text-sm text-stone-600 mt-2.5 leading-relaxed">
-            Olvídate de las arcadas y los moldes tradicionales. Digitalizamos tu sonrisa en 3 minutos con una cámara intraoral de alta definición.
-          </p>
-        </div>
-
-        <!-- Pillar 4 -->
-        <div class="p-7 rounded-3xl bg-luxury-cream border border-luxury-border hover:border-luxury-gold transition-all duration-300">
-          <div class="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center text-luxury-dark mb-5 border border-stone-200">
-            <span class="material-symbols-outlined text-[24px]">local_parking</span>
-          </div>
-          <h3 class="font-serif font-bold text-xl text-luxury-dark">Valet Parking Exclusivo</h3>
-          <p class="text-xs sm:text-sm text-stone-600 mt-2.5 leading-relaxed">
-            Cochera de cortesía sin cargo para nuestros pacientes en Av. Libertador 4820. Llegar y atenderse sin vueltas ni preocupaciones.
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- INTERACTIVE BEFORE & AFTER SLIDER (CASOS CLÍNICOS REALES - 100% FUNCIONAL Y FLUIDO) -->
-  <section class="py-16 sm:py-24 bg-luxury-dark text-white relative overflow-hidden" id="antes-despues">
-    
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      
-      <div class="text-center max-w-2xl mx-auto mb-10">
-        <span class="text-xs uppercase font-sans font-bold tracking-[0.25em] text-luxury-gold">CASOS CLÍNICOS DOCUMENTADOS</span>
-        <h2 class="font-serif font-bold text-3xl sm:text-5xl text-white mt-2">
-          Transformaciones Reales de Sonrisa
-        </h2>
-        <p class="text-stone-400 font-body text-sm sm:text-base mt-3">
-          Desliza la barra interactiva para comparar el estado inicial con el resultado final logrado en nuestra clínica.
-        </p>
-      </div>
-
-      <!-- Case Selector Tabs -->
-      <div class="flex flex-wrap items-center justify-center gap-2 mb-8">
-        <button type="button" onclick="changeClinicalCase('carillas')" id="btnCaseCarillas" class="case-btn active px-4 py-2 rounded-full text-xs font-sans font-bold uppercase tracking-wider bg-luxury-gold text-luxury-dark transition-all">
-          Caso 1: Carillas Cerámicas
-        </button>
-        <button type="button" onclick="changeClinicalCase('blanqueamiento')" id="btnCaseBlanqueamiento" class="case-btn px-4 py-2 rounded-full text-xs font-sans font-bold uppercase tracking-wider bg-white/10 text-stone-300 hover:bg-white/20 transition-all">
-          Caso 2: Blanqueamiento Láser 6 Tonos
-        </button>
-        <button type="button" onclick="changeClinicalCase('ortodoncia')" id="btnCaseOrtodoncia" class="case-btn px-4 py-2 rounded-full text-xs font-sans font-bold uppercase tracking-wider bg-white/10 text-stone-300 hover:bg-white/20 transition-all">
-          Caso 3: Ortodoncia Invisible
-        </button>
-      </div>
-
-      <!-- Main Slider Wrapper -->
-      <div class="max-w-3xl mx-auto bg-stone-900 rounded-3xl p-4 sm:p-7 shadow-2xl border border-white/10">
-        
-        <!-- Case Meta Header -->
-        <div class="flex flex-wrap items-center justify-between gap-2 pb-4 mb-4 border-b border-white/10 text-xs">
-          <div class="flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-luxury-gold"></span>
-            <span class="font-bold text-stone-200" id="caseTitle">Caso: Microcarillas de Porcelana E-Max (6 Dientes Superiores)</span>
-          </div>
-          <span class="text-stone-400 font-sans" id="caseDuration">Tratamiento: 2 Sesiones (10 Días)</span>
-        </div>
-
-        <!-- The Slider Screen (Rock-Solid CSS Clip & Native Slider Overlay) -->
-        <div class="relative w-full aspect-[16/10] sm:aspect-[16/9] rounded-2xl overflow-hidden select-none bg-stone-950 border border-white/10" id="sliderBox">
-          
-          <!-- AFTER Image (Clean Transformed Smile) -->
-          <img id="imgAfter" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=80" alt="Resultado Final Después" class="absolute inset-0 w-full h-full object-cover">
-          
-          <!-- AFTER Badge -->
-          <div class="absolute bottom-4 right-4 z-10 bg-luxury-dark/90 backdrop-blur-md text-white text-[11px] font-sans font-bold px-3.5 py-1.5 rounded-full border border-luxury-gold/50 shadow-lg pointer-events-none">
-            DESPUÉS &bull; Tono BL1 (Resultado)
-          </div>
-
-          <!-- BEFORE Layer (Same image with calibrated clinical enamel staining / pre-treatment shade) -->
-          <div id="beforeLayer" class="absolute inset-0 w-full h-full overflow-hidden" style="width: 50%;">
-            <img id="imgBefore" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=80" alt="Estado Inicial Antes" class="absolute inset-0 w-full h-full object-cover max-w-none" style="filter: sepia(0.40) saturate(1.4) brightness(0.84) contrast(1.10);">
-            
-            <!-- BEFORE Badge -->
-            <div class="absolute bottom-4 left-4 z-10 bg-luxury-dark/90 backdrop-blur-md text-stone-200 text-[11px] font-sans font-bold px-3.5 py-1.5 rounded-full border border-white/20 shadow-lg pointer-events-none">
-              ANTES &bull; Tono A3.5 (Diagnóstico)
-            </div>
-          </div>
-
-          <!-- Divider Bar with Handle -->
-          <div id="dividerBar" class="absolute top-0 bottom-0 w-1 bg-white shadow-[0_0_15px_rgba(0,0,0,0.8)] z-20 pointer-events-none" style="left: 50%;">
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-11 h-11 bg-white rounded-full shadow-2xl flex items-center justify-center border-2 border-luxury-gold text-luxury-dark">
-              <span class="material-symbols-outlined text-[20px]">swap_horiz</span>
-            </div>
-          </div>
-
-          <!-- Native Touch & Mouse Range Slider (100% Smooth on Desktop & Mobile) -->
-          <input type="range" min="0" max="100" value="50" class="slider-range absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-30 m-0 p-0" id="interactiveRange" aria-label="Deslizar comparación antes y después">
-        </div>
-
-        <!-- Slider Interaction Hint -->
-        <p class="text-center text-xs text-stone-400 mt-4 flex items-center justify-center gap-2">
-          <span class="material-symbols-outlined text-[16px] text-luxury-gold">swipe</span>
-          <span>Desliza con el dedo o mouse sobre la imagen para revelar la transformación</span>
         </p>
 
-      </div>
+<!-- Dual CTAs -->
 
-    </div>
-  </section>
+<div class="flex flex-wrap items-center gap-space-md pt-space-xs">
 
-  <!-- STAR TREATMENTS (ESPECIALIDADES DE AUTOR) -->
-  <section class="py-16 sm:py-24 bg-white" id="tratamientos">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
-        <div class="max-w-xl">
-          <span class="text-xs uppercase font-sans font-bold tracking-[0.25em] text-luxury-gold">TRATAMIENTOS DE VANGUARDIA</span>
-          <h2 class="font-serif font-bold text-3xl sm:text-5xl text-luxury-dark mt-2">
-            Especialidades Clínicas
-          </h2>
-          <p class="text-stone-600 font-body text-sm sm:text-base mt-3">
-            Tratamientos biológicamente respetuosos enfocados en la preservación del esmalte natural y la armonía facial.
-          </p>
-        </div>
-        <a href="#contacto" class="text-xs uppercase tracking-widest font-sans font-bold text-luxury-gold hover:text-luxury-dark transition-colors flex items-center gap-1.5">
-          <span>Consultar por un plan personalizado</span>
-          <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-        </a>
-      </div>
+<a class="inline-flex items-center justify-center gap-space-xs px-space-lg py-space-sm bg-primary-container text-on-primary rounded-full font-label-lg text-label-lg shadow-[0px_8px_24px_-4px_rgba(14,165,233,0.35)] hover:brightness-105 hover:-translate-y-0.5 transition-all" href="https://wa.me/5491123456789?text=Hola%2C%20quisiera%20solicitar%20un%20turno%20diagn%C3%B3stico" rel="noopener noreferrer" target="_blank">
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        
-        <!-- Treatment 1 -->
-        <div class="rounded-3xl p-8 bg-luxury-cream border border-luxury-border hover:border-luxury-gold transition-all duration-300 flex flex-col justify-between group">
-          <div>
-            <div class="flex items-center justify-between mb-6">
-              <span class="text-[10px] uppercase font-sans font-bold tracking-widest px-3 py-1 rounded-full bg-white text-stone-700 border border-stone-200">
-                Estética Biomimética
+<span class="">Solicitar Turno por WhatsApp</span>
+
+<span class="material-symbols-outlined text-[20px]">chat</span>
+
+</a>
+
+<a class="inline-flex items-center justify-center gap-space-xs px-space-lg py-space-sm bg-surface-container-lowest text-on-surface rounded-full font-label-lg text-label-lg shadow-sm hover:bg-surface-container-low transition-all" href="#tratamientos">
+
+<span class="">Ver Tratamientos</span>
+
+<span class="material-symbols-outlined text-[18px] text-primary">arrow_downward</span>
+
+</a>
+
+</div>
+
+<!-- Trust Marker Pill Strip -->
+
+<div class="pt-space-sm flex flex-wrap items-center gap-space-md text-on-surface-variant font-label-md text-label-md">
+
+<div class="flex items-center gap-1.5">
+
+<span class="material-symbols-outlined text-tertiary-container text-[18px]">verified</span>
+
+<span class="text-on-surface font-medium">Diagnóstico Digital en la 1° Consulta</span>
+
+</div>
+
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+
+<div class="flex items-center gap-1.5">
+
+<span class="material-symbols-outlined text-primary text-[18px]">workspace_premium</span>
+
+<span class="">Garantía Médica Escrita</span>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Right Visual Container (Bento Mosaic) -->
+
+<div class="lg:col-span-6 relative mt-space-md lg:mt-0">
+
+<!-- Glow Backdrops -->
+
+<div class="absolute -top-10 -right-10 w-72 h-72 bg-primary-fixed-dim/30 rounded-full blur-3xl pointer-events-none"></div>
+
+<div class="absolute -bottom-10 -left-10 w-64 h-64 bg-tertiary-fixed-dim/20 rounded-full blur-2xl pointer-events-none"></div>
+
+<div class="relative grid grid-cols-12 gap-space-sm sm:gap-space-md">
+
+<!-- Clinic Interior Main Image -->
+
+<div class="col-span-8 rounded-2xl overflow-hidden shadow-xl bg-surface-container-lowest aspect-[4/3] relative group">
+
+<img alt="Instalaciones OdontoStudio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8dL1FB92d-8R0JXc0ZZ7arzPB7Q6MWk2iXOgpAadTZM9NFDq2HwdnNGFvJ96lnB1zObnc703Uu396thq6_-25IOJIwgvyKvvZ581G9JNba-us3TAS9OB_zSfarM6T9lMMT046dR2JXljvGUN6ViYXMqOHy1-KMUG6emt91ez6QVA1vKnoR1yAvWs7ExOBTer4NSGddjYyhBGTWhqs-tWCyDBWk7Vs0_qXgW4A9e_bX4ZcRABJghY3QA">
+
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/40 via-transparent to-transparent"></div>
+
+<div class="absolute bottom-3 left-3 right-3 text-white px-space-xs">
+
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded-md bg-on-surface/60 backdrop-blur-md font-label-caps text-label-caps tracking-wider text-surface">
+
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>
+
+                SUITE CLÍNICA DIGITAL
+
               </span>
-              <div class="w-10 h-10 rounded-xl bg-white border border-stone-200 text-luxury-gold flex items-center justify-center group-hover:bg-luxury-dark group-hover:text-white transition-colors">
-                <span class="material-symbols-outlined text-[20px]">flare</span>
-              </div>
-            </div>
-            <h3 class="font-serif font-bold text-2xl text-luxury-dark group-hover:text-luxury-gold transition-colors">
-              Carillas de Porcelana &amp; DSD
-            </h3>
-            <p class="text-xs sm:text-sm text-stone-600 mt-3 leading-relaxed">
-              Diseño de sonrisa digital individualizado para corregir forma, manchas y desalineaciones con láminas cerámicas de 0.3 mm.
-            </p>
-            <ul class="mt-6 space-y-2.5 text-xs text-stone-600 pt-5 border-t border-luxury-border">
-              <li class="flex items-center gap-2">
-                <span class="material-symbols-outlined text-[16px] text-emerald-600">check</span>
-                <span>Sin desgaste invasivo del diente sano.</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="material-symbols-outlined text-[16px] text-emerald-600">check</span>
-                <span>Prueba estética previa antes de cementar.</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="material-symbols-outlined text-[16px] text-emerald-600">check</span>
-                <span>Cerámica vitrificada inmune a manchas.</span>
-              </li>
-            </ul>
-          </div>
-          <a href="#contacto" class="mt-8 pt-4 border-t border-luxury-border text-xs font-sans font-bold uppercase tracking-wider text-luxury-dark hover:text-luxury-gold flex items-center justify-between">
-            <span>Pedir Valoración</span>
-            <span class="material-symbols-outlined text-[16px]">chevron_right</span>
-          </a>
-        </div>
 
-        <!-- Treatment 2 -->
-        <div class="rounded-3xl p-8 bg-luxury-cream border border-luxury-border hover:border-luxury-gold transition-all duration-300 flex flex-col justify-between group">
-          <div>
-            <div class="flex items-center justify-between mb-6">
-              <span class="text-[10px] uppercase font-sans font-bold tracking-widest px-3 py-1 rounded-full bg-white text-stone-700 border border-stone-200">
-                Ortodoncia Digital
-              </span>
-              <div class="w-10 h-10 rounded-xl bg-white border border-stone-200 text-luxury-gold flex items-center justify-center group-hover:bg-luxury-dark group-hover:text-white transition-colors">
-                <span class="material-symbols-outlined text-[20px]">auto_awesome</span>
-              </div>
-            </div>
-            <h3 class="font-serif font-bold text-2xl text-luxury-dark group-hover:text-luxury-gold transition-colors">
-              Alineadores Invisibles
-            </h3>
-            <p class="text-xs sm:text-sm text-stone-600 mt-3 leading-relaxed">
-              Corrige la mordida y alineación sin brackets metálicos ni heridas. Placas transparentes y removibles para comer con libertad.
-            </p>
-            <ul class="mt-6 space-y-2.5 text-xs text-stone-600 pt-5 border-t border-luxury-border">
-              <li class="flex items-center gap-2">
-                <span class="material-symbols-outlined text-[16px] text-emerald-600">check</span>
-                <span>Planificación 3D semana por semana.</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="material-symbols-outlined text-[16px] text-emerald-600">check</span>
-                <span>100% imperceptibles a la vista.</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="material-symbols-outlined text-[16px] text-emerald-600">check</span>
-                <span>Menor frecuencia de citas de ajuste.</span>
-              </li>
-            </ul>
-          </div>
-          <a href="#contacto" class="mt-8 pt-4 border-t border-luxury-border text-xs font-sans font-bold uppercase tracking-wider text-luxury-dark hover:text-luxury-gold flex items-center justify-between">
-            <span>Pedir Valoración</span>
-            <span class="material-symbols-outlined text-[16px]">chevron_right</span>
-          </a>
-        </div>
+</div>
 
-        <!-- Treatment 3 -->
-        <div class="rounded-3xl p-8 bg-luxury-cream border border-luxury-border hover:border-luxury-gold transition-all duration-300 flex flex-col justify-between group">
-          <div>
-            <div class="flex items-center justify-between mb-6">
-              <span class="text-[10px] uppercase font-sans font-bold tracking-widest px-3 py-1 rounded-full bg-white text-stone-700 border border-stone-200">
-                Cirugía Guiada 3D
-              </span>
-              <div class="w-10 h-10 rounded-xl bg-white border border-stone-200 text-luxury-gold flex items-center justify-center group-hover:bg-luxury-dark group-hover:text-white transition-colors">
-                <span class="material-symbols-outlined text-[20px]">dentistry</span>
-              </div>
-            </div>
-            <h3 class="font-serif font-bold text-2xl text-luxury-dark group-hover:text-luxury-gold transition-colors">
-              Implantes &amp; Carga en 1 Día
-            </h3>
-            <p class="text-xs sm:text-sm text-stone-600 mt-3 leading-relaxed">
-              Recupera piezas ausentes con implantes de titanio grado médico colocados por navegación quirúrgica por computadora.
-            </p>
-            <ul class="mt-6 space-y-2.5 text-xs text-stone-600 pt-5 border-t border-luxury-border">
-              <li class="flex items-center gap-2">
-                <span class="material-symbols-outlined text-[16px] text-emerald-600">check</span>
-                <span>Diente fijo provisional en la misma sesión.</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="material-symbols-outlined text-[16px] text-emerald-600">check</span>
-                <span>Sin cortes traumáticos ni puntos extensos.</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="material-symbols-outlined text-[16px] text-emerald-600">check</span>
-                <span>Garantía de osteointegración de por vida.</span>
-              </li>
-            </ul>
-          </div>
-          <a href="#contacto" class="mt-8 pt-4 border-t border-luxury-border text-xs font-sans font-bold uppercase tracking-wider text-luxury-dark hover:text-luxury-gold flex items-center justify-between">
-            <span>Pedir Valoración</span>
-            <span class="material-symbols-outlined text-[16px]">chevron_right</span>
-          </a>
-        </div>
+</div>
 
-      </div>
+<!-- Patient Smile Card -->
 
-    </div>
-  </section>
+<div class="col-span-4 rounded-2xl overflow-hidden shadow-xl bg-surface-container-lowest aspect-square sm:aspect-[3/4] relative group">
 
-  <!-- EL EQUIPO MÉDICO (CREDIBILIDAD Y CERCANÍA) -->
-  <section class="py-16 sm:py-24 bg-luxury-cream border-t border-luxury-border" id="especialistas">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-2xl mx-auto mb-16">
-        <span class="text-xs uppercase font-sans font-bold tracking-[0.25em] text-luxury-gold">DIRECCIÓN MÉDICA</span>
-        <h2 class="font-serif font-bold text-3xl sm:text-5xl text-luxury-dark mt-2">
-          Profesionales Dedicados a Tu Sonrisa
-        </h2>
-        <p class="text-stone-600 font-body text-sm sm:text-base mt-3">
-          Cada tratamiento es planificado y ejecutado de principio a fin por odontólogos de posgrado.
+<img alt="Sonrisa OdontoStudio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASC5SwRImO8NBf-oZazsSdaaSRMhbedkK2mA1ow_MqXtx79AxHRkkBiNJZkfp-k_qmspd4dBfvnX-FXCVxJV3Z1Eo_DIIeq8q9ki_jWg9FGv8gWbJjuv0fVfcD1dtc1qJm5oo-sE3BQxUATJm-gV7tyK40zlfhVP41U3y74LFgv3rsg0JiMZm2vBmSOmVcMoP0CYkGND39XSCwjfJDxV9Xp96UXSW5USOXEGr1EtwyTyJxSOLSVTkbjw">
+
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/50 via-transparent to-transparent"></div>
+
+<div class="absolute bottom-2.5 left-2.5 right-2.5 text-white">
+
+<p class="font-label-caps text-label-caps text-primary-fixed uppercase tracking-wider">Resultados Reales</p>
+
+<p class="font-headline-sm text-sm sm:text-base leading-tight font-bold text-surface">Diseño DSD</p>
+
+</div>
+
+</div>
+
+<!-- Floating Badge 1: Google Reviews -->
+
+<div class="col-span-7 -mt-6 sm:-mt-8 z-20 bg-surface-container-lowest/90 backdrop-blur-xl rounded-xl p-space-sm sm:p-space-md shadow-xl flex items-center gap-space-sm">
+
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center flex-shrink-0 text-primary">
+
+<span class="material-symbols-outlined text-[22px]">star</span>
+
+</div>
+
+<div class="min-w-0">
+
+<div class="flex items-center gap-0.5 text-amber-500">
+
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+
+</div>
+
+<p class="font-label-md text-label-md text-on-surface font-semibold truncate">4.9/5 en Google</p>
+
+<p class="font-body-sm text-[11px] leading-tight text-on-surface-variant truncate">280+ Pacientes Satisfechos</p>
+
+</div>
+
+</div>
+
+<!-- Floating Badge 2: 3D Scanner -->
+
+<div class="col-span-5 -mt-6 sm:-mt-8 z-20 bg-surface-container-lowest/90 backdrop-blur-xl rounded-xl p-space-sm sm:p-space-md shadow-xl flex items-center gap-space-xs sm:gap-space-sm">
+
+<div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-surface-container-high flex items-center justify-center flex-shrink-0 text-primary-container">
+
+<span class="material-symbols-outlined text-[20px]">view_in_ar</span>
+
+</div>
+
+<div class="min-w-0">
+
+<p class="font-label-md text-label-md text-on-surface font-bold truncate">Escáner 3D</p>
+
+<p class="font-body-sm text-[11px] leading-tight text-tertiary font-medium truncate">Láser Indoloro</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- TRUST & HYGIENE BADGES STRIP -->
+
+<section class="w-full bg-surface-container-lowest py-space-lg shadow-sm">
+
+<div class="max-w-[1280px] mx-auto px-gutter-mobile lg:px-margin">
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+
+<!-- Badge 1 -->
+
+<div class="flex items-start gap-space-sm p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors">
+
+<div class="w-11 h-11 rounded-lg bg-surface-container-lowest shadow-sm flex items-center justify-center flex-shrink-0 text-primary">
+
+<span class="material-symbols-outlined text-[24px]">medical_services</span>
+
+</div>
+
+<div>
+
+<h4 class="font-label-lg text-label-lg font-bold text-on-surface">Tecnología Sin Dolor</h4>
+
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Anestesia computarizada y procedimientos mínimamente invasivos.</p>
+
+</div>
+
+</div>
+
+<!-- Badge 2 -->
+
+<div class="flex items-start gap-space-sm p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors">
+
+<div class="w-11 h-11 rounded-lg bg-surface-container-lowest shadow-sm flex items-center justify-center flex-shrink-0 text-tertiary">
+
+<span class="material-symbols-outlined text-[24px]">school</span>
+
+</div>
+
+<div>
+
+<h4 class="font-label-lg text-label-lg font-bold text-on-surface">Especialistas Matriculados</h4>
+
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Equipo odontológico de posgrado en constante formación científica.</p>
+
+</div>
+
+</div>
+
+<!-- Badge 3 -->
+
+<div class="flex items-start gap-space-sm p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors">
+
+<div class="w-11 h-11 rounded-lg bg-surface-container-lowest shadow-sm flex items-center justify-center flex-shrink-0 text-primary">
+
+<span class="material-symbols-outlined text-[24px]">local_parking</span>
+
+</div>
+
+<div>
+
+<h4 class="font-label-lg text-label-lg font-bold text-on-surface">Ubicación Céntrica</h4>
+
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Fácil acceso en Belgrano con estacionamiento exclusivo gratuito.</p>
+
+</div>
+
+</div>
+
+<!-- Badge 4 -->
+
+<div class="flex items-start gap-space-sm p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors">
+
+<div class="w-11 h-11 rounded-lg bg-surface-container-lowest shadow-sm flex items-center justify-center flex-shrink-0 text-tertiary">
+
+<span class="material-symbols-outlined text-[24px]">credit_card</span>
+
+</div>
+
+<div>
+
+<h4 class="font-label-lg text-label-lg font-bold text-on-surface">Obras Sociales &amp; Planes</h4>
+
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Financiación en cuotas sin interés y gestión ágil de reintegros.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- STAR TREATMENTS GRID -->
+
+<section class="w-full px-gutter-mobile lg:px-margin py-space-xl" id="tratamientos">
+
+<div class="max-w-[1280px] mx-auto flex flex-col gap-space-lg">
+
+<!-- Section Header -->
+
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm">
+
+<div>
+
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-primary font-bold">NUESTRAS ESPECIALIDADES</span>
+
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-1">Tratamientos Odontológicos de Vanguardia</h2>
+
+</div>
+
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+
+          Combinamos micro-odontología, materiales biocompatibles y software 3D para preservar tu biología natural.
+
         </p>
-      </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        
-        <!-- Specialist 1 -->
-        <div class="bg-white rounded-3xl p-7 border border-luxury-border shadow-sm flex flex-col sm:flex-row items-center gap-6">
-          <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=400&q=80" alt="Dr. Martín Silva" class="w-32 h-32 rounded-2xl object-cover shadow-md flex-shrink-0">
-          <div>
-            <span class="text-[10px] uppercase font-sans font-bold tracking-widest text-luxury-gold">Director Clínico</span>
-            <h3 class="font-serif font-bold text-2xl text-luxury-dark mt-0.5">Dr. Martín Silva</h3>
-            <p class="text-xs text-stone-500 font-sans font-semibold">M.N. 45.291 &bull; Odontólogo (UBA)</p>
-            <p class="text-xs text-stone-600 mt-2.5 leading-relaxed">
-              Especialista en Rehabilitación Oral de Alta Complejidad e Implantología Guiada por Computadora. Miembro de la Asociación Odontológica Argentina (AOA).
+</div>
+
+<!-- Bento Cards Grid -->
+
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-md">
+
+<!-- Treatment Card 1: Implantes -->
+
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary-fixed-dim/15 rounded-full blur-2xl pointer-events-none"></div>
+
+<div class="flex flex-col gap-space-md">
+
+<div class="flex items-center justify-between">
+
+<span class="inline-flex items-center gap-1 px-space-sm py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-md text-label-md font-bold">
+
+                Cirugía Digital Guiada
+
+              </span>
+
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+
+<span class="material-symbols-outlined text-[20px]">dentistry</span>
+
+</div>
+
+</div>
+
+<div>
+
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors">Implantes Dentales &amp; Prótesis Fijas</h3>
+
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 font-medium">Recupera la funcionalidad y estética en 1 solo día.</p>
+
+</div>
+
+<ul class="flex flex-col gap-2.5 pt-space-xs font-body-sm text-body-sm text-on-surface-variant">
+
+<li class="flex items-start gap-2">
+
+<span class="material-symbols-outlined text-[18px] text-tertiary flex-shrink-0 mt-0.5">check_circle</span>
+
+<span class="">Cirugía guiada 3D por computadora sin incisiones extensas.</span>
+
+</li>
+
+<li class="flex items-start gap-2">
+
+<span class="material-symbols-outlined text-[18px] text-tertiary flex-shrink-0 mt-0.5">check_circle</span>
+
+<span class="">Carga inmediata sin dolor con dientes fijos provisionales.</span>
+
+</li>
+
+<li class="flex items-start gap-2">
+
+<span class="material-symbols-outlined text-[18px] text-tertiary flex-shrink-0 mt-0.5">check_circle</span>
+
+<span class="">Garantía de osteointegración de titanio de por vida.</span>
+
+</li>
+
+</ul>
+
+</div>
+
+<div class="pt-space-lg mt-space-md border-t-0 bg-surface-container-low -mx-space-lg -mb-space-lg p-space-md flex items-center justify-between">
+
+<span class="font-label-md text-label-md font-semibold text-primary">Diagnóstico Tomográfico Incluido</span>
+
+<a class="inline-flex items-center gap-1 font-label-md text-label-md font-bold text-on-surface hover:text-primary transition-colors" href="#contacto">
+
+<span class="">Saber más</span>
+
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+
+</a>
+
+</div>
+
+</div>
+
+<!-- Treatment Card 2: Ortodoncia Invisible -->
+
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+
+<div class="absolute top-0 right-0 w-32 h-32 bg-tertiary-fixed-dim/20 rounded-full blur-2xl pointer-events-none"></div>
+
+<div class="flex flex-col gap-space-md">
+
+<div class="flex items-center justify-between">
+
+<span class="inline-flex items-center gap-1 px-space-sm py-1 rounded-full bg-surface-container-high text-primary font-label-md text-label-md font-bold">
+
+                Alineadores Certificados
+
+              </span>
+
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+
+<span class="material-symbols-outlined text-[20px]">auto_awesome</span>
+
+</div>
+
+</div>
+
+<div>
+
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors">Ortodoncia Invisible (Alineadores)</h3>
+
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 font-medium">Corrige tu sonrisa de forma cómoda y sin brackets metálicos.</p>
+
+</div>
+
+<ul class="flex flex-col gap-2.5 pt-space-xs font-body-sm text-body-sm text-on-surface-variant">
+
+<li class="flex items-start gap-2">
+
+<span class="material-symbols-outlined text-[18px] text-tertiary flex-shrink-0 mt-0.5">check_circle</span>
+
+<span class="">Alineadores 100% transparentes, confortables y removibles.</span>
+
+</li>
+
+<li class="flex items-start gap-2">
+
+<span class="material-symbols-outlined text-[18px] text-tertiary flex-shrink-0 mt-0.5">check_circle</span>
+
+<span class="">Planificación virtual de resultados semana a semana.</span>
+
+</li>
+
+<li class="flex items-start gap-2">
+
+<span class="material-symbols-outlined text-[18px] text-tertiary flex-shrink-0 mt-0.5">check_circle</span>
+
+<span class="">Visitas de control reducidas y sin urgencias de alambres.</span>
+
+</li>
+
+</ul>
+
+</div>
+
+<div class="pt-space-lg mt-space-md border-t-0 bg-surface-container-low -mx-space-lg -mb-space-lg p-space-md flex items-center justify-between">
+
+<span class="font-label-md text-label-md font-semibold text-tertiary">Simulación 3D Inmediata</span>
+
+<a class="inline-flex items-center gap-1 font-label-md text-label-md font-bold text-on-surface hover:text-primary transition-colors" href="#contacto">
+
+<span class="">Ver simulación</span>
+
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+
+</a>
+
+</div>
+
+</div>
+
+<!-- Treatment Card 3: Estética & Blanqueamiento -->
+
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary-fixed/30 rounded-full blur-2xl pointer-events-none"></div>
+
+<div class="flex flex-col gap-space-md">
+
+<div class="flex items-center justify-between">
+
+<span class="inline-flex items-center gap-1 px-space-sm py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-md text-label-md font-bold">
+
+                Diseño de Sonrisa
+
+              </span>
+
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+
+<span class="material-symbols-outlined text-[20px]">flare</span>
+
+</div>
+
+</div>
+
+<div>
+
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors">Estética Dental &amp; Blanqueamiento</h3>
+
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 font-medium">Carillas de porcelana, blanqueamiento láser y micro-diseño.</p>
+
+</div>
+
+<ul class="flex flex-col gap-2.5 pt-space-xs font-body-sm text-body-sm text-on-surface-variant">
+
+<li class="flex items-start gap-2">
+
+<span class="material-symbols-outlined text-[18px] text-tertiary flex-shrink-0 mt-0.5">check_circle</span>
+
+<span class="">Diseño digital de sonrisa (DSD) adaptado a tus rasgos.</span>
+
+</li>
+
+<li class="flex items-start gap-2">
+
+<span class="material-symbols-outlined text-[18px] text-tertiary flex-shrink-0 mt-0.5">check_circle</span>
+
+<span class="">Blanqueamiento LED en 1 sola sesión clínica de 45 min.</span>
+
+</li>
+
+<li class="flex items-start gap-2">
+
+<span class="material-symbols-outlined text-[18px] text-tertiary flex-shrink-0 mt-0.5">check_circle</span>
+
+<span class="">Microabrasión suave sin desgaste del esmalte dental sano.</span>
+
+</li>
+
+</ul>
+
+</div>
+
+<div class="pt-space-lg mt-space-md border-t-0 bg-surface-container-low -mx-space-lg -mb-space-lg p-space-md flex items-center justify-between">
+
+<span class="font-label-md text-label-md font-semibold text-primary">Hasta 6 Tonos Más Claros</span>
+
+<a class="inline-flex items-center gap-1 font-label-md text-label-md font-bold text-on-surface hover:text-primary transition-colors" href="#contacto">
+
+<span class="">Consultar</span>
+
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PATIENT REASSURANCE / STEP BY STEP EXPERIENCE -->
+
+<section class="w-full bg-surface-container-low py-space-xl">
+
+<div class="max-w-[1280px] mx-auto px-gutter-mobile lg:px-margin">
+
+<!-- Section Heading -->
+
+<div class="text-center max-w-2xl mx-auto mb-space-xl">
+
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-primary font-bold">EXPERIENCIA ODONTOSTUDIO</span>
+
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-1">Tu experiencia en OdontoStudio</h2>
+
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">
+
+          Un proceso transparente, cálido y sin estrés desde el primer momento que ingresas a nuestra clínica.
+
+        </p>
+
+</div>
+
+<!-- Step Cards -->
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg relative">
+
+<!-- Step 1 -->
+
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm flex flex-col justify-between relative">
+
+<div>
+
+<div class="flex items-center justify-between mb-space-md">
+
+<span class="w-10 h-10 rounded-full bg-primary-fixed text-primary font-bold font-label-lg flex items-center justify-center">01</span>
+
+<span class="px-space-sm py-1 rounded-full bg-surface-container text-primary font-label-md text-label-md font-bold">100% Digital</span>
+
+</div>
+
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Paso 1: Consulta &amp; Escaneo 3D</h3>
+
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-sm leading-relaxed">
+
+              Evaluamos tu salud bucal integral con escáner intraoral 3D de alta definición, sin moldes incómodos ni pastas desagradables.
+
             </p>
-          </div>
-        </div>
 
-        <!-- Specialist 2 -->
-        <div class="bg-white rounded-3xl p-7 border border-luxury-border shadow-sm flex flex-col sm:flex-row items-center gap-6">
-          <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=400&q=80" alt="Dra. Valeria Rossi" class="w-32 h-32 rounded-2xl object-cover shadow-md flex-shrink-0">
-          <div>
-            <span class="text-[10px] uppercase font-sans font-bold tracking-widest text-luxury-gold">Directora de Estética</span>
-            <h3 class="font-serif font-bold text-2xl text-luxury-dark mt-0.5">Dra. Valeria Rossi</h3>
-            <p class="text-xs text-stone-500 font-sans font-semibold">M.N. 52.810 &bull; Odontóloga (UBA)</p>
-            <p class="text-xs text-stone-600 mt-2.5 leading-relaxed">
-              Especialista en Diseño Digital de Sonrisa (DSD), Carillas Cerámicas y Ortodoncia Invisible certificada. Posgrado en Odontología Estética Mínimamente Invasiva.
-            </p>
-          </div>
-        </div>
+</div>
 
-      </div>
+<div class="mt-space-md pt-space-sm flex items-center gap-2 text-primary font-label-md text-label-md">
 
-    </div>
-  </section>
+<span class="material-symbols-outlined text-[18px]">document_scanner</span>
 
-  <!-- FORMULARIO CONCIERGE A WHATSAPP -->
-  <section class="py-16 sm:py-24 bg-white border-t border-luxury-border" id="contacto">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="max-w-5xl mx-auto bg-luxury-dark text-white rounded-3xl shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 border border-luxury-gold/30">
-        
-        <!-- Left Concierge Column -->
-        <div class="lg:col-span-5 p-8 sm:p-12 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-white/10 bg-gradient-to-br from-luxury-dark via-stone-900 to-luxury-dark">
-          <div>
-            <span class="text-[10px] uppercase font-sans font-bold tracking-[0.25em] text-luxury-gold">ATENCIÓN PERSONALIZADA</span>
-            <h2 class="font-serif font-bold text-3xl sm:text-4xl text-white mt-2 leading-tight">
-              Coordina tu Primera Cita Diagnóstica
-            </h2>
-            <p class="text-xs sm:text-sm text-stone-300 mt-3 leading-relaxed">
-              Completa tus datos para coordinar día y horario directamente con nuestra secretaría médica por WhatsApp.
-            </p>
-          </div>
+<span class="">Digitalización en 5 minutos</span>
 
-          <div class="space-y-4 pt-8 border-t border-white/10 text-xs text-stone-300">
-            <div class="flex items-center gap-3">
-              <span class="material-symbols-outlined text-[20px] text-luxury-gold">verified</span>
-              <span>Escaneo 3D y evaluación integral incluida</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="material-symbols-outlined text-[20px] text-luxury-gold">lock</span>
-              <span>Privacidad absoluta y reserva de suite médica</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="material-symbols-outlined text-[20px] text-luxury-gold">local_parking</span>
-              <span>Cochera de cortesía en Av. Libertador 4820</span>
-            </div>
-          </div>
-        </div>
+</div>
 
-        <!-- Right Form Column -->
-        <div class="lg:col-span-7 p-8 sm:p-12 bg-stone-900/90">
-          <form id="appointmentForm" onsubmit="handleFormSubmit(event)" class="space-y-5">
-            
-            <div>
-              <label for="fullName" class="block text-xs uppercase font-sans font-bold tracking-wider text-stone-300 mb-2">
-                Nombre y Apellido *
-              </label>
-              <input type="text" id="fullName" required placeholder="Ej: Carolina Méndez" class="w-full px-4 py-3.5 rounded-xl bg-stone-800 border border-stone-700 text-white placeholder-stone-500 text-sm focus:outline-none focus:border-luxury-gold transition-colors">
-            </div>
+</div>
 
-            <div>
-              <label for="whatsappNumber" class="block text-xs uppercase font-sans font-bold tracking-wider text-stone-300 mb-2">
-                Teléfono / WhatsApp *
-              </label>
-              <input type="tel" id="whatsappNumber" required placeholder="Ej: +54 9 11 2345-6789" class="w-full px-4 py-3.5 rounded-xl bg-stone-800 border border-stone-700 text-white placeholder-stone-500 text-sm focus:outline-none focus:border-luxury-gold transition-colors">
-            </div>
+<!-- Step 2 -->
 
-            <div>
-              <label for="treatmentSelect" class="block text-xs uppercase font-sans font-bold tracking-wider text-stone-300 mb-2">
-                Tratamiento de Interés *
-              </label>
-              <select id="treatmentSelect" required class="w-full px-4 py-3.5 rounded-xl bg-stone-800 border border-stone-700 text-white text-sm focus:outline-none focus:border-luxury-gold transition-colors cursor-pointer">
-                <option value="" disabled selected>Selecciona tu objetivo...</option>
-                <option value="Carillas de Porcelana & Diseño de Sonrisa">Carillas de Porcelana &amp; Diseño de Sonrisa</option>
-                <option value="Ortodoncia Invisible (Alineadores 3D)">Ortodoncia Invisible (Alineadores)</option>
-                <option value="Implantes Guiados & Carga en 1 Día">Implantes Dentales &amp; Dientes en 1 Día</option>
-                <option value="Blanqueamiento Clínico Láser">Blanqueamiento Clínico Láser</option>
-                <option value="Limpieza Profunda & Control Preventivo">Limpieza Profunda &amp; Control Preventivo</option>
-                <option value="Urgencia / Dolor Agudo">Guardia Odontológica / Urgencia</option>
-              </select>
-            </div>
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm flex flex-col justify-between relative">
 
-            <div>
-              <label class="block text-xs uppercase font-sans font-bold tracking-wider text-stone-300 mb-2">
-                Preferencia de Horario
-              </label>
-              <div class="grid grid-cols-2 gap-3">
-                <label class="cursor-pointer">
-                  <input type="radio" name="timePreference" value="Mañana (09:00 a 14:00)" checked class="peer sr-only">
-                  <div class="py-2.5 px-3 rounded-xl bg-stone-800 border border-stone-700 text-stone-300 text-xs font-semibold text-center peer-checked:bg-luxury-gold peer-checked:text-luxury-dark peer-checked:border-luxury-gold transition-all">
-                    ☀️ Mañana (09 a 14 hs)
-                  </div>
-                </label>
-                <label class="cursor-pointer">
-                  <input type="radio" name="timePreference" value="Tarde (14:00 a 20:00)" class="peer sr-only">
-                  <div class="py-2.5 px-3 rounded-xl bg-stone-800 border border-stone-700 text-stone-300 text-xs font-semibold text-center peer-checked:bg-luxury-gold peer-checked:text-luxury-dark peer-checked:border-luxury-gold transition-all">
-                    🌙 Tarde (14 a 20 hs)
-                  </div>
-                </label>
-              </div>
-            </div>
+<div>
 
-            <button type="submit" class="w-full mt-4 py-4 px-6 rounded-full bg-luxury-gold hover:bg-luxury-goldHover text-luxury-dark font-sans font-bold text-xs uppercase tracking-widest shadow-xl transition-all flex items-center justify-center gap-2">
-              <span class="material-symbols-outlined text-[18px]">chat</span>
-              <span>Solicitar Disponibilidad vía WhatsApp</span>
-            </button>
+<div class="flex items-center justify-between mb-space-md">
 
-            <p class="text-center text-[11px] text-stone-400 pt-1">
-              Respuesta personalizada en menos de 15 minutos en días hábiles.
+<span class="w-10 h-10 rounded-full bg-secondary-fixed text-on-secondary-fixed font-bold font-label-lg flex items-center justify-center">02</span>
+
+<span class="px-space-sm py-1 rounded-full bg-surface-container text-tertiary font-label-md text-label-md font-bold">Sin sorpresas</span>
+
+</div>
+
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Paso 2: Plan Personalizado &amp; Presupuesto</h3>
+
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-sm leading-relaxed">
+
+              Te mostramos una simulación de resultados futuros y entregamos un plan claro con opciones de financiación a tu medida.
+
             </p>
 
-          </form>
-        </div>
+</div>
 
-      </div>
+<div class="mt-space-md pt-space-sm flex items-center gap-2 text-tertiary font-label-md text-label-md">
 
-    </div>
-  </section>
+<span class="material-symbols-outlined text-[18px]">finance_chip</span>
 
-  <!-- UBICACIÓN & CONTACTO -->
-  <section class="py-16 sm:py-24 bg-luxury-cream border-t border-luxury-border" id="ubicacion">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        
-        <div class="lg:col-span-6 space-y-6">
-          <div>
-            <span class="text-xs uppercase font-sans font-bold tracking-[0.25em] text-luxury-gold">SEDE BELGRANO</span>
-            <h2 class="font-serif font-bold text-3xl sm:text-5xl text-luxury-dark mt-2">
-              Instalaciones de Primer Nivel
-            </h2>
-            <p class="text-stone-600 font-body text-sm sm:text-base mt-3">
-              Ubicación privilegiada en una de las avenidas más tradicionales y accesibles de Buenos Aires.
+<span class="">Planes de financiación transparentes</span>
+
+</div>
+
+</div>
+
+<!-- Step 3 -->
+
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm flex flex-col justify-between relative">
+
+<div>
+
+<div class="flex items-center justify-between mb-space-md">
+
+<span class="w-10 h-10 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-bold font-label-lg flex items-center justify-center">03</span>
+
+<span class="px-space-sm py-1 rounded-full bg-surface-container text-primary-container font-label-md text-label-md font-bold">Cero dolor</span>
+
+</div>
+
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Paso 3: Tratamiento Confortable</h3>
+
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-sm leading-relaxed">
+
+              Atención con equipamiento ergonómico, técnicas sin dolor y seguimiento continuo con tu odontólogo de cabecera.
+
             </p>
-          </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
-            <div class="p-5 rounded-2xl bg-white border border-luxury-border">
-              <span class="material-symbols-outlined text-luxury-gold text-[22px] mb-2 block">pin_drop</span>
-              <p class="font-bold text-luxury-dark">Dirección Sede</p>
-              <p class="text-stone-500 mt-1">Av. del Libertador 4850, Piso 3, Consultorio A (Belgrano / Palermo, CABA)</p>
-            </div>
-            <div class="p-5 rounded-2xl bg-white border border-luxury-border">
-              <span class="material-symbols-outlined text-luxury-gold text-[22px] mb-2 block">local_parking</span>
-              <p class="font-bold text-luxury-dark">Valet Parking</p>
-              <p class="text-stone-500 mt-1">Av. del Libertador 4820 (Cochera de cortesía incluida para pacientes)</p>
-            </div>
-            <div class="p-5 rounded-2xl bg-white border border-luxury-border">
-              <span class="material-symbols-outlined text-luxury-gold text-[22px] mb-2 block">schedule</span>
-              <p class="font-bold text-luxury-dark">Horarios de Atención</p>
-              <p class="text-stone-500 mt-1">Lunes a Viernes: 09:00 a 20:00 hs<br>Sábados: 09:00 a 14:00 hs</p>
-            </div>
-            <div class="p-5 rounded-2xl bg-white border border-luxury-border">
-              <span class="material-symbols-outlined text-emerald-600 text-[22px] mb-2 block">emergency</span>
-              <p class="font-bold text-luxury-dark">Guardia de Urgencias</p>
-              <p class="text-stone-500 mt-1">Atención activa 24hs los 365 días del año para dolor agudo o traumatismo.</p>
-            </div>
-          </div>
-        </div>
+</div>
 
-        <div class="lg:col-span-6">
-          <div class="bg-white p-3 rounded-3xl shadow-xl border border-luxury-border">
-            <div class="w-full h-80 rounded-2xl overflow-hidden">
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.502930263659!2d-58.4358826!3d-34.5661601!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb5b4e3933c97%3A0x7d022b72dfc9aa2c!2sAv.%20del%20Libertador%204850%2C%20CABA!5e0!3m2!1ses-419!2sar!4v1700000000000!5m2!1ses-419!2sar" 
-                class="w-full h-full border-0 rounded-2xl" 
-                allowfullscreen="" 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade"
-                title="Ubicación OdontoStudio Belgrano">
-              </iframe>
-            </div>
-          </div>
-        </div>
+<div class="mt-space-md pt-space-sm flex items-center gap-2 text-primary-container font-label-md text-label-md">
 
-      </div>
+<span class="material-symbols-outlined text-[18px]">sentiment_very_satisfied</span>
 
-    </div>
-  </section>
+<span class="">Acompañamiento post-tratamiento</span>
 
-  <!-- LUXURY FOOTER -->
-  <footer class="bg-luxury-dark text-stone-400 py-14 border-t border-white/10 text-xs">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-10 border-b border-white/10">
-        
-        <div class="space-y-3">
-          <span class="font-serif font-bold text-2xl text-white tracking-wider">
-            ODONTO<span class="italic text-luxury-gold">STUDIO</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- INTERACTIVE WHATSAPP APPOINTMENT BOOKING FORM -->
+
+<section class="w-full px-gutter-mobile lg:px-margin py-space-xl relative" id="contacto">
+
+<div class="max-w-[1040px] mx-auto bg-surface-container-lowest rounded-3xl shadow-xl overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+
+<!-- Left Info Column -->
+
+<div class="lg:col-span-5 bg-gradient-to-br from-primary to-on-primary-container text-white p-space-lg lg:p-space-xl flex flex-col justify-between">
+
+<div>
+
+<span class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-white/10 backdrop-blur-md text-white font-label-md text-label-md mb-space-md">
+
+<span class="w-2 h-2 rounded-full bg-tertiary-container animate-ping"></span>
+
+            Recepción Online Inmediata
+
           </span>
-          <p class="text-stone-400 leading-relaxed">
-            Clínica boutique de rehabilitación oral y alta estética dental. Fusión de tecnología digital, precisión médica y hospitalidad de excelencia.
+
+<h2 class="font-headline-lg text-headline-lg text-white font-bold leading-tight">Agenda tu Consulta Diagnóstica</h2>
+
+<p class="font-body-md text-body-md text-surface-variant/90 mt-space-sm leading-relaxed">
+
+            Completa tus datos y nuestro equipo médico te confirmará el turno inmediatamente vía WhatsApp.
+
           </p>
-        </div>
 
-        <div>
-          <h4 class="font-sans font-bold text-white uppercase tracking-wider mb-3">Especialidades</h4>
-          <ul class="space-y-2">
-            <li><a href="#tratamientos" class="hover:text-luxury-gold transition-colors">Carillas Cerámicas E-Max</a></li>
-            <li><a href="#tratamientos" class="hover:text-luxury-gold transition-colors">Ortodoncia Invisible 3D</a></li>
-            <li><a href="#tratamientos" class="hover:text-luxury-gold transition-colors">Implantes Dentales Guiados</a></li>
-            <li><a href="#tratamientos" class="hover:text-luxury-gold transition-colors">Blanqueamiento Clínico Láser</a></li>
-          </ul>
-        </div>
+</div>
 
-        <div>
-          <h4 class="font-sans font-bold text-white uppercase tracking-wider mb-3">Horarios</h4>
-          <ul class="space-y-2">
-            <li class="flex justify-between">
-              <span>Lunes a Viernes:</span>
-              <span class="text-white font-medium">09:00 - 20:00</span>
-            </li>
-            <li class="flex justify-between">
-              <span>Sábados:</span>
-              <span class="text-white font-medium">09:00 - 14:00</span>
-            </li>
-            <li class="flex justify-between text-luxury-gold pt-1 border-t border-white/10">
-              <span>Guardia Odontológica:</span>
-              <span>24 hs / 365 días</span>
-            </li>
-          </ul>
-        </div>
+<div class="flex flex-col gap-space-md mt-space-lg pt-space-md bg-white/5 rounded-2xl p-space-md backdrop-blur-sm">
 
-        <div>
-          <h4 class="font-sans font-bold text-white uppercase tracking-wider mb-3">Contacto Directo</h4>
-          <p class="text-stone-300">Av. del Libertador 4850, Piso 3, Belgrano, CABA</p>
-          <p class="text-stone-300 mt-1">WhatsApp: +54 9 11 2345-6789</p>
-          <p class="text-stone-300 mt-1">recepcion@odontostudio.com.ar</p>
-        </div>
+<div class="flex items-center gap-space-sm">
 
-      </div>
+<span class="material-symbols-outlined text-tertiary-fixed text-[24px]">verified_user</span>
 
-      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-stone-500 text-[11px]">
-        <div>
-          © 2026 OdontoStudio Belgrano. Matrícula Nacional N° 45.291. Todos los derechos reservados.
-        </div>
-        <div class="text-stone-400">
-          Desarrollado con arquitectura moderna por <strong class="text-white">Aura Web</strong>
-        </div>
-      </div>
-    </div>
-  </footer>
+<span class="font-label-md text-label-md text-white font-medium">Diagnóstico 3D y evaluación integral</span>
 
-  <!-- FLOATING CONCIERGE BUTTON -->
-  <a href="https://wa.me/5491123456789?text=Hola%20OdontoStudio%2C%20quisiera%20solicitar%20un%20turno%20diagn%C3%B3stico" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all flex items-center justify-center group" aria-label="Contactar por WhatsApp">
-    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
-      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.086s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.164.577 4.195 1.585 5.952l-1.685 6.16 6.331-1.661c1.701.928 3.654 1.459 5.769 1.459 6.627 0 12-5.373 12-12 0-6.627-5.373-12-12-12z"/>
-    </svg>
-  </a>
+</div>
 
-  <!-- SCRIPTS -->
-  <script>
-    // 1. Mobile Menu Toggle
-    function toggleMobileMenu() {
-      const menu = document.getElementById('mobileMenu');
-      const icon = document.getElementById('menuIcon');
-      menu.classList.toggle('hidden');
-      icon.textContent = menu.classList.contains('hidden') ? 'menu' : 'close';
-    }
-    document.getElementById('mobileMenuBtn').addEventListener('click', toggleMobileMenu);
+<div class="flex items-center gap-space-sm">
 
-    // 2. Interactive Before / After Slider (Native input range for 100% fluid touch & drag)
-    const interactiveRange = document.getElementById('interactiveRange');
-    const beforeLayer = document.getElementById('beforeLayer');
-    const dividerBar = document.getElementById('dividerBar');
+<span class="material-symbols-outlined text-tertiary-fixed text-[24px]">schedule</span>
 
-    interactiveRange.addEventListener('input', (e) => {
-      const val = e.target.value;
-      beforeLayer.style.width = val + '%';
-      dividerBar.style.left = val + '%';
-    });
+<span class="font-label-md text-label-md text-white font-medium">Respuesta promedio en menos de 15 min</span>
 
-    // 3. Clinical Cases Switcher for Slider
-    const clinicalCases = {
-      carillas: {
-        title: 'Caso: Microcarillas de Porcelana E-Max (6 Dientes Superiores)',
-        duration: 'Tratamiento: 2 Sesiones (10 Días)',
-        afterImg: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=80',
-        beforeImg: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=80',
-        beforeFilter: 'sepia(0.40) saturate(1.4) brightness(0.84) contrast(1.10)'
-      },
-      blanqueamiento: {
-        title: 'Caso: Blanqueamiento Clínico Láser (Aclareo de 6 Tonos)',
-        duration: 'Tratamiento: 1 Sesión Clínica (45 Minutos)',
-        afterImg: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=80',
-        beforeImg: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=80',
-        beforeFilter: 'sepia(0.60) saturate(1.6) brightness(0.78) contrast(1.15)'
-      },
-      ortodoncia: {
-        title: 'Caso: Ortodoncia Invisible (Alineación y Cierre de Diastemas)',
-        duration: 'Tratamiento: 8 Meses con Alineadores Removibles',
-        afterImg: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=80',
-        beforeImg: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=80',
-        beforeFilter: 'sepia(0.30) saturate(1.2) brightness(0.90) contrast(1.05)'
-      }
-    };
+</div>
 
-    function changeClinicalCase(caseKey) {
-      const data = clinicalCases[caseKey];
-      if (!data) return;
+<div class="flex items-center gap-space-sm">
 
-      document.getElementById('caseTitle').textContent = data.title;
-      document.getElementById('caseDuration').textContent = data.duration;
-      
-      const imgAfter = document.getElementById('imgAfter');
-      const imgBefore = document.getElementById('imgBefore');
-      
-      imgAfter.src = data.afterImg;
-      imgBefore.src = data.beforeImg;
-      imgBefore.style.filter = data.beforeFilter;
+<span class="material-symbols-outlined text-tertiary-fixed text-[24px]">support_agent</span>
 
-      // Update button styles
-      document.querySelectorAll('.case-btn').forEach(btn => {
-        btn.classList.remove('bg-luxury-gold', 'text-luxury-dark');
-        btn.classList.add('bg-white/10', 'text-stone-300');
-      });
-      const activeBtn = caseKey === 'carillas' ? document.getElementById('btnCaseCarillas') :
-                        caseKey === 'blanqueamiento' ? document.getElementById('btnCaseBlanqueamiento') :
-                        document.getElementById('btnCaseOrtodoncia');
-      activeBtn.classList.remove('bg-white/10', 'text-stone-300');
-      activeBtn.classList.add('bg-luxury-gold', 'text-luxury-dark');
+<span class="font-label-md text-label-md text-white font-medium">Coordinación directa sin intermediarios</span>
 
-      // Reset slider to 50%
-      interactiveRange.value = 50;
-      beforeLayer.style.width = '50%';
-      dividerBar.style.left = '50%';
-    }
+</div>
 
-    // 4. Interactive Quick Treatment Pills in Hero
-    function selectQuickTreatment(element, treatmentName) {
-      document.querySelectorAll('.quick-pill').forEach(pill => {
-        pill.classList.remove('border-luxury-gold', 'bg-luxury-dark', 'text-white');
-        pill.classList.add('border-stone-200', 'bg-stone-50', 'text-stone-700');
-      });
-      element.classList.remove('border-stone-200', 'bg-stone-50', 'text-stone-700');
-      element.classList.add('border-luxury-gold', 'bg-luxury-dark', 'text-white');
+</div>
 
-      const select = document.getElementById('treatmentSelect');
-      for (let i = 0; i < select.options.length; i++) {
-        if (select.options[i].value.includes(treatmentName.split(' ')[0])) {
-          select.selectedIndex = i;
-          break;
-        }
-      }
-      document.getElementById('treatmentHint').innerHTML = `Seleccionado: <strong>${treatmentName}</strong> &bull; Diagnóstico 3D digital en suite privada.`;
-    }
+</div>
 
-    // 5. WhatsApp Form Submission
-    function handleFormSubmit(e) {
-      e.preventDefault();
-      const name = document.getElementById('fullName').value.trim();
-      const phone = document.getElementById('whatsappNumber').value.trim();
-      const treatment = document.getElementById('treatmentSelect').value;
-      const timePref = document.querySelector('input[name="timePreference"]:checked') ? document.querySelector('input[name="timePreference"]:checked').value : 'Sin preferencia';
+<!-- Right Form Column -->
 
-      const messageText = `Hola OdontoStudio! 👋 Quisiera solicitar una consulta diagnóstica personalizada:\n\n` +
-                          `👤 *Nombre:* ${name}\n` +
-                          `📱 *WhatsApp:* ${phone}\n` +
-                          `🩺 *Tratamiento:* ${treatment}\n` +
-                          `⏰ *Horario sugerido:* ${timePref}\n\n` +
-                          `Aguardo su confirmación de disponibilidad para la Sede Belgrano. Muchas gracias!`;
+<div class="lg:col-span-7 p-space-lg lg:p-space-xl bg-surface-container-lowest">
 
-      const encodedMessage = encodeURIComponent(messageText);
-      const whatsappUrl = `https://wa.me/5491123456789?text=${encodedMessage}`;
-      window.open(whatsappUrl, '_blank');
-    }
-  </script>
-</body>
-</html>
+<form class="flex flex-col gap-space-md" id="appointmentForm" onsubmit="handleFormSubmit(event)">
+
+<!-- Name Field -->
+
+<div class="flex flex-col gap-1.5">
+
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="fullName">Nombre y Apellido</label>
+
+<input class="w-full px-space-md py-space-sm rounded-xl bg-surface-container-low text-on-surface font-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary-container transition-all" id="fullName" placeholder="Ej. Carolina Méndez" required="" type="text">
+
+</div>
+
+<!-- WhatsApp Field -->
+
+<div class="flex flex-col gap-1.5">
+
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="whatsappNumber">Número de WhatsApp</label>
+
+<div class="relative">
+
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">chat</span>
+
+<input class="w-full pl-10 pr-space-md py-space-sm rounded-xl bg-surface-container-low text-on-surface font-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary-container transition-all" id="whatsappNumber" placeholder="+54 9 11 2345-6789" required="" type="tel">
+
+</div>
+
+</div>
+
+<!-- Treatment Field -->
+
+<div class="flex flex-col gap-1.5">
+
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="treatmentSelect">Tratamiento de Interés</label>
+
+<select class="w-full px-space-md py-space-sm rounded-xl bg-surface-container-low text-on-surface font-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary-container transition-all appearance-none cursor-pointer" id="treatmentSelect" required="">
+
+<option disabled="" selected="" value="">Selecciona una especialidad</option>
+
+<option value="Implantes Dentales">Implantes Dentales &amp; Prótesis Fijas</option>
+
+<option value="Ortodoncia Invisible">Ortodoncia Invisible (Alineadores)</option>
+
+<option value="Estética Dental &amp; Blanqueamiento">Estética Dental &amp; Blanqueamiento</option>
+
+<option value="Limpieza y Control Preventivo">Limpieza Profunda &amp; Control Preventivo</option>
+
+<option value="Urgencia Odontológica">Urgencia Odontológica Inmediata</option>
+
+</select>
+
+</div>
+
+<!-- Schedule Preference -->
+
+<div class="flex flex-col gap-1.5">
+
+<label class="font-label-md text-label-md text-on-surface font-semibold">Preferencia de Horario</label>
+
+<div class="grid grid-cols-2 gap-space-sm">
+
+<label class="cursor-pointer">
+
+<input checked="" class="peer sr-only" name="timePreference" type="radio" value="Mañana (9:00 a 14:00)">
+
+<div class="px-space-sm py-2.5 rounded-xl bg-surface-container-low text-on-surface-variant font-label-md text-label-md text-center peer-checked:bg-primary-container peer-checked:text-on-primary transition-all">
+
+                  Mañana (9:00 a 14:00)
+
+                </div>
+
+</label>
+
+<label class="cursor-pointer">
+
+<input class="peer sr-only" name="timePreference" type="radio" value="Tarde (14:00 a 20:00)">
+
+<div class="px-space-sm py-2.5 rounded-xl bg-surface-container-low text-on-surface-variant font-label-md text-label-md text-center peer-checked:bg-primary-container peer-checked:text-on-primary transition-all">
+
+                  Tarde (14:00 a 20:00)
+
+                </div>
+
+</label>
+
+</div>
+
+</div>
+
+<!-- Estimated Date -->
+
+<div class="flex flex-col gap-1.5">
+
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="preferredDate">Fecha Estimada</label>
+
+<input class="w-full px-space-md py-space-sm rounded-xl bg-surface-container-low text-on-surface font-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary-container transition-all" id="preferredDate" type="date">
+
+</div>
+
+<!-- Submit Button -->
+
+<button class="w-full mt-space-sm py-space-sm px-space-lg rounded-full bg-primary-container text-on-primary font-label-lg text-label-lg font-bold shadow-[0px_8px_24px_-4px_rgba(14,165,233,0.35)] hover:brightness-105 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-space-xs" type="submit">
+
+<span class="">Consultar Disponibilidad vía WhatsApp</span>
+
+<span class="material-symbols-outlined text-[20px]">chat</span>
+
+</button>
+
+<!-- Microcopy -->
+
+<p class="text-center font-body-sm text-[12px] text-on-surface-variant flex items-center justify-center gap-1.5 pt-1">
+
+<span class="material-symbols-outlined text-[15px] text-tertiary">lock</span>
+
+<span class="">Tus datos están protegidos. Respuesta promedio: menos de 15 minutos.</span>
+
+</p>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- LOCATION, HOURS & DIRECT CONTACT STRIP -->
+
+<section class="w-full px-gutter-mobile lg:px-margin py-space-xl bg-surface-container-low">
+
+<div class="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
+
+<!-- Clinic Details Column -->
+
+<div class="lg:col-span-7 flex flex-col gap-space-md">
+
+<div>
+
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-primary font-bold">SEDE BELGRANO</span>
+
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-1">Visítanos en Nuestras Instalaciones</h2>
+
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Ambientes climatizados, salas de recuperación privadas y la máxima comodidad médica.</p>
+
+</div>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md pt-space-xs">
+
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-space-xs">
+
+<span class="material-symbols-outlined text-[20px]">pin_drop</span>
+
+</div>
+
+<h4 class="font-label-lg text-label-lg font-bold text-on-surface">Dirección Central</h4>
+
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+
+              Av. Libertador 4850, Piso 3, Consultorio A (Belgrano / Palermo, CABA)
+
+            </p>
+
+</div>
+
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-space-xs">
+
+<span class="material-symbols-outlined text-[20px]">local_parking</span>
+
+</div>
+
+<h4 class="font-label-lg text-label-lg font-bold text-on-surface">Estacionamiento</h4>
+
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+
+              Estacionamiento de cortesía para pacientes en Av. Libertador 4820 (Valet parking).
+
+            </p>
+
+</div>
+
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-space-xs">
+
+<span class="material-symbols-outlined text-[20px]">schedule</span>
+
+</div>
+
+<h4 class="font-label-lg text-label-lg font-bold text-on-surface">Horarios de Atención</h4>
+
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+
+              Lunes a Viernes: 09:00 - 20:00 hs<br>Sábados: 09:00 - 14:00 hs
+
+            </p>
+
+</div>
+
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-tertiary mb-space-xs">
+
+<span class="material-symbols-outlined text-[20px]">emergency</span>
+
+</div>
+
+<h4 class="font-label-lg text-label-lg font-bold text-on-surface">Línea de Urgencias</h4>
+
+<p class="font-body-sm text-body-sm text-tertiary font-semibold mt-1 leading-relaxed">
+
+              Guardia Activa 24/7 los 365 días del año para dolor agudo o traumatismo.
+
+            </p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Map Visual Card Column -->
+
+<div class="lg:col-span-5 flex flex-col gap-space-sm">
+
+<div class="bg-surface-container-lowest rounded-2xl p-space-md shadow-md flex flex-col gap-space-sm">
+
+<!-- Map Preview Container using data-location -->
+
+<div class="w-full h-64 rounded-xl bg-surface-container-high bg-cover bg-center relative overflow-hidden flex items-center justify-center group cursor-pointer shadow-inner" data-location="Av. Libertador 4850, Belgrano, Buenos Aires, Argentina">
+
+<div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors"></div>
+
+<div class="px-space-md py-space-xs rounded-full bg-surface-container-lowest/90 backdrop-blur-md shadow-md flex items-center gap-space-xs text-on-surface font-label-md text-label-md z-10">
+
+<span class="material-symbols-outlined text-error text-[20px]">location_on</span>
+
+<span class="">OdontoStudio Belgrano</span>
+
+</div>
+
+</div>
+
+<div class="flex items-center justify-between pt-space-xs">
+
+<span class="font-body-sm text-body-sm text-on-surface-variant">A 300m de Barrancas de Belgrano</span>
+
+<a class="inline-flex items-center gap-1 font-label-md text-label-md text-primary font-bold hover:underline" href="https://maps.google.com/?q=Av.+del+Libertador+4850,+CABA" rel="noopener noreferrer" target="_blank">
+
+<span class="">Abrir en Google Maps</span>
+
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- QUICK BRAND REASSURANCE STRIP -->
+
+<section class="w-full bg-surface-container-lowest py-space-lg">
+
+<div class="max-w-[1280px] mx-auto px-gutter-mobile lg:px-margin flex flex-col sm:flex-row items-center justify-between gap-space-md"><img src="https://lh3.googleusercontent.com/aida/AEtjO1UFA2HZZbp7iMfLPG9jzd8HoPidRaf3vrNXBzjVGtS1lKqBvChsizke0HVr_4aejiKeyaDr6SJRgkEwsxeEEbYAL-sX3SkuLc6RuYYbU3iokF7ac8xk1Y-M7awn0tmZ4brW88wPSQRpqxnJOgf8NV5L2tt9ZvNdWPfW-EwAwcXgm4JSwgAwYfLmasMgAM9NekolWEvNCB920Nxtc7M8wH5FLp7Xsq5VMxdQ7WGNcsLRKPm7AuaeR7I3q586" alt="OdontoStudio Logo" class="h-11 w-auto object-contain"></div>
+
+</section>
+
+</div>
+
+<script>
+
+  function handleFormSubmit(e) {
+
+    e.preventDefault();
+
+    const name = document.getElementById('fullName').value;
+
+    const phone = document.getElementById('whatsappNumber').value;
+
+    const treatment = document.getElementById('treatmentSelect').value;
+
+    const timePref = document.querySelector('input[name="timePreference"]:checked') ? document.querySelector('input[name="timePreference"]:checked').value : 'Sin preferencia';
+
+    const date = document.getElementById('preferredDate').value || 'A coordinar';
+
+
+
+    const message = encodeURIComponent(`Hola OdontoStudio! Quisiera solicitar una consulta diagnóstica:\n\n- Nombre: ${name}\n- WhatsApp: ${phone}\n- Especialidad: ${treatment}\n- Horario de preferencia: ${timePref}\n- Fecha estimada: ${date}`);
+
+    const whatsappUrl = `https://wa.me/5491123456789?text=${message}`;
+
+    window.open(whatsappUrl, '_blank');
+
+  }
+
+</script></main><footer class="w-full bg-surface-container-low text-on-surface-variant"><div class="max-w-[1280px] mx-auto px-gutter-mobile lg:px-margin py-space-xl"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg"><div class="flex flex-col gap-space-sm"><div class="flex items-center gap-space-sm"><a href="#" class="inline-block transition-opacity hover:opacity-90"><img src="https://lh3.googleusercontent.com/aida/AEtjO1XudFTRdeI_5hYVeUqB0-MEsSA_ac97WQqTcc3243jb6tcqvBs6DqiftAjYI9IkANIM-_ejda5LB45SbUV1ShU1LFaUYbcZz3Cd_EUTTuteh4u2N76fzqd7eMIVodfe7rXkxhzn5oHZiC4nvTSIFjvlyPXHSuTtd91PR50T3KhVNy78j0BWXAGMvKzPuvl8-DvboVRZVkqbs70UCHq7OcFRrFblwu_LOSGgqSmrgq5Kzs2pOj0vNjnojKRf" alt="OdontoStudio Logo" class="h-10 w-auto object-contain"></a></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Centro de estética dental y rehabilitación de alta complejidad. Fusión de tecnología digital, precisión médica y hospitalidad de excelencia.</p><div class="flex items-center gap-space-xs mt-space-xs"><span class="inline-flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-surface-container-highest text-primary font-label-caps text-label-caps"><span class="material-symbols-outlined text-[14px] text-tertiary-container">verified</span>Certificación Digital 3D</span></div></div><div class="flex flex-col gap-space-sm"><h4 class="font-label-lg text-label-lg text-on-surface">Explorar</h4><nav class="flex flex-col gap-space-xs"><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="tratamientos" href="#">Tratamientos y Procedimientos</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="casos-clinicos" href="#">Antes y Después</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="especialistas" href="#">Equipo Médico</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="ubicacion" href="#">Instalaciones y Consultorios</a></nav></div><div class="flex flex-col gap-space-sm"><h4 class="font-label-lg text-label-lg text-on-surface">Horarios de Atención</h4><ul class="flex flex-col gap-space-xs font-body-sm text-body-sm"><li class="flex justify-between"><span class="text-on-surface-variant">Lunes a Viernes:</span><span class="font-medium text-on-surface">08:00 - 20:00</span></li><li class="flex justify-between"><span class="text-on-surface-variant">Sábados:</span><span class="font-medium text-on-surface">09:00 - 14:00</span></li><li class="flex justify-between"><span class="text-on-surface-variant">Guardia Activa:</span><span class="font-medium text-tertiary">24 Horas / 365 días</span></li></ul></div><div class="flex flex-col gap-space-sm"><h4 class="font-label-lg text-label-lg text-on-surface">Sede Central</h4><address class="not-italic font-body-sm text-body-sm text-on-surface-variant flex flex-col gap-space-xs"><p class="flex items-start gap-space-xs"><span class="material-symbols-outlined text-[18px] text-primary flex-shrink-0 mt-0.5">location_on</span><span class="">Av. del Libertador 4820, Piso 6, Belgrano, CABA</span></p><p class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[18px] text-primary flex-shrink-0">call</span><span class="">+54 9 11 2345-6789</span></p><p class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[18px] text-primary flex-shrink-0">mail</span><span class="">recepcion@odontostudio.com</span></p></address></div></div><div class="mt-space-xl pt-space-md flex flex-col md:flex-row items-center justify-between gap-space-sm text-on-surface-variant font-label-caps text-label-caps"><div class="">© 2024 OdontoStudio. Todos los derechos reservados. Matrícula Nacional N° 45.291.</div><div class="flex items-center gap-space-md"><a class="hover:text-primary transition-colors" href="#">Términos de Servicio</a><a class="hover:text-primary transition-colors" href="#">Privacidad y Consentimiento Informado</a></div></div></div></footer>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- FLOATING WHATSAPP BUTTON (HIGH CONVERSION) -->
+<a href="https://wa.me/5491123456789?text=Hola%20OdontoStudio%2C%20quisiera%20solicitar%20un%20turno%20diagn%C3%B3stico" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-3.5 sm:p-4 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all flex items-center justify-center group" aria-label="Contactar por WhatsApp">
+  <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
+    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.086s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.164.577 4.195 1.585 5.952l-1.685 6.16 6.331-1.661c1.701.928 3.654 1.459 5.769 1.459 6.627 0 12-5.373 12-12 0-6.627-5.373-12-12-12z"/>
+  </svg>
+</a>
+
+</body></html>
