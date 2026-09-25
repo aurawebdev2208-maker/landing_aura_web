@@ -667,7 +667,8 @@
                 <span class="font-display text-3xl sm:text-5xl font-extrabold text-white" id="p1_price">$119.000</span>
                 <span class="text-xs text-on-surface-variant" id="p1_currency">ARS / puesta en marcha</span>
               </div>
-              <p class="text-[11px] text-outline mt-1 font-mono" id="p1_subtext">Dominio propio + Servidor Cloud de alta velocidad y soporte incluidos</p>
+              <p class="text-xs text-primary-container mt-1 font-mono font-medium" id="p1_subtext">+ $12.000 ARS/mes de Alojamiento Cloud & Mantenimiento</p>
+              <p class="text-[10px] text-outline mt-0.5" id="p1_note">*El costo del dominio puede variar según la extensión elegida.</p>
             </div>
 
             <ul class="flex flex-col gap-2.5 my-5 text-xs sm:text-sm text-on-surface">
@@ -677,7 +678,7 @@
               </li>
               <li class="flex items-center gap-2">
                 <span class="material-symbols-outlined text-primary-container text-[17px]">check_circle</span>
-                <span data-i18n="p1_f2">Dominio propio (.com o .com.ar) bonificado</span>
+                <span data-i18n="p1_f2">Dominio oficial propio (.com o .com.ar)*</span>
               </li>
               <li class="flex items-center gap-2">
                 <span class="material-symbols-outlined text-primary-container text-[17px]">check_circle</span>
@@ -728,7 +729,8 @@
                 <span class="font-display text-3xl sm:text-5xl font-extrabold text-white" id="p2_price">$230.000</span>
                 <span class="text-xs text-on-surface-variant" id="p2_currency">ARS / solución completa</span>
               </div>
-              <p class="text-[11px] text-outline mt-1 font-mono" id="p2_subtext">Todo el Pack Llave en Mano + Sistema de turnos/catálogo y servidor dedicado</p>
+              <p class="text-xs text-primary-container mt-1 font-mono font-medium" id="p2_subtext">+ $18.000 ARS/mes de Servidor Cloud dedicado & Soporte</p>
+              <p class="text-[10px] text-outline mt-0.5" id="p2_note">*El costo del dominio puede variar según la extensión elegida.</p>
             </div>
 
             <ul class="flex flex-col gap-2.5 my-5 text-xs sm:text-sm text-on-surface">
@@ -975,9 +977,10 @@
         p1_delivery: "48 Horas",
         p1_price: "$119.000",
         p1_currency: "ARS / puesta en marcha",
-        p1_subtext: "Dominio propio + Servidor Cloud de alta velocidad y soporte incluidos",
+        p1_subtext: "+ $12.000 ARS/mes de Alojamiento Cloud & Mantenimiento",
+        p1_note: "*El costo del dominio puede variar según la extensión elegida.",
         p1_f1: "Sitio Web profesional listo para usar en 48 Horas",
-        p1_f2: "Dominio propio (.com o .com.ar) bonificado",
+        p1_f2: "Dominio oficial propio (.com o .com.ar)*",
         p1_f3: "Alojamiento Cloud ultra-rápido & SSL https",
         p1_f4: "Embudo directo a WhatsApp para recibir clientes",
         p1_f5: "Mantenimiento técnico: nos ocupamos de todo",
@@ -987,7 +990,8 @@
         p2_name: "Pack Web App + Cloud Pro",
         p2_price: "$230.000",
         p2_currency: "ARS / solución completa",
-        p2_subtext: "Todo el Pack Llave en Mano + Sistema de turnos/catálogo y servidor dedicado",
+        p2_subtext: "+ $18.000 ARS/mes de Servidor Cloud dedicado & Soporte",
+        p2_note: "*El costo del dominio puede variar según la extensión elegida.",
         p2_f1: "Todo lo incluido en el Pack Llave en Mano",
         p2_f2: "Sistema interactivo de turnos, catálogo o panel",
         p2_f3: "Servidor Cloud dedicado de máxima velocidad",
@@ -1084,9 +1088,10 @@
         p1_delivery: "48 Hours",
         p1_price: "$140",
         p1_currency: "USD / turnkey ready",
-        p1_subtext: "Custom domain + High-speed Cloud Hosting & full support included",
+        p1_subtext: "+ $14 USD/mo Managed Cloud Hosting & Support",
+        p1_note: "*Domain cost may vary depending on the chosen extension.",
         p1_f1: "High-converting professional website (48h turnaround)",
-        p1_f2: "Custom domain (.com) fully configured & included",
+        p1_f2: "Custom official domain (.com)*",
         p1_f3: "Lightning-fast Cloud Hosting & SSL security included",
         p1_f4: "Direct WhatsApp / Booking conversion funnel",
         p1_f5: "Complete technical maintenance: zero hassle for you",
@@ -1096,7 +1101,8 @@
         p2_name: "Web App + Cloud Pro",
         p2_price: "$260",
         p2_currency: "USD / complete setup",
-        p2_subtext: "Everything in Turnkey Pack + Database & custom logic",
+        p2_subtext: "+ $22 USD/mo Dedicated Cloud Server & Support",
+        p2_note: "*Domain cost may vary depending on the chosen extension.",
         p2_f1: "Everything included in the Turnkey Web Pack",
         p2_f2: "Interactive appointment booking or product catalog",
         p2_f3: "Dedicated high-performance Cloud Server",
@@ -1169,10 +1175,12 @@
       document.getElementById('p1_price').textContent = translations[lang].p1_price;
       document.getElementById('p1_currency').textContent = translations[lang].p1_currency;
       document.getElementById('p1_subtext').textContent = translations[lang].p1_subtext;
+      if (document.getElementById('p1_note')) document.getElementById('p1_note').textContent = translations[lang].p1_note;
 
       document.getElementById('p2_price').textContent = translations[lang].p2_price;
       document.getElementById('p2_currency').textContent = translations[lang].p2_currency;
       document.getElementById('p2_subtext').textContent = translations[lang].p2_subtext;
+      if (document.getElementById('p2_note')) document.getElementById('p2_note').textContent = translations[lang].p2_note;
     }
 
     function openWhatsappWithCurrentLang(context) {
